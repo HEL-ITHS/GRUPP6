@@ -2,7 +2,7 @@
     export default {
         data() {
             return {
-                words: "",
+                words: ["apple", "rain", "radio"],
                 result: ""
             }
         },
@@ -21,3 +21,10 @@
         }
     }
 </script>
+
+<template>
+    <ul>
+        <li v-for="word in words"> {{ word }}</li>
+    </ul>
+
+</template>

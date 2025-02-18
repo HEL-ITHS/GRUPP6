@@ -2,8 +2,7 @@
     export default {
         data() {
             return {
-                words: ["apple", "rain", "radio"],
-                result: ""
+                word: "",
             }
         },
         methods: {
@@ -11,7 +10,7 @@
                 fetch("/public/words.json")
                 .then(response => response.json())
                 .then(data => {
-                    this.words = data
+                    this.word = data
                     console.log(data)
                 })
             }
@@ -24,7 +23,7 @@
 
 <template>
     <ul>
-        <li v-for="word in words"> {{ word }}</li>
+        <li v-for="words in word"> {{ words }}</li>
     </ul>
 
 </template>

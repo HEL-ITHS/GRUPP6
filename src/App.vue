@@ -1,16 +1,13 @@
 <script>
-  import CitiesList from "./components/CitiesList.vue";
-  import HelloWorld from "./components/HelloWorld.vue";
+  import Quiz from "./components/Quiz.vue";
 
   export default {
     components: {
-      CitiesList,
-      HelloWorld
+      Quiz
     }
   };
 </script>
 
 <template>
-  <HelloWorld msg="Hello World!" />
-  <CitiesList />
+  <Quiz />
 </template>

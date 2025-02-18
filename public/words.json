@@ -1,0 +1,372 @@
+{
+    "words": [
+      {
+        "english": "apple",
+        "swedish": "äpple"
+      },
+      {
+        "english": "house",
+        "swedish": "hus"
+      },
+      {
+        "english": "car",
+        "swedish": "bil"
+      },
+      {
+        "english": "tree",
+        "swedish": "träd"
+      },
+      {
+        "english": "water",
+        "swedish": "vatten"
+      },
+      {
+        "english": "fire",
+        "swedish": "eld"
+      },
+      {
+        "english": "earth",
+        "swedish": "jord"
+      },
+      {
+        "english": "sky",
+        "swedish": "himmel"
+      },
+      {
+        "english": "sun",
+        "swedish": "sol"
+      },
+      {
+        "english": "moon",
+        "swedish": "måne"
+      },
+      {
+        "english": "star",
+        "swedish": "stjärna"
+      },
+      {
+        "english": "dog",
+        "swedish": "hund"
+      },
+      {
+        "english": "cat",
+        "swedish": "katt"
+      },
+      {
+        "english": "bird",
+        "swedish": "fågel"
+      },
+      {
+        "english": "fish",
+        "swedish": "fisk"
+      },
+      {
+        "english": "flower",
+        "swedish": "blomma"
+      },
+      {
+        "english": "mountain",
+        "swedish": "berg"
+      },
+      {
+        "english": "river",
+        "swedish": "flod"
+      },
+      {
+        "english": "ocean",
+        "swedish": "hav"
+      },
+      {
+        "english": "rain",
+        "swedish": "regn"
+      },
+      {
+        "english": "snow",
+        "swedish": "snö"
+      },
+      {
+        "english": "wind",
+        "swedish": "vind"
+      },
+      {
+        "english": "storm",
+        "swedish": "storm"
+      },
+      {
+        "english": "light",
+        "swedish": "ljus"
+      },
+      {
+        "english": "dark",
+        "swedish": "mörk"
+      },
+      {
+        "english": "day",
+        "swedish": "dag"
+      },
+      {
+        "english": "night",
+        "swedish": "natt"
+      },
+      {
+        "english": "morning",
+        "swedish": "morgon"
+      },
+      {
+        "english": "evening",
+        "swedish": "kväll"
+      },
+      {
+        "english": "week",
+        "swedish": "vecka"
+      },
+      {
+        "english": "month",
+        "swedish": "månad"
+      },
+      {
+        "english": "year",
+        "swedish": "år"
+      },
+      {
+        "english": "time",
+        "swedish": "tid"
+      },
+      {
+        "english": "clock",
+        "swedish": "klocka"
+      },
+      {
+        "english": "minute",
+        "swedish": "minut"
+      },
+      {
+        "english": "second",
+        "swedish": "sekund"
+      },
+      {
+        "english": "food",
+        "swedish": "mat"
+      },
+      {
+        "english": "bread",
+        "swedish": "bröd"
+      },
+      {
+        "english": "butter",
+        "swedish": "smör"
+      },
+      {
+        "english": "cheese",
+        "swedish": "ost"
+      },
+      {
+        "english": "milk",
+        "swedish": "mjölk"
+      },
+      {
+        "english": "coffee",
+        "swedish": "kaffe"
+      },
+      {
+        "english": "tea",
+        "swedish": "te"
+      },
+      {
+        "english": "sugar",
+        "swedish": "socker"
+      },
+      {
+        "english": "salt",
+        "swedish": "salt"
+      },
+      {
+        "english": "pepper",
+        "swedish": "peppar"
+      },
+      {
+        "english": "chicken",
+        "swedish": "kyckling"
+      },
+      {
+        "english": "meat",
+        "swedish": "kött"
+      },
+      {
+        "english": "fish",
+        "swedish": "fisk"
+      },
+      {
+        "english": "egg",
+        "swedish": "ägg"
+      },
+      {
+        "english": "fruit",
+        "swedish": "frukt"
+      },
+      {
+        "english": "vegetable",
+        "swedish": "grönsak"
+      },
+      {
+        "english": "chair",
+        "swedish": "stol"
+      },
+      {
+        "english": "table",
+        "swedish": "bord"
+      },
+      {
+        "english": "door",
+        "swedish": "dörr"
+      },
+      {
+        "english": "window",
+        "swedish": "fönster"
+      },
+      {
+        "english": "wall",
+        "swedish": "vägg"
+      },
+      {
+        "english": "roof",
+        "swedish": "tak"
+      },
+      {
+        "english": "floor",
+        "swedish": "golv"
+      },
+      {
+        "english": "bed",
+        "swedish": "säng"
+      },
+      {
+        "english": "pillow",
+        "swedish": "kudde"
+      },
+      {
+        "english": "blanket",
+        "swedish": "filt"
+      },
+      {
+        "english": "mirror",
+        "swedish": "spegel"
+      },
+      {
+        "english": "book",
+        "swedish": "bok"
+      },
+      {
+        "english": "paper",
+        "swedish": "papper"
+      },
+      {
+        "english": "pen",
+        "swedish": "penna"
+      },
+      {
+        "english": "pencil",
+        "swedish": "blyertspenna"
+      },
+      {
+        "english": "computer",
+        "swedish": "dator"
+      },
+      {
+        "english": "phone",
+        "swedish": "telefon"
+      },
+      {
+        "english": "internet",
+        "swedish": "internet"
+      },
+      {
+        "english": "music",
+        "swedish": "musik"
+      },
+      {
+        "english": "song",
+        "swedish": "sång"
+      },
+      {
+        "english": "movie",
+        "swedish": "film"
+      },
+      {
+        "english": "television",
+        "swedish": "tv"
+      },
+      {
+        "english": "radio",
+        "swedish": "radio"
+      },
+      {
+        "english": "car",
+        "swedish": "bil"
+      },
+      {
+        "english": "bus",
+        "swedish": "buss"
+      },
+      {
+        "english": "train",
+        "swedish": "tåg"
+      },
+      {
+        "english": "bicycle",
+        "swedish": "cykel"
+      },
+      {
+        "english": "airplane",
+        "swedish": "flygplan"
+      },
+      {
+        "english": "ship",
+        "swedish": "fartyg"
+      },
+      {
+        "english": "boat",
+        "swedish": "båt"
+      },
+      {
+        "english": "money",
+        "swedish": "pengar"
+      },
+      {
+        "english": "work",
+        "swedish": "arbete"
+      },
+      {
+        "english": "school",
+        "swedish": "skola"
+      },
+      {
+        "english": "teacher",
+        "swedish": "lärare"
+      },
+      {
+        "english": "student",
+        "swedish": "elev"
+      },
+      {
+        "english": "child",
+        "swedish": "barn"
+      },
+      {
+        "english": "man",
+        "swedish": "man"
+      },
+      {
+        "english": "woman",
+        "swedish": "kvinna"
+      },
+      {
+        "english": "family",
+        "swedish": "familj"
+      },
+      {
+        "english": "friend",
+        "swedish": "vän"
+      }
+    ]
+  }

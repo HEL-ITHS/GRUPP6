@@ -31,9 +31,9 @@
 export default{
     data(){
         return{
-            disabled: false,
-            selectedAnswer: "",
-            showAnswer: false,
+            disabled: [],
+            selectedAnswer: [],
+            showAnswer: [],
             quiz: [
             {
                 "question": "Vad är hej på engelska?",
@@ -52,17 +52,35 @@ export default{
                 "c": "Chair"
                 },
                 "correctAnswer": "House"
+            },
+            {
+                "question": "Vad heter hund på engelska?",
+                "answers": {
+                "a": "Bird",
+                "b": "Cat",
+                "c": "Dog"
+                },
+                "correctAnswer": "Dog"
+            },
+            {
+                "question": "Vad heter katt på engelska?",
+                "answers": {
+                "a": "Dinosaur",
+                "b": "Cat",
+                "c": "Car"
+                },
+                "correctAnswer": "Cat"
             }
         ]
     }
     },
     methods:{
-        show() {
+        show(index) {
 
-            if (this.selectedAnswer){
-                this.disabled = true;
+            if (this.selectedAnswer[index]){
+                this.disabled[index] = true;
             }
-                this.showAnswer = true;
+                this.showAnswer[index] = true;
                 console.log("showanswer är true")
                 console.log(this.selectedAnswer)
             }
@@ -73,26 +91,31 @@ export default{
 </script>
 
 <template>
-<div>
-    <div v-for="(question, index) in quiz" :key="index">
-        <h3> {{ question.question }}</h3>
-        <form>
-            <input v-model="selectedAnswer" value="Hello" type="radio" :disabled="disabled">{{ quiz[index].answers.a }}
-            <input v-model="selectedAnswer" value="Goodbye" type="radio" :disabled="disabled">{{ quiz[index].answers.b }}
-            <input v-model="selectedAnswer" value= "Thanks" type="radio" :disabled="disabled"> {{ quiz[index].answers.c }}
-            <input type="button" value="Svara" @click="show()">
-        </form>
-    </div>
-
-
     <div>
-        <p v-if="showAnswer">Rätt svar: {{ quiz[0].correctAnswer }}</p>
-        <p v-if="showAnswer">Ditt svar: {{ selectedAnswer }}</p>
+      <div v-for="(question, index) in quiz" :key="index">
+        <h3>{{ question.question }}</h3>
+        <form @submit.prevent="show(index)">
+          <label>
+            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.a" :disabled="disabled[index]">
+            {{ question.answers.a }}
+          </label>
+          <br>
+          <label>
+            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.b" :disabled="disabled[index]">
+            {{ question.answers.b }}
+          </label>
+          <br>
+          <label>
+            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.c" :disabled="disabled[index]">
+            {{ question.answers.c }}
+          </label>
+          <br>
+          <input type="submit" value="Svara">
+        </form>
+        <div v-if="showAnswer[index]">
+          <p>Rätt svar: {{ quiz[index].correctAnswer }}</p>
+          <p>Ditt svar: {{ selectedAnswer[index] }}</p>
+        </div>
+      </div>
     </div>
-
-
-
-
-</div>
-
-</template>
+  </template>

@@ -31,6 +31,7 @@
 export default{
     data(){
         return{
+            answerBtn: [],
             disabled: [],
             selectedAnswer: [],
             showAnswer: [],
@@ -79,6 +80,7 @@ export default{
 
             if (this.selectedAnswer[index]){
                 this.disabled[index] = true;
+                this.answerBtn[index] = true;
             }
                 this.showAnswer[index] = true;
                 console.log("showanswer är true")
@@ -112,7 +114,7 @@ export default{
             {{ question.answers.c }}
           </label>
           <br>
-          <input type="submit" value="Svara">
+          <input :disabled="answerBtn[index]" type="submit" value="Svara">
           <div id="answers" v-if="showAnswer[index]">
             <p>Rätt svar: {{ quiz[index].correctAnswer }}</p>
           <p>Ditt svar: {{ selectedAnswer[index] }}</p>
@@ -128,6 +130,6 @@ export default{
     background-color: #77b0ff;
     border: 1px solid black;
   }
- 
+
 
 </style>

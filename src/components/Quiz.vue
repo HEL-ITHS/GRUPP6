@@ -93,8 +93,10 @@ export default{
 <template>
     <div>
       <div v-for="(question, index) in quiz" :key="index">
-        <h3>{{ question.question }}</h3>
+        <h2>fråga:</h2>
+
         <form @submit.prevent="show(index)">
+            <h3>{{ question.question }}</h3>
           <label>
             <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.a" :disabled="disabled[index]">
             {{ question.answers.a }}
@@ -111,11 +113,24 @@ export default{
           </label>
           <br>
           <input type="submit" value="Svara">
-        </form>
-        <div v-if="showAnswer[index]">
-          <p>Rätt svar: {{ quiz[index].correctAnswer }}</p>
+          <div id="answers" v-if="showAnswer[index]">
+            <p>Rätt svar: {{ quiz[index].correctAnswer }}</p>
           <p>Ditt svar: {{ selectedAnswer[index] }}</p>
         </div>
+<button>nästa</button>
+        </form>
+
       </div>
     </div>
   </template>
+
+  <style>
+  form {
+    background-color: #77b0ff;
+    border: 1px solid black;
+  }
+  #ansvers {
+
+  }
+
+</style>

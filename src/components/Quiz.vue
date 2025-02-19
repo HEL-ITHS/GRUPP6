@@ -31,6 +31,8 @@
 export default{
     data(){
         return{
+            disabled: false,
+            selectedAnswer: "",
             showAnswer: false,
             quiz: [
             {
@@ -41,36 +43,56 @@ export default{
                 "c": "Thanks"
                 },
                 "correctAnswer": "Hello"
+            },
+            {
+                "question": "Vad är hus på engelska?",
+                "answers": {
+                "a": "Tree",
+                "b": "House",
+                "c": "Chair"
+                },
+                "correctAnswer": "House"
             }
         ]
     }
     },
     methods:{
         show() {
-            this.showAnswer = true
-            console.log("show")
+
+            if (this.selectedAnswer){
+                this.disabled = true;
+            }
+                this.showAnswer = true;
+                console.log("showanswer är true")
+                console.log(this.selectedAnswer)
+            }
 
         }
     }
-}
-
-
 
 </script>
 
 <template>
 <div>
-    <h3> {{ quiz[0].question }}</h3>
-    <form>
-       <input type="radio">{{ quiz[0].answers.a }}
-       <input type="radio">{{ quiz[0].answers.b }}
-       <input type="radio"> {{ quiz[0].answers.c }}
-       <input type="submit" value="Svara" @click="show()">
-    </form>
-    <p v-if="showAnswer">{{ quiz[0].correctAnswer }}</p>
-    
+    <div v-for="(question, index) in quiz" :key="index">
+        <h3> {{ question.question }}</h3>
+        <form>
+            <input v-model="selectedAnswer" value="Hello" type="radio" :disabled="disabled">{{ quiz[index].answers.a }}
+            <input v-model="selectedAnswer" value="Goodbye" type="radio" :disabled="disabled">{{ quiz[index].answers.b }}
+            <input v-model="selectedAnswer" value= "Thanks" type="radio" :disabled="disabled"> {{ quiz[index].answers.c }}
+            <input type="button" value="Svara" @click="show()">
+        </form>
+    </div>
+
+
+    <div>
+        <p v-if="showAnswer">Rätt svar: {{ quiz[0].correctAnswer }}</p>
+        <p v-if="showAnswer">Ditt svar: {{ selectedAnswer }}</p>
+    </div>
+
+
+
 
 </div>
- 
-</template>
 
+</template>

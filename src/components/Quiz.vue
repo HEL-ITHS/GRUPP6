@@ -117,7 +117,6 @@ export default{
             <p>Rätt svar: {{ quiz[index].correctAnswer }}</p>
           <p>Ditt svar: {{ selectedAnswer[index] }}</p>
         </div>
-<button>nästa</button>
         </form>
 
       </div>
@@ -129,8 +128,6 @@ export default{
     background-color: #77b0ff;
     border: 1px solid black;
   }
-  #ansvers {
-
-  }
+ 
 
 </style>

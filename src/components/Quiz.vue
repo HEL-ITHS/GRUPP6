@@ -2,12 +2,11 @@
 <script>
 export default{
     data(){
-        return{
-            disabled: false,
-            selectedAnswer: [],
-            allAnswers:[],
-            quiz: [
-    {
+        return {
+      selectedAnswer: [], // Lagrar användarens svar
+      showResults: false, // Styr om vi ska visa resultaten
+      quiz: [
+      {
         "question": "1. Hur säger man 'katt' på engelska?",
         "answers": {
             "a": "Dog",
@@ -97,9 +96,15 @@ export default{
         },
         "correctAnswer": "School"
     }
-]
+      ]
+    };
+  },
+  methods: {
+    submitQuiz() {
+      this.showResults = true; // Visa alla svar
     }
     },
+
 
     }
 
@@ -107,38 +112,34 @@ export default{
 
 <template>
     <div>
-        <h2>Prov Enkelt</h2>
-      <div v-for="(question, index) in quiz" :key="index">
-        
+    <h2>Prov Enkelt</h2>
+    <div v-for="(question, index) in quiz" :key="index">
+      <form @submit.prevent>
+        <h3>{{ question.question }}</h3>
+        <label v-for="(answer, key) in question.answers" :key="key">
+          <input type="radio" v-model="selectedAnswer[index]" :value="answer">
+          {{ answer }}
+        </label>
+      </form>
+    </div>
+    <button @click="submitQuiz">Visa mina svar</button>
 
-        <form @submit.prevent="show(index)">
-            <h3>{{ question.question }}</h3>
-          <label>
-            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.a">
-            {{ question.answers.a }}
-          </label>
-          <br>
-          <label>
-            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.b">
-            {{ question.answers.b }}
-          </label>
-          <br>
-          <label>
-            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.c">
-            {{ question.answers.c }}
-          </label>
-          <br>
-          <label>
-            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.d">
-            {{ question.answers.d }}
-          </label>
-          <br>
-        
-        
-        </form>
+    <div v-if="showResults">
+      <h2>Resultat</h2>
+      <ul>
+        <li v-for="(question, index) in quiz" :key="'result' + index">
+          <strong>{{ question.question }}</strong><br>
+          Rätt svar: <strong>{{ question.correctAnswer }}</strong><br>
+          Ditt svar:
+          <strong :style="{ color: selectedAnswer[index] === question.correctAnswer ? 'green' : 'red' }">
+            {{ selectedAnswer[index] || "Ej besvarad" }}
+          </strong>
+        </li>
+      </ul>
     </div>
-      
+
     </div>
+
   </template>
 
   <style>

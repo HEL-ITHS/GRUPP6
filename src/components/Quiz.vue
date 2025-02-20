@@ -3,97 +3,141 @@
 export default{
     data(){
         return{
-            answerBtn: [],
-            disabled: [],
+            disabled: false,
             selectedAnswer: [],
-            showAnswer: [],
+            allAnswers:[],
             quiz: [
-            {
-                "question": "Vad är hej på engelska?",
-                "answers": {
-                "a": "Hello",
-                "b": "Goodbye",
-                "c": "Thanks"
-                },
-                "correctAnswer": "Hello"
-            },
-            {
-                "question": "Vad är hus på engelska?",
-                "answers": {
-                "a": "Tree",
-                "b": "House",
-                "c": "Chair"
-                },
-                "correctAnswer": "House"
-            },
-            {
-                "question": "Vad heter hund på engelska?",
-                "answers": {
-                "a": "Bird",
-                "b": "Cat",
-                "c": "Dog"
-                },
-                "correctAnswer": "Dog"
-            },
-            {
-                "question": "Vad heter katt på engelska?",
-                "answers": {
-                "a": "Dinosaur",
-                "b": "Cat",
-                "c": "Car"
-                },
-                "correctAnswer": "Cat"
-            }
-        ]
+    {
+        "question": "1. Hur säger man 'katt' på engelska?",
+        "answers": {
+            "a": "Dog",
+            "b": "Cat",
+            "c": "Horse",
+            "d": "Mouse"
+        },
+        "correctAnswer": "Cat"
+    },
+    {
+        "question": "2. Vilket av följande ord betyder 'hund' på engelska?",
+        "answers": {
+            "a": "Fish",
+            "b": "Bird",
+            "c": "Dog",
+            "d": "Lion"
+        },
+        "correctAnswer": "Dog"
+    },
+    {
+        "question": "3. Vad är den rätta översättningen av 'hus' till engelska?",
+        "answers": {
+            "a": "House",
+            "b": "Car",
+            "c": "Tree",
+            "d": "Apartment"
+        },
+        "correctAnswer": "House"
+    },
+    {
+        "question": "4. Vilket ord betyder 'sol' på engelska?",
+        "answers": {
+            "a": "Moon",
+            "b": "Star",
+            "c": "Sun",
+            "d": "Light"
+        },
+        "correctAnswer": "Sun"
+    },
+    {
+        "question": "5. Vad heter 'vatten' på engelska?",
+        "answers": {
+            "a": "Water",
+            "b": "Juice",
+            "c": "Milk",
+            "d": "Soda"
+        },
+        "correctAnswer": "Water"
+    },
+    {
+        "question": "6. Vad är det engelska ordet för 'bil'?",
+        "answers": {
+            "a": "Train",
+            "b": "Car",
+            "c": "Bike",
+            "d": "Bus"
+        },
+        "correctAnswer": "Car"
+    },
+    {
+        "question": "7. Vilket alternativ betyder 'röd' på engelska?",
+        "answers": {
+            "a": "Blue",
+            "b": "Green",
+            "c": "Red",
+            "d": "Yellow"
+        },
+        "correctAnswer": "Red"
+    },
+    {
+        "question": "8. Hur säger man 'äpple' på engelska?",
+        "answers": {
+            "a": "Banana",
+            "b": "Apple",
+            "c": "Pear",
+            "d": "Orange"
+        },
+        "correctAnswer": "Apple"
+    },
+    {
+        "question": "9. Vilket ord betyder 'skola' på engelska?",
+        "answers": {
+            "a": "School",
+            "b": "Hospital",
+            "c": "Library",
+            "d": "University"
+        },
+        "correctAnswer": "School"
+    }
+]
     }
     },
-    methods:{
-        show(index) {
 
-            if (this.selectedAnswer[index]){
-                this.disabled[index] = true;
-                this.answerBtn[index] = true;
-            }
-                this.showAnswer[index] = true;
-                console.log("showanswer är true")
-                console.log(this.selectedAnswer)
-            }
-
-        }
     }
 
 </script>
 
 <template>
     <div>
+        <h2>Prov Enkelt</h2>
       <div v-for="(question, index) in quiz" :key="index">
-        <h2>fråga:</h2>
+        
 
         <form @submit.prevent="show(index)">
             <h3>{{ question.question }}</h3>
           <label>
-            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.a" :disabled="disabled[index]">
+            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.a">
             {{ question.answers.a }}
           </label>
           <br>
           <label>
-            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.b" :disabled="disabled[index]">
+            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.b">
             {{ question.answers.b }}
           </label>
           <br>
           <label>
-            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.c" :disabled="disabled[index]">
+            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.c">
             {{ question.answers.c }}
           </label>
           <br>
-          <input :disabled="answerBtn[index]" type="submit" value="Svara">
-          <div id="answers" v-if="showAnswer[index]">
-            <p>Rätt svar: {{ quiz[index].correctAnswer }}</p>
-          <p>Ditt svar: {{ selectedAnswer[index] }}</p>
-        </div>
+          <label>
+            <input type="radio" v-model="selectedAnswer[index]" :value="question.answers.d">
+            {{ question.answers.d }}
+          </label>
+          <br>
+        
+        
         </form>
-
-      </div>
+    </div>
+      
     </div>
   </template>
 

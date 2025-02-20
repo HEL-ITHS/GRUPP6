@@ -3,13 +3,8 @@
 export default{
     data(){
         return {
-<<<<<<< HEAD
       selectedAnswer: Array(9).fill(null),
       showResults: false,
-=======
-      selectedAnswer: [], 
-      showResults: false, 
->>>>>>> ee870e4fa0332cfdcdaaeb8a2349fe30ab3f2a53
       quiz: [
       {
         "question": "1. Hur säger man 'katt' på engelska?",
@@ -104,7 +99,6 @@ export default{
       ]
     };
   },
-<<<<<<< HEAD
 
     methods: {
         submitQuiz() {
@@ -113,21 +107,6 @@ export default{
         }
         }
     },
-=======
-  computed: {
-        allAnswered(){
-            return this.selectedAnswer.length === this.quiz.length && this.selectedAnswer.every(ans => ans)
-        }
-    },
-  methods: {
-    submitQuiz() {
-        if(this.allAnswered){
-            this.showResults = true;
-        }
-        else{alert("hej")}
-     }
- }
->>>>>>> ee870e4fa0332cfdcdaaeb8a2349fe30ab3f2a53
 
     computed: {
         allAnswered() {
@@ -155,11 +134,7 @@ export default{
         </label>
       </form>
     </div>
-<<<<<<< HEAD
-    <button :disabled = "!allAnswered" @click="submitQuiz">Visa mina svar</button>
-=======
     <button @click="submitQuiz" :disabled="!allAnswered">Visa mina svar</button>
->>>>>>> ee870e4fa0332cfdcdaaeb8a2349fe30ab3f2a53
 
     <div v-if="showResults">
       <h2>Resultat</h2>

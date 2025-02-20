@@ -1,13 +1,19 @@
 <script>
-  import Quiz from "./components/Quiz.vue";
+  import LogInView from "./Views/LogInView.vue";
+  import StudentView from "./Views/StudentView.vue";
+  import StudentView from "./Views/StudentView.vue";
+  import TeacherView from "./Views/TeacherView.vue";
 
   export default {
     components: {
-      Quiz
+      LogInView,
+      StudentView,
+      TeacherView
     }
   };
 </script>
 
 <template>
-  <Quiz />
+  <LogInView />
+  <RouterView />
 </template>

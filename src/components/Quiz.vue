@@ -3,8 +3,8 @@
 export default{
     data(){
         return {
-      selectedAnswer: [], // Lagrar användarens svar
-      showResults: false, // Styr om vi ska visa resultaten
+      selectedAnswer: [], 
+      showResults: false, 
       quiz: [
       {
         "question": "1. Hur säger man 'katt' på engelska?",
@@ -95,15 +95,23 @@ export default{
             "d": "University"
         },
         "correctAnswer": "School"
-    }
+        }
       ]
     };
   },
+  computed: {
+        allAnswered(){
+            return this.selectedAnswer.length === this.quiz.length && this.selectedAnswer.every(ans => ans)
+        }
+    },
   methods: {
     submitQuiz() {
-      this.showResults = true; // Visa alla svar
-    }
-    },
+        if(this.allAnswered){
+            this.showResults = true;
+        }
+        else{alert("hej")}
+     }
+ }
 
 
     }
@@ -122,7 +130,7 @@ export default{
         </label>
       </form>
     </div>
-    <button @click="submitQuiz">Visa mina svar</button>
+    <button @click="submitQuiz" :disabled="!allAnswered">Visa mina svar</button>
 
     <div v-if="showResults">
       <h2>Resultat</h2>

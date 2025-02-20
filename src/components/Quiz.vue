@@ -105,6 +105,13 @@ export default{
         if(this.allAnswered) {
         this.showResults = true;
         }
+        },
+
+        restartQuiz(){
+            if(this.allAnswered){
+            this.selectedAnswer = Array(9).fill(null),
+            this.showResults = false
+            }
         }
     },
 
@@ -136,6 +143,7 @@ export default{
     </div>
     <button @click="submitQuiz" :disabled="!allAnswered">Visa mina svar</button>
 
+
     <div v-if="showResults">
       <h2>Resultat</h2>
       <ul>
@@ -148,6 +156,7 @@ export default{
           </strong>
         </li>
       </ul>
+      <button @click="restartQuiz" :hidden="!allAnswered">Gör om Quiz</button>
     </div>
 
     </div>

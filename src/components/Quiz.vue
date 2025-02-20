@@ -3,8 +3,8 @@
 export default{
     data(){
         return {
-      selectedAnswer: [], // Lagrar användarens svar
-      showResults: false, // Styr om vi ska visa resultaten
+      selectedAnswer: Array(9).fill(null),
+      showResults: false,
       quiz: [
       {
         "question": "1. Hur säger man 'katt' på engelska?",
@@ -99,11 +99,20 @@ export default{
       ]
     };
   },
-  methods: {
-    submitQuiz() {
-      this.showResults = true; // Visa alla svar
-    }
+
+    methods: {
+        submitQuiz() {
+        if(this.allAnswered) {
+        this.showResults = true;
+        }
+        }
     },
+
+    computed: {
+        allAnswered() {
+            return this.selectedAnswer.length === this.quiz.length && this.selectedAnswer.every(question => question !== null)
+        }
+    }
 
 
     }
@@ -117,12 +126,15 @@ export default{
       <form @submit.prevent>
         <h3>{{ question.question }}</h3>
         <label v-for="(answer, key) in question.answers" :key="key">
-          <input type="radio" v-model="selectedAnswer[index]" :value="answer">
+          <input
+          type="radio"
+           v-model="selectedAnswer[index]"
+           :value="answer">
           {{ answer }}
         </label>
       </form>
     </div>
-    <button @click="submitQuiz">Visa mina svar</button>
+    <button :disabled = "!allAnswered" @click="submitQuiz">Visa mina svar</button>
 
     <div v-if="showResults">
       <h2>Resultat</h2>
@@ -132,7 +144,7 @@ export default{
           Rätt svar: <strong>{{ question.correctAnswer }}</strong><br>
           Ditt svar:
           <strong :style="{ color: selectedAnswer[index] === question.correctAnswer ? 'green' : 'red' }">
-            {{ selectedAnswer[index] || "Ej besvarad" }}
+            {{ selectedAnswer[index] }}
           </strong>
         </li>
       </ul>

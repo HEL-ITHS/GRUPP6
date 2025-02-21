@@ -1,19 +1,22 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-
 import LogInView from "./Views/LogInView.vue";
 import StudentView from "./Views/StudentView.vue";
 import TeacherView from "./Views/TeacherView.vue";
 
 export default createRouter({
-  history: createWebHashHistory,
+  history: createWebHashHistory(),
   routes: [
     {
-      component: "LogInView",
+      component: LogInView,
       path: "/",
     },
-    { component: "StudentView", path: "/student" },
     {
-      component: "TeacherView",
+      component: StudentView,
+      path: "/student",
+    },
+
+    {
+      component: TeacherView,
       path: "/teacher",
     },
   ],

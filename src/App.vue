@@ -14,10 +14,27 @@ export default {
 
 <template>
   <header>
-    <h2>Header</h2>
+    <img src="" alt="logga">
+    <div></div>
   </header>
   <RouterView />
   <footer>
     <h2>Footer</h2>
   </footer>
 </template>
+<style>
+header {
+  background-color: #77b0ff;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+
+}
+header div {
+  background-color: blue;
+  height: 20px;
+  width: 50%;
+}
+</style>

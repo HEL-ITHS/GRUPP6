@@ -1,10 +1,13 @@
 <script>
+import { vModelCheckbox } from "vue";
+
 export default {
   data() {
     return {
       value: "",
       email: "",
       password: "",
+      confirmTerms: "",
     };
   },
 
@@ -13,13 +16,15 @@ export default {
       if (
         this.value === "student" &&
         this.email !== "" &&
-        this.password !== ""
+        this.password !== "" &&
+        this.confirmTerms === true
       ) {
         this.$router.push("/student");
       } else if (
         this.value === "teacher" &&
         this.email !== "" &&
-        this.password !== ""
+        this.password !== "" &&
+        this.confirmTerms === true
       ) {
         this.$router.push("/teacher");
       }
@@ -60,8 +65,30 @@ export default {
         <option value="teacher">Lärare</option>
       </select>
     </div>
-    <div class="d-flex justify-content-center mb-3">
-      <button type="submit" class="btn btn-primary">Logga in</button>
+    <div>
+      <input
+        v-model="confirmTerms"
+        class="form-check-input"
+        id="confirmTerms"
+        type="checkbox"
+        value=""
+        required
+      />
+      <label class="form-check-label" for="confirmTerms">
+        Godkänn villkoren</label
+      >
     </div>
+    <div class="d-flex justify-content-center mb-3">
+      <button style="cursor: pointer" type="submit" class="btn btn-primary">
+        Logga in
+      </button>
+    </div>
+    <a href="#">Glömt lösenord?</a>
   </form>
 </template>
+
+<style scooped>
+a {
+  color: black;
+}
+</style>

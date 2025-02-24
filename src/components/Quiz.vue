@@ -130,10 +130,12 @@ export default{
     <div>
     <h2>Prov Enkelt</h2>
     <div v-for="(question, index) in quiz" :key="index">
-      <form @submit.prevent>
+      <form class="question_container" @submit.prevent>
+        <div class="question">
         <h3>{{ question.question }}</h3>
-        <label v-for="(answer, key) in question.answers" :key="key">
-          <input
+        </div>
+        <label class="answer" v-for="(answer, key) in question.answers" :key="key">
+          <input class="checkmark"
           type="radio"
            v-model="selectedAnswer[index]"
            :value="answer">
@@ -141,10 +143,12 @@ export default{
         </label>
       </form>
     </div>
-    <button @click="submitQuiz" :disabled="!allAnswered">Visa mina svar</button>
+    <div class="result_button">
+      <button class="show_answer_button" @click="submitQuiz" :disabled="!allAnswered">Visa resultat</button>
+    </div>
 
 
-    <div v-if="showResults">
+    <div v-if="showResults" class="result_continer">
       <h2>Resultat</h2>
       <ul>
         <li v-for="(question, index) in quiz" :key="'result' + index">
@@ -156,18 +160,92 @@ export default{
           </strong>
         </li>
       </ul>
-      <button @click="restartQuiz" :hidden="!allAnswered">Gör om Quiz</button>
+      <div class="restart_button">
+        <button @click="restartQuiz" :hidden="!allAnswered">Gör om Quiz</button>
     </div>
+    </div>
+
+
 
     </div>
 
   </template>
 
-  <style>
+  <style scoped>
   form {
-    background-color: #77b0ff;
-    border: 1px solid black;
+    background-color: white;
   }
+
+  .questioncontainer {
+    padding: 20px;
+  }
+
+  .question {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  }
+
+  .answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5em;
+    cursor: pointer;
+  }
+
+  .checkmark {
+    height: 25px;
+    width: 25px;
+  }
+
+  .show_answer_button {
+    border: none;
+    border-radius: 5px;
+    background-color: #7AC0F5;
+    padding: 10px;
+  }
+
+  .show_answer_button:hover {
+    background-color: #519fdb;
+  }
+
+  .result_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 4em;
+  }
+
+  .result_continer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  li {
+    margin-top: 2em;
+    list-style: none;
+  }
+
+  .restart_button {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .restart_button button {
+    background-color: #7AC0F5;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 2em;
+  }
+
+  .restart_button button:hover {
+    background-color: #519fdb;
+  }
+
 
 
 </style>

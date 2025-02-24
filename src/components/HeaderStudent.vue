@@ -51,8 +51,8 @@
     <h2 class="header-text">Välkommen Elev</h2>
   </div>
       <nav class="d-flex align-items-center"> 
-      <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 3</a>
-       <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 4 </a>
+      <a href="#" class="link" style="color: white;">Text 3</a>
+       <a href="#" class="link" style="color: white;">Text 4 </a>
       </nav>
 
     </div>
@@ -77,6 +77,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.link:hover {
+  background-color: #0056b3; 
+  transform: scale(1.05); 
+}
+
+.link:active {
+  background-color: #004085; 
 }
 
 </style>

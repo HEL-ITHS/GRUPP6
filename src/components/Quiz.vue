@@ -128,7 +128,9 @@ export default{
 
 <template>
     <div>
-    <h2>Prov Enkelt</h2>
+    <div class="test_text">
+      <h1>Prov Enkelt</h1>
+    </div>
     <div v-for="(question, index) in quiz" :key="index">
       <form class="question_container" @submit.prevent>
         <div class="question">
@@ -174,6 +176,13 @@ export default{
   <style scoped>
   form {
     background-color: white;
+  }
+
+  .test_text {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    text-decoration: underline;
   }
 
   .questioncontainer {

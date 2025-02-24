@@ -9,7 +9,7 @@ export default {
   },
 
   methods: {
-    onClick() {
+    onClickLoggin() {
       if (
         this.value === "student" &&
         this.email !== "" &&
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-  <form @submit.prevent="onClick()" class="container mt-5">
+  <form @submit.prevent="onClickLoggin()" class="container mt-5">
     <div class="mb-3">
       <label for="email" class="form-label"><strong>Email:</strong></label>
       <input

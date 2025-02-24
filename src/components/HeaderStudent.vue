@@ -6,14 +6,14 @@
 <template>
   <header class="py-3" style="background-color:#004276 ;">
     <div class="container d-flex justify-content-beetween align-items-center">
-      <nav> 
+      <nav>
       <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 1</a>
        <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 2 </a>
       </nav>
       <div class="img-logo">
       <img src="/assets/fox.jpeg" alt="Grammify-logo" class="logo">
     </div>
-      <nav> 
+      <nav>
       <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 3</a>
        <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 4 </a>
       </nav>
@@ -45,12 +45,12 @@
   <header class="py-3" style="background-color:#004276 ;">
     <div class="container d-flex justify-content-beetween">
       <div class="img-logo">
-      <img src="/assets/fox.jpeg" alt="Grammify-logo" class="logo">
+      <img src="/assets/Logga.png" alt="Grammify-logo" class="logo">
     </div>
     <div class="d-flex justify-content-center flex-grow-1">
     <h2 class="header-text">Välkommen Elev</h2>
   </div>
-      <nav class="d-flex align-items-center"> 
+      <nav class="d-flex align-items-center">
       <a href="#" class="link" style="color: white;">Text 3</a>
        <a href="#" class="link" style="color: white;">Text 4 </a>
       </nav>
@@ -91,15 +91,12 @@
 }
 
 .link:hover {
-  background-color: #0056b3; 
-  transform: scale(1.05); 
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 .link:active {
-  background-color: #004085; 
+  background-color: #004085;
 }
 
 </style>
-
-
-

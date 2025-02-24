@@ -1,26 +1,85 @@
-<script>
+<!-- <script>
+
 </script>
 
 
 <template>
-<header>
-    <img src="" alt="logga">
-    <div></div>
-</header></template>
+  <header class="py-3" style="background-color:#004276 ;">
+    <div class="container d-flex justify-content-beetween align-items-center">
+      <nav> 
+      <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 1</a>
+       <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 2 </a>
+      </nav>
+      <div class="img-logo">
+      <img src="/assets/fox.jpeg" alt="Grammify-logo" class="logo">
+    </div>
+      <nav> 
+      <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 3</a>
+       <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 4 </a>
+      </nav>
 
-<style>
-header {
-  background-color: #77b0ff;
-  height: 10vh;
+    </div>
+  </header>
+</template>
+
+<style scoped>
+.img-logo{
+  width: 120px;
+  display: flex;
+  justify-content: center;
+}
+.logo{
+  max-width: 100%;
+  height: auto;
+}
+
+</style> -->
+
+
+<script>
+
+</script>
+
+
+<template>
+  <header class="py-3" style="background-color:#004276 ;">
+    <div class="container d-flex justify-content-beetween">
+      <div class="img-logo">
+      <img src="/assets/fox.jpeg" alt="Grammify-logo" class="logo">
+    </div>
+    <div class="d-flex justify-content-center flex-grow-1">
+    <h2 class="header-text">Välkommen Elev</h2>
+  </div>
+      <nav class="d-flex align-items-center"> 
+      <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 3</a>
+       <a href="#" class="text-decoration-none mx-3" style="color: white;">Text 4 </a>
+      </nav>
+
+    </div>
+  </header>
+</template>
+
+<style scoped>
+.img-logo{
+  width: 120px;
+  display: flex;
+  justify-content: center;
+}
+.logo{
+  max-width: 100%;
+  height: auto;
+}
+.header-text{
+  background-color:#7AC0F5 ;
+  color: white;
+  padding: 10px 120px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-between;
+}
 
-}
-header div {
-  background-color: blue;
-  height: 20px;
-  width: 50%;
-}
 </style>
+
+
+

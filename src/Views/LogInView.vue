@@ -38,7 +38,7 @@ export default {
 
   <form @submit.prevent="onClickLoggin()"
   >
-    <div>
+    <div class="email_container">
       <label for="email"><strong>Email:</strong></label>
       <input
         v-model="email"
@@ -47,7 +47,7 @@ export default {
         required
       />
     </div>
-    <div>
+    <div class="password_container">
       <label for="password"
         ><strong>Lösenord:</strong></label
       >
@@ -58,7 +58,7 @@ export default {
         required
       />
     </div>
-    <div>
+    <div class="choice_container">
       <label for="typeOfUser" ><strong>Välj:</strong></label>
       <select v-model="value" id="typeOfUser" required>
         <option selected disabled value="">Välj</option>
@@ -89,6 +89,24 @@ export default {
 </template>
 
 <style scoped>
+.email_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.password_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.choice_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 #main_container {
   display: flex;
   flex-direction: column;

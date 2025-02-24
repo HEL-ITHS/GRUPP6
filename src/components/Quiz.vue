@@ -206,6 +206,7 @@ export default{
   .checkmark {
     height: 25px;
     width: 25px;
+    margin-right: 1em;
   }
 
   .show_answer_button {

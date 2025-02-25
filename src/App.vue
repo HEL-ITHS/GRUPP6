@@ -2,14 +2,14 @@
 import LogInView from "./Views/LogInView.vue";
 import StudentView from "./Views/StudentView.vue";
 import TeacherView from "./Views/TeacherView.vue";
-import Footer from "./components/Footer.vue";
+import FooterAll from "./components/FooterAll.vue";
 
 export default {
   components: {
     LogInView,
     StudentView,
     TeacherView,
-    Footer
+    FooterAll
   },
 };
 </script>
@@ -17,6 +17,6 @@ export default {
 <template>
 
   <RouterView />
-  <Footer />
+  <FooterAll />
 
 </template>

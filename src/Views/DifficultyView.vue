@@ -94,8 +94,8 @@
     </div>
     </div>
 
-    <div v-if="showPopup" class="popup_info" @click="closePopup">
-        <div class="popup_box" @click.stop>
+    <div v-if="showPopup" class="popup_info">
+        <div class="popup_box">
             <p> {{ popupText }} </p>
             <button class="popup_button" @click="closePopup">Stäng</button>
         </div>

@@ -1,4 +1,5 @@
 <script>
+import { userDetails} from "../stores/userStorage";
 
 export default {
   data() {
@@ -12,6 +13,10 @@ export default {
 
   methods: {
     onClickLoggin() {
+      const username = this.email.split("@")[0];
+      const userStore = userDetails();
+      userStore.setUsername(username);
+
       if (
         this.value === "student" &&
         this.email !== "" &&

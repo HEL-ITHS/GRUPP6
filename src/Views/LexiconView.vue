@@ -1,5 +1,4 @@
 <script>
-import { registerRuntimeCompiler } from "vue";
 import HeaderStudent from "../components/HeaderStudent.vue";
 
 export default {
@@ -22,13 +21,21 @@ export default {
 
           this.definition = {
             word: data.word,
-            phonetic: data.phonetics[0].text,
-            audio: data.phonetics[1].audio,
-            partOfSpeech: data.meanings[0].partOfSpeech,
-            meaning: data.meanings[0].definitions[0].definition,
+            phonetic: data.phonetics[0]?.text || "",
+            audio: data.phonetics[1]?.audio || "",
+            meanings: data.meanings.map((meaning) => ({
+              partOfSpeech: meaning.partOfSpeech,
+              definition: meaning.definitions[0]?.definition || "",
+              synonyms: meaning.synonyms || [],
+            })),
           };
         });
-      if (this.definition === "") return;
+    },
+    playAudio() {
+      if (this.definition && this.definition.audio) {
+        const audio = new Audio(this.definition.audio);
+        audio.play();
+      }
     },
   },
 };
@@ -36,35 +43,41 @@ export default {
 
 <template>
   <HeaderStudent />
-  <article>
-    Välkommen till vår ordsökningssida! Här kan du enkelt söka på ett ord och få
-    fram den engelska betydelsen samt annan relevant information som kan hjälpa
-    dig att förstå och använda ordet på rätt sätt. Oavsett om du är en elev som
-    behöver hjälp med att översätta ord för en uppgift, eller om du vill bygga
-    ut ditt ordförråd på engelska, så finns här en användbar resurs för dig. För
-    att komma igång, skriv bara in det ord du söker efter i sökfältet. När du
-    söker får du inte bara den engelska betydelsen av ordet, utan även exempel
-    på hur ordet används i meningar, uttal, och synonymer. Detta gör att du kan
-    lära dig ordet på djupet och förstå dess användning i olika sammanhang.
-    Denna sida är perfekt för alla elever som vill förbättra sina
-    språkkunskaper, oavsett om du studerar engelska som andraspråk eller om du
-    bara vill stärka dina ordkunskaper. Tveka inte att använda sidan så ofta du
-    vill – vi är här för att hjälpa dig att lyckas!
-  </article>
+
   <div id="lexicon_container">
     <input v-model="word" placeholder="Skriv in ett ord" id="searched_input" />
     <button id="searched_button" @click="onClickLexicon">Sök</button>
     <div v-if="definition" id="defintion_container">
-      <p><strong>Ord:</strong> {{ definition.word }}</p>
-      <p><strong>Uttal:</strong> {{ definition.phonetic }}</p>
-      <p>
-        <strong>Uttal(ljud):</strong>
-        <audio controls>
-          <source :src="definition.audio" type="audio/mpeg" />
-        </audio>
-      </p>
-      <p><strong>Ordklass:</strong> {{ definition.partOfSpeech }}</p>
-      <p><strong>Betydelse:</strong> {{ definition.meaning }}</p>
+      <div id="search_word_container">
+        <h3 id="searched_word">
+          <strong>{{ definition.word.toUpperCase() }}</strong>
+        </h3>
+        <p v-if="definition.phonetic !== ''">
+          <strong>Uttal:</strong> {{ definition.phonetic }}
+        </p>
+        <p>
+          <strong>Uttal(ljud):</strong>
+          <button v-if="definition.audio" @click="playAudio" id="play_button">
+            ▶
+          </button>
+        </p>
+      </div>
+      <div
+        v-for="(meaning, index) in definition.meanings"
+        :key="index"
+        id="words_defintion"
+      >
+        <div v-if="meaning.partOfSpeech" id="part_of_speech">
+          <h4>{{ meaning.partOfSpeech }}</h4>
+        </div>
+        <p v-if="meaning.definition" id="defintion">
+          <strong>Defintion:</strong> {{ meaning.definition }}
+        </p>
+        <p v-if="meaning.synonyms.length > 0" class="synonyms">
+          <strong>Synonymer:</strong> {{ meaning.synonyms }}
+        </p>
+        <p v-else class="synonyms">Inga synonymer finns</p>
+      </div>
     </div>
   </div>
 </template>
@@ -78,11 +91,13 @@ export default {
   padding: 20px;
 }
 #defintion_container {
-  background-color: lightgray;
+  display: flex;
+  background-color: white;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
+  width: 100%;
   margin-top: 20px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px 2px;
@@ -119,5 +134,44 @@ export default {
   border-color: #2575fc;
   box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
   outline: none;
+}
+
+#search_word_container {
+  width: 100%;
+  font-size: 20px;
+}
+#searched_word {
+  display: flex;
+  justify-content: center;
+}
+#play_button {
+  border: none;
+  background: none;
+  color: black;
+}
+
+#words_defintion {
+  box-shadow: 2px 2px 2px 2px;
+  margin: 10px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: lightblue;
+}
+#part_of_speech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#defintion {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.synonyms {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
 }
 </style>

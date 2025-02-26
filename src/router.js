@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import LogInView from "./Views/LogInView.vue";
 import StudentView from "./Views/StudentView.vue";
 import TeacherView from "./Views/TeacherView.vue";
-import StudentDashboard from "./Views/StudentDashboard.vue";
+import QuizView from "./Views/QuizView.vue";
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -12,7 +12,7 @@ export default createRouter({
       path: "/",
     },
     {
-      component: StudentView,
+      component: QuizView,
       path: "/quiz",
     },
 
@@ -22,7 +22,7 @@ export default createRouter({
     },
 
     {
-      component: StudentDashboard,
+      component: StudentView,
       path: "/student"
     }
 

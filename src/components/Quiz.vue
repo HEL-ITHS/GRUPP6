@@ -118,6 +118,9 @@ export default {
           (this.showQuiz = true);
       }
     },
+    goToInteraction(){
+      this.$router.push('/interaction')
+    }
   },
 
   computed: {
@@ -200,6 +203,7 @@ export default {
       <button class="cancel_button">Avsluta</button>
     </RouterLink>
   </div>
+  <button @click="goToInteraction">tyck till om provet</button>
 </template>
 
 <style scoped>

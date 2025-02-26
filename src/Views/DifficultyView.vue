@@ -37,7 +37,8 @@
     <HeaderStudent />
 
     <div class="head_text">
-        <h1>Quiz portal</h1>
+
+        <img class="quiz_image" src="/assets/quiz2.jpg" alt="Quiz time letters">
     </div>
 
     <div class="choise_container">
@@ -111,12 +112,16 @@
 .head_text {
     display: flex;
     justify-content: center;
-    margin-top: 2em;
+    align-items: center;
+}
+
+.quiz_image {
+    height: 250px;
 }
 
 .choise_container {
-    margin-top: 5em;
-    margin-bottom: 5em;
+    margin-top: 2em;
+    margin-bottom: 7em;
 }
 
 .choice_parts {

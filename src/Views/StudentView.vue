@@ -1,9 +1,16 @@
 <script>
   import HeaderStudent from "../components/HeaderStudent.vue"
+  import { userDetails} from "../stores/userStorage";
 
   export default {
     components: {
       HeaderStudent,
+    },
+    computed: {
+      setUsernameFromLogIn(){
+        const userstore = userDetails()
+        return userstore.username
+      }
     }
   }
 </script>
@@ -12,7 +19,8 @@
   <HeaderStudent />
   <div class="hero_content" aria-label= "">
     <section class="hero_text_content">
-      <h1>Välkommen till studentvyn</h1>
+      <h1>Välkommen till studentvyn </h1>
+      <h2> {{ setUsernameFromLogIn }} </h2>
       <p>Förbättra dina engelskkunskaper genom utmana dig själv på quiz med olika svårighetsgrad, se dina resultat och ha roligt medan du lär dig. Du kan även att använda lexikon för att söka och lära dig mer om orden. </p>
     </section>
   </div>

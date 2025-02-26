@@ -1,12 +1,21 @@
 <script>
+  import { userDetails} from "../stores/userStorage";
 
+  export default {
+    computed: {
+      setUsernameFromLogIn(){
+        const userstore = userDetails()
+        return userstore.username
+      }
+    }
+  }
 </script>
 
 
 <template>
   <header class="container_header">
     <img src="/assets/Logga.png" alt="Grammify-logo" class="logo">
-    <h2 class="header_text">Välkommen Användarnamn (student)</h2>
+    <h2 class="header_text">{{ setUsernameFromLogIn }}</h2>
   </header>
 </template>
 

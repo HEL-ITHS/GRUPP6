@@ -34,7 +34,7 @@
     <HeaderStudent />
 
     <div class="head_text">
-        <h1>Quiz att göra</h1>
+        <h1>Quiz portal</h1>
     </div>
 
     <div class="choise_container">

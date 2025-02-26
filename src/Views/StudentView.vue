@@ -12,16 +12,15 @@
   <HeaderStudent />
   <div class="hero_content" aria-label= "">
     <section class="hero_text_content">
-      <h1>Studentens Dashboard</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia mi nec erat gravida, at varius justo gravida. Integer aliquet ante et ultricies interdum. Morbi dapibus metus at velit viverra, eget vestibulum sem dictum. Nullam accumsan, metus at suscipit fermentum, dui ligula hendrerit erat, at fermentum arcu purus sit amet est.</p>
-      <p>In posuere leo ut nisi hendrerit, vel posuere nisi feugiat. Sed in dictum neque. Ut hendrerit leo sit amet mi suscipit, vel volutpat turpis auctor.</p>
+      <h1>Välkommen till studentvyn</h1>
+      <p>Förbättra dina engelskkunskaper genom utmana dig själv på quiz med olika svårighetsgrad, se dina resultat och ha roligt medan du lär dig. Du kan även att använda lexikon för att söka och lära dig mer om orden. </p>
     </section>
   </div>
   <div class="student_options">
     <RouterLink to="/Difficulty">
     <button class="student_navigation_btns">Gör quiz</button class="student_navigation_btns"></RouterLink>
     <RouterLink to="/">
-    <button class="student_navigation_btns">Mina resultat</button>
+    <button class="student_navigation_btns">Se mina resultat</button>
     </RouterLink>
     <RouterLink to="/Lexicon"><button class="student_navigation_btns">Lexikon</button></RouterLink>
   </div>
@@ -74,5 +73,7 @@
 
   .student_navigation_btns:hover {
     background-color: #004276;
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
   }
 </style>

@@ -4,6 +4,7 @@ import StudentView from "./Views/StudentView.vue";
 import TeacherView from "./Views/TeacherView.vue";
 import QuizView from "./Views/QuizView.vue";
 import InteractionView from "./Views/InteractionView.vue";
+import DifficultyView from "./Views/DifficultyView.vue";
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -29,6 +30,10 @@ export default createRouter({
     {
       component: InteractionView,
       path: "/interaction"
+    },
+    {
+      component: DifficultyView,
+      path: "/Difficulty"
     }
 
   ],

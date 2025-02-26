@@ -18,12 +18,12 @@
     </section>
   </div>
   <div class="student_options">
-    <RouterLink to="/">
+    <RouterLink to="/Difficulty">
     <button class="student_navigation_btns">Gör quiz</button class="student_navigation_btns"></RouterLink>
     <RouterLink to="/">
     <button class="student_navigation_btns">Mina resultat</button>
     </RouterLink>
-    <RouterLink to="/"><button class="student_navigation_btns">Lexikon</button></RouterLink>
+    <RouterLink to="/Lexicon"><button class="student_navigation_btns">Lexikon</button></RouterLink>
   </div>
 
 </template>

@@ -1,4 +1,6 @@
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
   data() {
     return {
@@ -194,7 +196,9 @@ export default {
     </div>
   </div>
   <div class="container_cancel_button">
+    <RouterLink to="/student">
       <button class="cancel_button">Avsluta</button>
+    </RouterLink>
   </div>
 </template>
 

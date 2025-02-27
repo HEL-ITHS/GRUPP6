@@ -1,21 +1,3 @@
-<!--<script>
-import Quiz from "../components/Quiz.vue";
-import HeaderStudent from "../components/HeaderStudent.vue"
-
-export default {
-  components: {
-    HeaderStudent,
-    Quiz
-
-  },
-};
-</script>
-
-<template>
-  <HeaderStudent />
-  <Quiz />
-</template>-->
-
 <script>
 import { RouterLink } from 'vue-router';
 import HeaderStudent from "../components/HeaderStudent.vue"
@@ -29,100 +11,99 @@ export default {
       showQuiz: true,
       selectedAnswer: Array(9).fill(null),
       showResults: false,
-      quiz: [
-        {
-          question: "1. Hur säger man 'katt' på engelska?",
-          answers: {
-            a: "Dog",
-            b: "Cat",
-            c: "Horse",
-            d: "Mouse",
-          },
-          correctAnswer: "Cat",
-        },
-        {
-          question: "2. Vilket av följande ord betyder 'hund' på engelska?",
-          answers: {
-            a: "Fish",
-            b: "Bird",
-            c: "Dog",
-            d: "Lion",
-          },
-          correctAnswer: "Dog",
-        },
-        {
-          question:
-            "3. Vad är den rätta översättningen av 'hus' till engelska?",
-          answers: {
-            a: "House",
-            b: "Car",
-            c: "Tree",
-            d: "Apartment",
-          },
-          correctAnswer: "House",
-        },
-        {
-          question: "4. Vilket ord betyder 'sol' på engelska?",
-          answers: {
-            a: "Moon",
-            b: "Star",
-            c: "Sun",
-            d: "Light",
-          },
-          correctAnswer: "Sun",
-        },
-        {
-          question: "5. Vad heter 'vatten' på engelska?",
-          answers: {
-            a: "Water",
-            b: "Juice",
-            c: "Milk",
-            d: "Soda",
-          },
-          correctAnswer: "Water",
-        },
-        {
-          question: "6. Vad är det engelska ordet för 'bil'?",
-          answers: {
-            a: "Train",
-            b: "Car",
-            c: "Bike",
-            d: "Bus",
-          },
-          correctAnswer: "Car",
-        },
-        {
-          question: "7. Vilket alternativ betyder 'röd' på engelska?",
-          answers: {
-            a: "Blue",
-            b: "Green",
-            c: "Red",
-            d: "Yellow",
-          },
-          correctAnswer: "Red",
-        },
-        {
-          question: "8. Hur säger man 'äpple' på engelska?",
-          answers: {
-            a: "Banana",
-            b: "Apple",
-            c: "Pear",
-            d: "Orange",
-          },
-          correctAnswer: "Apple",
-        },
-        {
-          question: "9. Vilket ord betyder 'skola' på engelska?",
-          answers: {
-            a: "School",
-            b: "Hospital",
-            c: "Library",
-            d: "University",
-          },
-          correctAnswer: "School",
-        },
-      ],
-    };
+      "quiz": [
+    {
+      "question": "1. Vilket ord passar in i följande mening: 'I ____ to the store yesterday.'",
+      "answers": {
+        "a": "go",
+        "b": "went",
+        "c": "going",
+        "d": "gone"
+      },
+      "correctAnswer": "went"
+    },
+    {
+      "question": "2. Vilket ord passar in i följande mening: 'She ____ a book right now.'",
+      "answers": {
+        "a": "read",
+        "b": "reads",
+        "c": "reading",
+        "d": "is reading"
+      },
+      "correctAnswer": "is reading"
+    },
+    {
+      "question": "3. Vilket ord passar in i följande mening: 'They ____ to the park every weekend.'",
+      "answers": {
+        "a": "go",
+        "b": "going",
+        "c": "gone",
+        "d": "went"
+      },
+      "correctAnswer": "go"
+    },
+    {
+      "question": "4. Vilket ord passar in i följande mening: 'We ____ a great time at the party.'",
+      "answers": {
+        "a": "have",
+        "b": "had",
+        "c": "having",
+        "d": "has"
+      },
+      "correctAnswer": "had"
+    },
+    {
+      "question": "5. Vilket ord passar in i följande mening: 'He ____ to play soccer next weekend.'",
+      "answers": {
+        "a": "plans",
+        "b": "plan",
+        "c": "planned",
+        "d": "planning"
+      },
+      "correctAnswer": "plans"
+    },
+    {
+      "question": "6. Vilket ord passar in i följande mening: 'I ____ my homework before dinner.'",
+      "answers": {
+        "a": "finish",
+        "b": "finished",
+        "c": "finishing",
+        "d": "finishes"
+      },
+      "correctAnswer": "finished"
+    },
+    {
+      "question": "7. Vilket ord passar in i följande mening: 'They ____ breakfast at 7:30 every morning.'",
+      "answers": {
+        "a": "eat",
+        "b": "eats",
+        "c": "ate",
+        "d": "eating"
+      },
+      "correctAnswer": "eat"
+    },
+    {
+      "question": "8. Vilket ord passar in i följande mening: 'She ____ to the music every day.'",
+      "answers": {
+        "a": "listen",
+        "b": "listened",
+        "c": "listens",
+        "d": "listening"
+      },
+      "correctAnswer": "listens"
+    },
+    {
+      "question": "9. Vilket ord passar in i följande mening: 'We ____ to visit our grandparents next summer.'",
+      "answers": {
+        "a": "are",
+        "b": "is",
+        "c": "were",
+        "d": "will be"
+      },
+      "correctAnswer": "will be"
+    }
+  ]
+}
   },
 
   methods: {
@@ -161,7 +142,7 @@ export default {
 
   <div v-if="showQuiz">
     <div class="test_text">
-      <h1>Prov Enkelt</h1>
+      <h1>Prov Medel</h1>
     </div>
     <div v-for="(question, index) in quiz" :key="index">
       <form class="question_container" @submit.prevent>

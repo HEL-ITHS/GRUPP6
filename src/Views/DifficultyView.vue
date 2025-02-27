@@ -18,8 +18,14 @@
             window.scrollTo(0, 0)
         },
         methods: {
-            startQuiz() {
-
+                startEasy() {
+                    this.$router.push("/quiz");
+                },
+                startMedel() {
+                    this.$router.push("/quizmedel");
+                },
+                startHard() {
+                    this.$router.push("/quizhard");
                 },
                 showInfo(text) {
                     this.popupText = text
@@ -53,7 +59,7 @@
         </div>
         <button
         class="start_quiz"
-        @click="startQuiz"
+        @click="startEasy"
         >
         Starta quiz
         </button>
@@ -72,7 +78,7 @@
         </div>
         <button
         class="start_quiz"
-        @click="startQuiz"
+        @click="startMedel"
         >
         Starta quiz
     </button>
@@ -91,7 +97,7 @@
         </div>
         <button
             class="start_quiz"
-            @click="startQuiz"
+            @click="startHard"
             >
             Starta quiz
         </button>

@@ -1,21 +1,3 @@
-<!--<script>
-import Quiz from "../components/Quiz.vue";
-import HeaderStudent from "../components/HeaderStudent.vue"
-
-export default {
-  components: {
-    HeaderStudent,
-    Quiz
-
-  },
-};
-</script>
-
-<template>
-  <HeaderStudent />
-  <Quiz />
-</template>-->
-
 <script>
 import { RouterLink } from 'vue-router';
 import HeaderStudent from "../components/HeaderStudent.vue"
@@ -29,100 +11,99 @@ export default {
       showQuiz: true,
       selectedAnswer: Array(9).fill(null),
       showResults: false,
-      quiz: [
-        {
-          question: "1. Hur säger man 'katt' på engelska?",
-          answers: {
-            a: "Dog",
-            b: "Cat",
-            c: "Horse",
-            d: "Mouse",
-          },
-          correctAnswer: "Cat",
-        },
-        {
-          question: "2. Vilket av följande ord betyder 'hund' på engelska?",
-          answers: {
-            a: "Fish",
-            b: "Bird",
-            c: "Dog",
-            d: "Lion",
-          },
-          correctAnswer: "Dog",
-        },
-        {
-          question:
-            "3. Vad är den rätta översättningen av 'hus' till engelska?",
-          answers: {
-            a: "House",
-            b: "Car",
-            c: "Tree",
-            d: "Apartment",
-          },
-          correctAnswer: "House",
-        },
-        {
-          question: "4. Vilket ord betyder 'sol' på engelska?",
-          answers: {
-            a: "Moon",
-            b: "Star",
-            c: "Sun",
-            d: "Light",
-          },
-          correctAnswer: "Sun",
-        },
-        {
-          question: "5. Vad heter 'vatten' på engelska?",
-          answers: {
-            a: "Water",
-            b: "Juice",
-            c: "Milk",
-            d: "Soda",
-          },
-          correctAnswer: "Water",
-        },
-        {
-          question: "6. Vad är det engelska ordet för 'bil'?",
-          answers: {
-            a: "Train",
-            b: "Car",
-            c: "Bike",
-            d: "Bus",
-          },
-          correctAnswer: "Car",
-        },
-        {
-          question: "7. Vilket alternativ betyder 'röd' på engelska?",
-          answers: {
-            a: "Blue",
-            b: "Green",
-            c: "Red",
-            d: "Yellow",
-          },
-          correctAnswer: "Red",
-        },
-        {
-          question: "8. Hur säger man 'äpple' på engelska?",
-          answers: {
-            a: "Banana",
-            b: "Apple",
-            c: "Pear",
-            d: "Orange",
-          },
-          correctAnswer: "Apple",
-        },
-        {
-          question: "9. Vilket ord betyder 'skola' på engelska?",
-          answers: {
-            a: "School",
-            b: "Hospital",
-            c: "Library",
-            d: "University",
-          },
-          correctAnswer: "School",
-        },
-      ],
-    };
+      "quiz": [
+    {
+      "question": "1. Vilken ordklass har ordet 'quickly' i följande mening: 'She runs quickly.'?",
+      "answers": {
+        "a": "Noun",
+        "b": "Adverb",
+        "c": "Adjective",
+        "d": "Verb"
+      },
+      "correctAnswer": "Adverb"
+    },
+    {
+      "question": "2. Vilken ordklass har ordet 'beautiful' i följande mening: 'The flower is beautiful.'?",
+      "answers": {
+        "a": "Verb",
+        "b": "Adverb",
+        "c": "Adjective",
+        "d": "Noun"
+      },
+      "correctAnswer": "Adjective"
+    },
+    {
+      "question": "3. Vilken ordklass har ordet 'cat' i följande mening: 'The cat is sleeping.'?",
+      "answers": {
+        "a": "Adverb",
+        "b": "Verb",
+        "c": "Noun",
+        "d": "Adjective"
+      },
+      "correctAnswer": "Noun"
+    },
+    {
+      "question": "4. Vilken ordklass har ordet 'quick' i följande mening: 'He is a quick runner.'?",
+      "answers": {
+        "a": "Adjective",
+        "b": "Noun",
+        "c": "Verb",
+        "d": "Adverb"
+      },
+      "correctAnswer": "Adjective"
+    },
+    {
+      "question": "5. Vilken ordklass har ordet 'to' i följande mening: 'I want to go to the store.'?",
+      "answers": {
+        "a": "Preposition",
+        "b": "Adverb",
+        "c": "Conjunction",
+        "d": "Verb"
+      },
+      "correctAnswer": "Preposition"
+    },
+    {
+      "question": "6. Vilken ordklass har ordet 'quickly' i följande mening: 'She quickly left the room.'?",
+      "answers": {
+        "a": "Adverb",
+        "b": "Adjective",
+        "c": "Noun",
+        "d": "Verb"
+      },
+      "correctAnswer": "Adverb"
+    },
+    {
+      "question": "7. Vilken ordklass har ordet 'and' i följande mening: 'She likes tea and coffee.'?",
+      "answers": {
+        "a": "Verb",
+        "b": "Conjunction",
+        "c": "Adverb",
+        "d": "Preposition"
+      },
+      "correctAnswer": "Conjunction"
+    },
+    {
+      "question": "8. Vilken ordklass har ordet 'happily' i följande mening: 'They danced happily all night.'?",
+      "answers": {
+        "a": "Adjective",
+        "b": "Verb",
+        "c": "Adverb",
+        "d": "Noun"
+      },
+      "correctAnswer": "Adverb"
+    },
+    {
+      "question": "9. Vilken ordklass har ordet 'dog' i följande mening: 'The dog barked loudly.'?",
+      "answers": {
+        "a": "Verb",
+        "b": "Noun",
+        "c": "Adjective",
+        "d": "Adverb"
+      },
+      "correctAnswer": "Noun"
+    }
+  ]
+}
   },
 
   methods: {
@@ -161,7 +142,7 @@ export default {
 
   <div v-if="showQuiz">
     <div class="test_text">
-      <h1>Prov Enkelt</h1>
+      <h1>Prov Svårt</h1>
     </div>
     <div v-for="(question, index) in quiz" :key="index">
       <form class="question_container" @submit.prevent>

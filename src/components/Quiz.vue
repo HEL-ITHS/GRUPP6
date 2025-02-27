@@ -1,4 +1,4 @@
-<script>
+<!--<script>
 import { RouterLink } from 'vue-router';
 
 export default {
@@ -325,4 +325,4 @@ li {
   background-color: #0e74c2;
   transform: scale(1.1);
 }
-</style>
+</style>-->

@@ -24,7 +24,6 @@
           .then((response)=> response.json())
           .then((result)=>{
               this.quiz= result
-              console.log("resultatet:", this.quiz)
           })
         },
 

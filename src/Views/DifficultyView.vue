@@ -65,7 +65,7 @@
         </div>
         <button
         class="start_quiz"
-        @click="onClickStartQuiz('/public/quizLevelEasy.json')"
+        @click="onClickStartQuiz('/quizLevelEasy.json')"
         >
         Starta quiz
         </button>

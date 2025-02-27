@@ -18,6 +18,7 @@ export default {
         .then((response) => response.json())
         .then((result) => {
           const data = result[0];
+          
 
           this.definition = {
             word: data.word,
@@ -26,7 +27,7 @@ export default {
             meanings: data.meanings.map((meaning) => ({
               partOfSpeech: meaning.partOfSpeech,
               definition: meaning.definitions[0]?.definition || "",
-              synonyms: meaning.synonyms || [],
+              synonyms: meaning.synonyms[0] || "",
             })),
           };
         });
@@ -44,8 +45,15 @@ export default {
 <template>
   <HeaderStudent />
 
+  <div class="hero_content">
+    <section class="hero_text_content">
+    <h1 >Välkommen till lexikon</h1>
+    <p>Vårt lexikon är en användbar resurs för att snabbt hitta förklaringar på begrepp och termer som används i olika ämnen. Det är utformat för att vara lättillgängligt och hjälpa elever att förstå viktiga ord och definitioner. Genom att hålla lexikonet uppdaterat strävar vi efter att stödja lärandet på bästa sätt.</p>
+  </section>
+  </div>
+
   <div id="lexicon_container">
-    <input v-model="word" placeholder="Skriv in ett ord" id="searched_input" />
+    <input v-model="word" placeholder="Skriv in ett ord" id="searched_input" @keydown.enter="onClickLexicon"/>
     <button id="searched_button" @click="onClickLexicon">Sök</button>
     <div v-if="definition" id="defintion_container">
       <div id="search_word_container">
@@ -55,7 +63,7 @@ export default {
         <p v-if="definition.phonetic !== ''">
           <strong>Uttal:</strong> {{ definition.phonetic }}
         </p>
-        <p>
+        <p v-if="definition.audio !==''">
           <strong>Uttal(ljud):</strong>
           <button v-if="definition.audio" @click="playAudio" id="play_button">
             ▶
@@ -83,6 +91,25 @@ export default {
 </template>
 
 <style>
+ .hero_content {
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.5)
+    ), url('/assets/Books.jpg');
+    height: 50%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 3em;
+  }
+
+  .hero_text_content {
+    color: white;
+    text-align: center;
+    margin: 2em;
+  }
+
 #lexicon_container {
   display: flex;
   flex-direction: column;

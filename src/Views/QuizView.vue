@@ -223,7 +223,7 @@ export default {
     </div>
   </div>
   <div class="container_cancel_button">
-    <RouterLink to="/student">
+    <RouterLink to="/difficulty">
       <button class="cancel_button">Avsluta</button>
     </RouterLink>
   </div>

@@ -1,0 +1,92 @@
+[
+  {
+    "question": "1. Vilket ord passar in i följande mening: 'I ____ to the store yesterday.'",
+    "answers": {
+      "a": "go",
+      "b": "went",
+      "c": "going",
+      "d": "gone"
+    },
+    "correctAnswer": "went"
+  },
+  {
+    "question": "2. Vilket ord passar in i följande mening: 'She ____ a book right now.'",
+    "answers": {
+      "a": "read",
+      "b": "reads",
+      "c": "reading",
+      "d": "is reading"
+    },
+    "correctAnswer": "is reading"
+  },
+  {
+    "question": "3. Vilket ord passar in i följande mening: 'They ____ to the park every weekend.'",
+    "answers": {
+      "a": "go",
+      "b": "going",
+      "c": "gone",
+      "d": "went"
+    },
+    "correctAnswer": "go"
+  },
+  {
+    "question": "4. Vilket ord passar in i följande mening: 'We ____ a great time at the party.'",
+    "answers": {
+      "a": "have",
+      "b": "had",
+      "c": "having",
+      "d": "has"
+    },
+    "correctAnswer": "had"
+  },
+  {
+    "question": "5. Vilket ord passar in i följande mening: 'He ____ to play soccer next weekend.'",
+    "answers": {
+      "a": "plans",
+      "b": "plan",
+      "c": "planned",
+      "d": "planning"
+    },
+    "correctAnswer": "plans"
+  },
+  {
+    "question": "6. Vilket ord passar in i följande mening: 'I ____ my homework before dinner.'",
+    "answers": {
+      "a": "finish",
+      "b": "finished",
+      "c": "finishing",
+      "d": "finishes"
+    },
+    "correctAnswer": "finished"
+  },
+  {
+    "question": "7. Vilket ord passar in i följande mening: 'They ____ breakfast at 7:30 every morning.'",
+    "answers": {
+      "a": "eat",
+      "b": "eats",
+      "c": "ate",
+      "d": "eating"
+    },
+    "correctAnswer": "eat"
+  },
+  {
+    "question": "8. Vilket ord passar in i följande mening: 'She ____ to the music every day.'",
+    "answers": {
+      "a": "listen",
+      "b": "listened",
+      "c": "listens",
+      "d": "listening"
+    },
+    "correctAnswer": "listens"
+  },
+  {
+    "question": "9. Vilket ord passar in i följande mening: 'We ____ to visit our grandparents next summer.'",
+    "answers": {
+      "a": "are",
+      "b": "is",
+      "c": "were",
+      "d": "will be"
+    },
+    "correctAnswer": "will be"
+  }
+]

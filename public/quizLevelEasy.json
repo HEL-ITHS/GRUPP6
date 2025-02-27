@@ -1,0 +1,92 @@
+[
+  {
+    "question": "1. Hur säger man 'katt' på engelska?",
+    "answers": {
+      "a": "Dog",
+      "b": "Cat",
+      "c": "Horse",
+      "d": "Mouse"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "2. Vilket av följande ord betyder 'hund' på engelska?",
+    "answers": {
+      "a": "Fish",
+      "b": "Bird",
+      "c": "Dog",
+      "d": "Lion"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "3. Vad är den rätta översättningen av 'hus' till engelska?",
+    "answers": {
+      "a": "House",
+      "b": "Car",
+      "c": "Tree",
+      "d": "Apartment"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "4. Vilket ord betyder 'sol' på engelska?",
+    "answers": {
+      "a": "Moon",
+      "b": "Star",
+      "c": "Sun",
+      "d": "Light"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "5. Vad heter 'vatten' på engelska?",
+    "answers": {
+      "a": "Water",
+      "b": "Juice",
+      "c": "Milk",
+      "d": "Soda"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "6. Vad är det engelska ordet för 'bil'?",
+    "answers": {
+      "a": "Train",
+      "b": "Car",
+      "c": "Bike",
+      "d": "Bus"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "7. Vilket alternativ betyder 'röd' på engelska?",
+    "answers": {
+      "a": "Blue",
+      "b": "Green",
+      "c": "Red",
+      "d": "Yellow"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "8. Hur säger man 'äpple' på engelska?",
+    "answers": {
+      "a": "Banana",
+      "b": "Apple",
+      "c": "Pear",
+      "d": "Orange"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "9. Vilket ord betyder 'skola' på engelska?",
+    "answers": {
+      "a": "School",
+      "b": "Hospital",
+      "c": "Library",
+      "d": "University"
+    },
+    "correctAnswer": "a"
+  }
+]

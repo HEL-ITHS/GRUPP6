@@ -1,131 +1,33 @@
-<!--<script>
-import Quiz from "../components/Quiz.vue";
-import HeaderStudent from "../components/HeaderStudent.vue"
-
-export default {
-  components: {
-    HeaderStudent,
-    Quiz
-
-  },
-};
-</script>
-
-<template>
-  <HeaderStudent />
-  <Quiz />
-</template>-->
-
 <script>
-import { RouterLink } from 'vue-router';
-import HeaderStudent from "../components/HeaderStudent.vue"
+  export default {
+    data() {
+      return {
+        showQuiz: true,
+        selectedAnswer: Array(9).fill(null),
+        showResults: false,
+        quiz: []
+      }
+    },
+    props: {
+      quizLink: {
+        type: String,
+        required: true
+      }
+    },
 
-export default {
-  coponents: {
-    HeaderStudent
-  },
-  data() {
-    return {
-      showQuiz: true,
-      selectedAnswer: Array(9).fill(null),
-      showResults: false,
-      quiz: [
-        {
-          question: "1. Hur säger man 'katt' på engelska?",
-          answers: {
-            a: "Dog",
-            b: "Cat",
-            c: "Horse",
-            d: "Mouse",
-          },
-          correctAnswer: "Cat",
+    created(){
+      this.startQuiz()
+    },
+    methods: {
+        startQuiz() {
+          fetch (this.quizLink)
+          .then((response)=> response.json())
+          .then((result)=>{
+              this.quiz= result
+              console.log("resultatet:", this.quiz)
+          })
         },
-        {
-          question: "2. Vilket av följande ord betyder 'hund' på engelska?",
-          answers: {
-            a: "Fish",
-            b: "Bird",
-            c: "Dog",
-            d: "Lion",
-          },
-          correctAnswer: "Dog",
-        },
-        {
-          question:
-            "3. Vad är den rätta översättningen av 'hus' till engelska?",
-          answers: {
-            a: "House",
-            b: "Car",
-            c: "Tree",
-            d: "Apartment",
-          },
-          correctAnswer: "House",
-        },
-        {
-          question: "4. Vilket ord betyder 'sol' på engelska?",
-          answers: {
-            a: "Moon",
-            b: "Star",
-            c: "Sun",
-            d: "Light",
-          },
-          correctAnswer: "Sun",
-        },
-        {
-          question: "5. Vad heter 'vatten' på engelska?",
-          answers: {
-            a: "Water",
-            b: "Juice",
-            c: "Milk",
-            d: "Soda",
-          },
-          correctAnswer: "Water",
-        },
-        {
-          question: "6. Vad är det engelska ordet för 'bil'?",
-          answers: {
-            a: "Train",
-            b: "Car",
-            c: "Bike",
-            d: "Bus",
-          },
-          correctAnswer: "Car",
-        },
-        {
-          question: "7. Vilket alternativ betyder 'röd' på engelska?",
-          answers: {
-            a: "Blue",
-            b: "Green",
-            c: "Red",
-            d: "Yellow",
-          },
-          correctAnswer: "Red",
-        },
-        {
-          question: "8. Hur säger man 'äpple' på engelska?",
-          answers: {
-            a: "Banana",
-            b: "Apple",
-            c: "Pear",
-            d: "Orange",
-          },
-          correctAnswer: "Apple",
-        },
-        {
-          question: "9. Vilket ord betyder 'skola' på engelska?",
-          answers: {
-            a: "School",
-            b: "Hospital",
-            c: "Library",
-            d: "University",
-          },
-          correctAnswer: "School",
-        },
-      ],
-    };
-  },
 
-  methods: {
     submitQuiz() {
       if (this.allAnswered) {
         this.showResults = true;
@@ -151,14 +53,12 @@ export default {
         this.selectedAnswer.length === this.quiz.length &&
         this.selectedAnswer.every((question) => question !== null)
       );
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <template>
-  <HeaderStudent />
-
   <div v-if="showQuiz">
     <div class="test_text">
       <h1>Prov Enkelt</h1>
@@ -222,11 +122,6 @@ export default {
       <button class="opinion_button">Tyck till om provet</button>
     </div>
   </div>
-  <div class="container_cancel_button">
-    <RouterLink to="/difficulty">
-      <button class="cancel_button">Avsluta</button>
-    </RouterLink>
-  </div>
   <button @click="goToInteraction">tyck till om provet</button>
 </template>
 
@@ -275,21 +170,6 @@ form {
 
 .show_answer_button:hover {
   background-color: #519fdb;
-}
-
-.cancel_button {
-  color: white;
-  border: none;
-  border-radius: 5px;
-  background-color: #004276;
-  padding: 10px;
-  margin-left: 1em;
-  transition: transform 0.3s ease;
-}
-
-.cancel_button:hover {
-  background-color: #0e74c2;
-  transform: scale(1.1);
 }
 
 .result_button {

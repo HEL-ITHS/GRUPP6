@@ -1,9 +1,11 @@
 <script>
     import HeaderStudent from "../components/HeaderStudent.vue"
+    import NewQuiz from "../components/NewQuiz.vue";
 
     export default {
         components: {
-            HeaderStudent
+            HeaderStudent,
+            NewQuiz
         },
         data() {
             return {
@@ -11,32 +13,36 @@
                 sentenceQuiz: "",
                 classQuiz: "",
                 showPopup: false,
-                popupText: ""
+                popupText: "",
+                fetchKey: "",
+                quizLevel: false,
+                linkName: "",
+                allChoices: true,
             }
         },
         mounted() {
             window.scrollTo(0, 0)
         },
+
         methods: {
-                startEasy() {
-                    this.$router.push("/quiz");
-                },
-                startMedel() {
-                    this.$router.push("/quizmedel");
-                },
-                startHard() {
-                    this.$router.push("/quizhard");
-                },
+            onClickStartQuiz(linkName){
+                this.linkName = linkName
+                this.quizLevel = true;
+                this.allChoices = !this.allChoices
+            },
                 showInfo(text) {
                     this.popupText = text
                     this.showPopup = true
                 },
                 closePopup() {
                     this.showPopup = false
-                }
+                },
+            quitQuiz(){
+                this.quizLevel = false;
+                this.allChoices = true;
+            }
             }
         }
-
 </script>
 
 <template>
@@ -47,7 +53,7 @@
         <img class="quiz_image" src="/assets/quiz2.jpg" alt="Quiz time letters">
     </div>
 
-    <div class="choise_container">
+    <div v-if="allChoices" class="choise_container">
     <div class="choice_parts">
         <div class="quiz_type_container">
             <div class="quiz_type"><strong>Glosor</strong></div>
@@ -59,7 +65,7 @@
         </div>
         <button
         class="start_quiz"
-        @click="startEasy"
+        @click="onClickStartQuiz('/public/quizLevelEasy.json')"
         >
         Starta quiz
         </button>
@@ -78,7 +84,7 @@
         </div>
         <button
         class="start_quiz"
-        @click="startMedel"
+        @click="onClickStartQuiz('/public/quizLevelMedium.json')"
         >
         Starta quiz
     </button>
@@ -97,7 +103,7 @@
         </div>
         <button
             class="start_quiz"
-            @click="startHard"
+            @click="onClickStartQuiz('/public/quizLevelHard.json')"
             >
             Starta quiz
         </button>
@@ -111,6 +117,12 @@
         </div>
     </div>
 
+    <div v-if="quizLevel">
+        <NewQuiz :quizLink="linkName" />
+        <div class="container_cancel_button">
+            <button @click="quitQuiz" class="cancel_button">Avsluta</button>
+        </div>
+    </div>
 </template>
 
 <style scoped>
@@ -217,5 +229,20 @@
 .popup_button:hover {
     background-color: #519fdb;
     transform: scale(1.1);
+}
+
+.cancel_button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #004276;
+  padding: 10px;
+  margin-left: 1em;
+  transition: transform 0.3s ease;
+}
+
+.cancel_button:hover {
+  background-color: #0e74c2;
+  transform: scale(1.1);
 }
 </style>

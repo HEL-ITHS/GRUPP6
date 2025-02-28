@@ -117,9 +117,7 @@
     <div class="restart_button">
       <button @click="restartQuiz" :hidden="!allAnswered">Gör om Quiz</button>
     </div>
-    <div class="container_opinion_button">
-      <button class="opinion_button">Tyck till om provet</button>
-    </div>
+
   </div>
   <button @click="goToInteraction">tyck till om provet</button>
 </template>

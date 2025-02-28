@@ -7,14 +7,20 @@
         const userstore = userDetails()
         return userstore.username
       }
+    },
+    methods: {
+      backToHomeStudent(){
+        this.$router.push('/student')
+      }
     }
   }
+
 </script>
 
 
 <template>
   <header class="container_header">
-    <img src="/assets/Logga.png" alt="Grammify-logo" class="logo">
+    <img  @click="backToHomeStudent"  src="/assets/Logga.png" alt="Grammify-logo" class="logo">
     <h2 class="header_text">{{ setUsernameFromLogIn }}</h2>
   </header>
 </template>

@@ -27,6 +27,9 @@ export default {
     resetHover() {
       this.hoverRating = 0;
     },
+    goToHome(){
+      this.$router.push('/student')
+    }
   },
 };
 </script>
@@ -67,9 +70,10 @@ export default {
     </div>
   </div>
   <ChatComponent />
+  <button @click="goToHome">Home</button>
 </template>
 
-<style>
+<style scoped>
 #rating_container {
   display: flex;
   flex-direction: column;
@@ -113,6 +117,17 @@ export default {
 .rotate-in-enter-active {
   animation: rotate-in 1s ease-out;
 }
+button {
+  margin-top: 1em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #004276;
+  padding: 10px;
+  margin-left: 1em;
+  transition: transform 0.3s ease;
+}
+
 
 @keyframes rotate-in {
   0% {

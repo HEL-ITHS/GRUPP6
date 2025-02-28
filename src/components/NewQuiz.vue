@@ -124,7 +124,7 @@
       <button class="opinion_button">Tyck till om provet</button>
     </div>
   </div>
-  <button @click="goToInteraction">tyck till om provet</button>
+  <button class="opinion_button" @click="goToInteraction">tyck till om provet</button>
 </template>
 
 <style scoped>
@@ -223,7 +223,7 @@ li {
   border-radius: 5px;
   background-color: #004276;
   padding: 10px;
-  margin-left: 1em;
+  margin: 1em;
   transition: transform 0.3s ease;
 }
 

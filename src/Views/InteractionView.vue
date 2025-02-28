@@ -4,26 +4,29 @@ import ChatComponent from "../components/ChatComponent.vue";
 export default {
   components: {
     HeaderStudent,
-    ChatComponent
+    ChatComponent,
   },
   data() {
     return {
       rating: 0,
       ShowThankYou: false,
-      hoverRating : 0
+      hoverRating: 0,
     };
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
   methods: {
     setRating(star) {
       this.rating = star;
       this.ShowThankYou = true;
     },
-    setHover(star){
-      this.hoverRating = star
+    setHover(star) {
+      this.hoverRating = star;
     },
-    resetHover(){
-this.hoverRating = 0
-    }
+    resetHover() {
+      this.hoverRating = 0;
+    },
   },
 };
 </script>
@@ -33,15 +36,26 @@ this.hoverRating = 0
   <div id="rating_container">
     <div id="hero_text">
       <h1>Vi värdesätter din åsikt!</h1>
-      <p>Dina åsikter och synpunkter är oerhört viktiga för oss. Vi strävar alltid efter att förbättra vår tjänst och ge dig den bästa möjliga upplevelsen, och för att kunna göra det behöver vi din hjälp. Genom att dela dina tankar, feedback eller förslag, hjälper du oss att förstå vad vi gör bra och vad vi kan förbättra.
-
-Vi är lyhörda för dina behov och ser varje åsikt som en möjlighet att växa och utvecklas. Tack för att du är en del av vår gemenskap – din åsikt gör verkligen skillnad!</p>
+      <p>
+        Dina åsikter och synpunkter är oerhört viktiga för oss. Vi strävar
+        alltid efter att förbättra vår tjänst och ge dig den bästa möjliga
+        upplevelsen, och för att kunna göra det behöver vi din hjälp. Genom att
+        dela dina tankar, feedback eller förslag, hjälper du oss att förstå vad
+        vi gör bra och vad vi kan förbättra. Vi är lyhörda för dina behov och
+        ser varje åsikt som en möjlighet att växa och utvecklas. Tack för att du
+        är en del av vår gemenskap – din åsikt gör verkligen skillnad!
+      </p>
     </div>
     <div id="rating">
       <p>Va tyckte du om vårat quiz?</p>
       <div id="stars">
-        <span v-for="star in 5" :key="star" @click="setRating(star)" @mouseover="setHover(star)"
-  @mouseleave="resetHover">
+        <span
+          v-for="star in 5"
+          :key="star"
+          @click="setRating(star)"
+          @mouseover="setHover(star)"
+          @mouseleave="resetHover"
+        >
           {{ star <= (hoverRating || rating) ? "⭐" : "☆" }}
         </span>
         <transition name="rotate-in">
@@ -110,7 +124,7 @@ Vi är lyhörda för dina behov och ser varje åsikt som en möjlighet att växa
     opacity: 0.5;
   }
   100% {
-    transform: rotate(360deg)scale(1);
+    transform: rotate(360deg) scale(1);
     opacity: 1;
   }
 }

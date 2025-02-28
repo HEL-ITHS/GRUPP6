@@ -124,7 +124,7 @@
     </div>
 
   </div>
-  <button @click="goToInteraction">tyck till om provet</button>
+  <button id="interaction" @click="goToInteraction">tyck till om provet</button>
 </template>
 
 <style scoped>
@@ -212,12 +212,8 @@ li {
   transform: scale(1.1);
 }
 
-.container_opinion_button {
-  margin-bottom: 1em;
-}
-
-.opinion_button {
-  margin-top: 1em;
+#interaction {
+  margin: 1em;
   color: white;
   border: none;
   border-radius: 5px;
@@ -227,7 +223,7 @@ li {
   transition: transform 0.3s ease;
 }
 
-.opinion_button:hover {
+#interaction:hover {
   background-color: #0e74c2;
   transform: scale(1.1);
 }

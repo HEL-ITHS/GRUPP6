@@ -11,7 +11,11 @@
         const userstore = userDetails()
         return userstore.username
       }
-    }
+    },
+    mounted() {
+            window.scrollTo(0, 0)
+        },
+
   }
 </script>
 

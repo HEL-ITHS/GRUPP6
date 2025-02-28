@@ -80,12 +80,12 @@
     "correctAnswer": "listens"
   },
   {
-    "question": "9. Vilket ord passar in i följande mening: 'We ____ to visit our grandparents next summer.'",
+    "question": "9. Vilket ord passar in i följande mening: 'We ____ visiting our grandparents next summer.'",
     "answers": {
       "a": "are",
       "b": "is",
       "c": "were",
-      "d": "will be"
+      "d": "will"
     },
     "correctAnswer": "will be"
   }

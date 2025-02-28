@@ -18,7 +18,6 @@ export default {
         .then((response) => response.json())
         .then((result) => {
           const data = result[0];
-          
 
           this.definition = {
             word: data.word,
@@ -47,24 +46,35 @@ export default {
 
   <div class="hero_content">
     <section class="hero_text_content">
-    <h1 >Välkommen till lexikon</h1>
-    <p>Vårt lexikon är en användbar resurs för att snabbt hitta förklaringar på begrepp och termer som används i olika ämnen. Det är utformat för att vara lättillgängligt och hjälpa elever att förstå viktiga ord och definitioner. Genom att hålla lexikonet uppdaterat strävar vi efter att stödja lärandet på bästa sätt.</p>
-  </section>
+      <h1>Välkommen till lexikon</h1>
+      <p>
+        Vårt lexikon är en användbar resurs för att snabbt hitta förklaringar på
+        begrepp och termer som används i olika ämnen. Det är utformat för att
+        vara lättillgängligt och hjälpa elever att förstå viktiga ord och
+        definitioner. Genom att hålla lexikonet uppdaterat strävar vi efter att
+        stödja lärandet på bästa sätt.
+      </p>
+    </section>
   </div>
 
   <div id="lexicon_container">
-    <input v-model="word" placeholder="Skriv in ett ord" id="searched_input" @keydown.enter="onClickLexicon"/>
+    <input
+      v-model="word"
+      placeholder="Skriv in ett ord"
+      id="searched_input"
+      @keydown.enter="onClickLexicon"
+    />
     <button id="searched_button" @click="onClickLexicon">Sök</button>
     <div v-if="definition" id="defintion_container">
       <div id="search_word_container">
         <h3 id="searched_word">
           <strong>{{ definition.word.toUpperCase() }}</strong>
         </h3>
-        <p v-if="definition.phonetic !== ''">
+        <p
+          v-if="definition.phonetic !== '' || definition.audio !== ''"
+          id="phonetic_word"
+        >
           <strong>Uttal:</strong> {{ definition.phonetic }}
-        </p>
-        <p v-if="definition.audio !==''">
-          <strong>Uttal(ljud):</strong>
           <button v-if="definition.audio" @click="playAudio" id="play_button">
             ▶
           </button>
@@ -91,24 +101,21 @@ export default {
 </template>
 
 <style>
- .hero_content {
-    background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.5)
-    ), url('/assets/Books.jpg');
-    height: 50%;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    padding: 3em;
-  }
+.hero_content {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url("/assets/Books.jpg");
+  height: 50%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 3em;
+}
 
-  .hero_text_content {
-    color: white;
-    text-align: center;
-    margin: 2em;
-  }
+.hero_text_content {
+  color: white;
+  text-align: center;
+  margin: 2em;
+}
 
 #lexicon_container {
   display: flex;
@@ -170,6 +177,11 @@ export default {
 #searched_word {
   display: flex;
   justify-content: center;
+}
+#phonetic_word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #play_button {
   border: none;

@@ -18,6 +18,11 @@
     created(){
       this.startQuiz()
     },
+
+    mounted() {
+            window.scrollTo(0, 0)
+        },
+
     methods: {
         startQuiz() {
           fetch (this.quizLink)

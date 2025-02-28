@@ -18,6 +18,7 @@
                 quizLevel: false,
                 linkName: "",
                 allChoices: true,
+                showParrot: true
             }
         },
         mounted() {
@@ -29,6 +30,7 @@
                 this.linkName = linkName
                 this.quizLevel = true;
                 this.allChoices = !this.allChoices
+                this.showParrot = false
             },
                 showInfo(text) {
                     this.popupText = text
@@ -40,6 +42,7 @@
             quitQuiz(){
                 this.quizLevel = false;
                 this.allChoices = true;
+                this.showParrot = true
             }
             }
         }
@@ -48,9 +51,13 @@
 <template>
     <HeaderStudent />
 
-    <div class="head_text">
-
-        <img class="quiz_image" src="/assets/quiz2.jpg" alt="Quiz time letters">
+    <div class="head_container">
+        <div class="head_text">
+            <img class="quiz_image" src="/assets/quiz2.jpg" alt="Quiz time letters">
+        </div>
+        <div v-if="showParrot" class="parrot_container">
+            <img class="parrot" src="/assets/parrot.png" alt="parrot with speachbubble">
+        </div>
     </div>
 
     <div v-if="allChoices" class="choise_container">
@@ -124,20 +131,26 @@
         <NewQuiz :quizLink="linkName" />
         <div class="container_cancel_button">
             <button @click="quitQuiz" class="cancel_button">Avsluta</button>
+            <button @click="goToInteraction">tyck till om provet</button>
         </div>
     </div>
 </template>
 
 <style scoped>
 
-.head_text {
+.head_container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    margin-top: 2em;
+    margin-bottom: 3em;
 }
 
 .quiz_image {
     height: 250px;
+}
+
+.parrot {
+    height: 300px;
 }
 
 .choise_container {

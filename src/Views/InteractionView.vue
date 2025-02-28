@@ -1,14 +1,16 @@
 <script>
 import HeaderStudent from "../components/HeaderStudent.vue";
-
+import ChatComponent from "../components/ChatComponent.vue";
 export default {
   components: {
     HeaderStudent,
+    ChatComponent
   },
   data() {
     return {
       rating: 0,
       ShowThankYou: false,
+      hoverRating : 0
     };
   },
   methods: {
@@ -16,6 +18,12 @@ export default {
       this.rating = star;
       this.ShowThankYou = true;
     },
+    setHover(star){
+      this.hoverRating = star
+    },
+    resetHover(){
+this.hoverRating = 0
+    }
   },
 };
 </script>
@@ -24,18 +32,17 @@ export default {
   <HeaderStudent />
   <div id="rating_container">
     <div id="hero_text">
-      <h1>Dina åsikter är viktiga för oss!</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus
-        officia libero natus nesciunt, modi eveniet aperiam autem exercitationem
-        tempore reiciendis atque veritatis, neque aliquid cupiditate facilis
-        magni unde impedit delectus?
-      </p>
+      <h1>Vi värdesätter din åsikt!</h1>
+      <p>Dina åsikter och synpunkter är oerhört viktiga för oss. Vi strävar alltid efter att förbättra vår tjänst och ge dig den bästa möjliga upplevelsen, och för att kunna göra det behöver vi din hjälp. Genom att dela dina tankar, feedback eller förslag, hjälper du oss att förstå vad vi gör bra och vad vi kan förbättra.
+
+Vi är lyhörda för dina behov och ser varje åsikt som en möjlighet att växa och utvecklas. Tack för att du är en del av vår gemenskap – din åsikt gör verkligen skillnad!</p>
     </div>
     <div id="rating">
+      <p>Va tyckte du om vårat quiz?</p>
       <div id="stars">
-        <span v-for="star in 5" :key="star" @click="setRating(star)">
-          {{ star <= rating ? "⭐" : "☆" }}
+        <span v-for="star in 5" :key="star" @click="setRating(star)" @mouseover="setHover(star)"
+  @mouseleave="resetHover">
+          {{ star <= (hoverRating || rating) ? "⭐" : "☆" }}
         </span>
         <transition name="rotate-in">
           <div v-if="ShowThankYou">
@@ -45,6 +52,7 @@ export default {
       </div>
     </div>
   </div>
+  <ChatComponent />
 </template>
 
 <style>
@@ -58,6 +66,7 @@ export default {
   background-size: cover;
   min-height: 50vh;
   align-items: center;
+  text-align: center;
 }
 #hero_text {
   display: flex;

@@ -7,7 +7,7 @@
       "c": "Horse",
       "d": "Mouse"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "Cat"
   },
   {
     "question": "2. Vilket av följande ord betyder 'hund' på engelska?",
@@ -17,7 +17,7 @@
       "c": "Dog",
       "d": "Lion"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "Dog"
   },
   {
     "question": "3. Vad är den rätta översättningen av 'hus' till engelska?",
@@ -27,7 +27,7 @@
       "c": "Tree",
       "d": "Apartment"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "House"
   },
   {
     "question": "4. Vilket ord betyder 'sol' på engelska?",
@@ -37,7 +37,7 @@
       "c": "Sun",
       "d": "Light"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "Sun"
   },
   {
     "question": "5. Vad heter 'vatten' på engelska?",
@@ -47,7 +47,7 @@
       "c": "Milk",
       "d": "Soda"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "Water"
   },
   {
     "question": "6. Vad är det engelska ordet för 'bil'?",
@@ -57,7 +57,7 @@
       "c": "Bike",
       "d": "Bus"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "Car"
   },
   {
     "question": "7. Vilket alternativ betyder 'röd' på engelska?",
@@ -67,7 +67,7 @@
       "c": "Red",
       "d": "Yellow"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "Red"
   },
   {
     "question": "8. Hur säger man 'äpple' på engelska?",
@@ -77,7 +77,7 @@
       "c": "Pear",
       "d": "Orange"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "Apple"
   },
   {
     "question": "9. Vilket ord betyder 'skola' på engelska?",
@@ -87,6 +87,6 @@
       "c": "Library",
       "d": "University"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "School"
   }
 ]

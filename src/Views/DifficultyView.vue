@@ -131,7 +131,6 @@
         <NewQuiz :quizLink="linkName" />
         <div class="container_cancel_button">
             <button @click="quitQuiz" class="cancel_button">Avsluta</button>
-            <button @click="goToInteraction">tyck till om provet</button>
         </div>
     </div>
 </template>

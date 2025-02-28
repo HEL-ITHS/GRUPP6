@@ -113,7 +113,10 @@
     <div v-if="showPopup" class="popup_info">
         <div class="popup_box">
             <p> {{ popupText }} </p>
-            <button class="popup_button" @click="closePopup">Stäng</button>
+            <img class="popup_image" src="/assets/questionmark.jpg" alt="questio mark">
+            <div class="button_container">
+                <button class="popup_button" @click="closePopup">Stäng</button>
+            </div>
         </div>
     </div>
 
@@ -208,12 +211,18 @@
 }
 
 .popup_box {
+    justify-content: center;
     width: 350px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
 }
 
 .popup_button {
@@ -229,6 +238,11 @@
 .popup_button:hover {
     background-color: #519fdb;
     transform: scale(1.1);
+}
+
+.popup_image {
+    width: 100px;
+    margin-top: 1em;
 }
 
 .cancel_button {

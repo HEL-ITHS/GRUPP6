@@ -140,7 +140,7 @@
     <div v-if="showPopup" class="popup_info">
         <div class="popup_box">
             <p> {{ popupText }} </p>
-            <img class="popup_image" src="/assets/questionmark.jpg" alt="questio mark">
+            <img class="popup_image" src="/assets/parrotpop.jpg" alt="questio mark">
             <div class="button_container">
                 <button class="popup_button" @click="closePopup">Stäng</button>
             </div>
@@ -148,10 +148,10 @@
     </div>
 
     <div v-if="loading" class="loading_screen">
-    <div class="spinner"></div>
-    <p>Laddar quiz...</p>
-    <p class="quote">{{ randomQuote }}</p>
-</div>
+        <div class="spinner"></div>
+        <p>Laddar quiz...</p>
+        <p class="quote">{{ randomQuote }}</p>
+    </div>
 
     <div v-if="quizLevel">
         <NewQuiz :quizLink="linkName" />
@@ -337,7 +337,7 @@
 }
 
 .popup_image {
-    width: 100px;
+    height: 150px;
     margin-top: 1em;
 }
 
@@ -354,7 +354,6 @@
     align-items: center;
     color: white;
     font-size: 1.5em;
-    z-index: 1000;
 }
 
 .spinner {

@@ -5,6 +5,7 @@ import TeacherView from "./Views/TeacherView.vue";
 import InteractionView from "./Views/InteractionView.vue";
 import DifficultyView from "./Views/DifficultyView.vue";
 import Lexicon from "./Views/LexiconView.vue";
+import UserDashboard from "./Views/UserDashboard.vue";
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -12,6 +13,11 @@ export default createRouter({
     {
       component: LogInView,
       path: "/",
+    },
+
+    {
+      component: UserDashboard,
+      path: "/dashboard"
     },
 
     {

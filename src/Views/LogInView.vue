@@ -15,22 +15,17 @@ export default {
     onClickLoggin() {
       const username = this.email.split("@")[0];
       const userStore = userDetails();
+
       userStore.setUsername(username);
+      userStore.setUserType(this.value)
 
       if (
-        this.value === "student" &&
+        this.value === "student" || this.value === "teacher" &&
         this.email !== "" &&
         this.password !== "" &&
         this.confirmTerms === true
       ) {
-        this.$router.push("/student");
-      } else if (
-        this.value === "teacher" &&
-        this.email !== "" &&
-        this.password !== "" &&
-        this.confirmTerms === true
-      ) {
-        this.$router.push("/teacher");
+        this.$router.push("/dashboard");
       }
     },
   },

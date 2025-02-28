@@ -18,7 +18,19 @@
                 quizLevel: false,
                 linkName: "",
                 allChoices: true,
-                showParrot: true
+                showParrot: true,
+                loading: false,
+                randomQuote: "",
+                quotes: [
+                "Lärande är en skatt som följer sin ägare överallt.' - Kinesiskt ordspråk",
+                "Kunskap är det enda goda och okunnighet det enda onda.' - Sokrates",
+                "Den som slutar att lära är gammal, oavsett om han är tjugo eller åttio.' - Henry Ford",
+                "Utbildning är inte förberedelse för livet, det är livet självt.' - John Dewey",
+                "Berätta för mig och jag glömmer. Lär mig och jag kommer ihåg. Involvera mig och jag lär mig.' - Benjamin Franklin",
+                "Lär dig av gårdagen, lev för idag, hoppas på morgondagen. Det viktiga är att aldrig sluta ifrågasätta.' - Albert Einstein",
+                "Kunskap är makt.' - Francis Bacon",
+                "Den som läser mycket och går med öppna ögon lär sig mer än den som vet allt från början.' - Svenskt ordspråk"
+                ]
             }
         },
         mounted() {
@@ -27,10 +39,15 @@
 
         methods: {
             onClickStartQuiz(linkName){
-                this.linkName = linkName
-                this.quizLevel = true;
-                this.allChoices = !this.allChoices
-                this.showParrot = false
+                this.loading = true;
+                this.randomQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
+                setTimeout(() => {
+                    this.linkName = linkName
+                    this.quizLevel = true;
+                    this.allChoices = !this.allChoices
+                    this.showParrot = false
+                    this.loading = false
+            }, 4000)
             },
                 showInfo(text) {
                     this.popupText = text
@@ -56,7 +73,10 @@
             <img class="quiz_image" src="/assets/quiz2.jpg" alt="Quiz time letters">
         </div>
         <div v-if="showParrot" class="parrot_container">
-            <img class="parrot" src="/assets/parrot.png" alt="parrot with speachbubble">
+            <div class="parrot_wrapper">
+                <img class="parrot" src="/assets/parrot1.jpg" alt="parrot">
+                <img class="speachbubble" src="/assets/chatt.png" alt="Speachbubble">
+            </div>
         </div>
     </div>
 
@@ -127,6 +147,12 @@
         </div>
     </div>
 
+    <div v-if="loading" class="loading_screen">
+    <div class="spinner"></div>
+    <p>Laddar quiz...</p>
+    <p class="quote">{{ randomQuote }}</p>
+</div>
+
     <div v-if="quizLevel">
         <NewQuiz :quizLink="linkName" />
         <div class="container_cancel_button">
@@ -139,17 +165,75 @@
 
 .head_container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 2em;
     margin-bottom: 3em;
+    align-items: center;
+    position: relative;
 }
 
 .quiz_image {
     height: 250px;
 }
 
-.parrot {
+@keyframes fly-in {
+    from {
+        transform: translateX(100vw) translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) translateY(-50%);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.parrot_container {
+    position: absolute;
+    width: auto;
     height: 300px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    right: 0;
+}
+
+.parrot_wrapper {
+    position: relative;
+    right: 50px;
+    top: 50%;
+    transform: translateX(100vw) translateY(-50%);
+    animation: fly-in 2s ease-out forwards;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.parrot {
+    height: 150px;
+    position: relative;
+    right: 50px;
+    top: 50%;
+    transform: translateX(100vw) translateY(-50%);
+    animation: fly-in 2s ease-out forwards;
+}
+
+.speachbubble {
+    width: 150px;
+    opacity: 0;
+    animation: fade-in 1s ease-in forwards;
+    animation-delay: 2s;
+    position: absolute;
+    top: -140px;
+    left: -170px;
 }
 
 .choise_container {
@@ -255,6 +339,48 @@
 .popup_image {
     width: 100px;
     margin-top: 1em;
+}
+
+.loading_screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    z-index: 1000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.quote {
+    font-style: italic;
+    text-align: center;
+    margin-top: 15px;
+    max-width: 600px;
 }
 
 .cancel_button {

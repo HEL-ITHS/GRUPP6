@@ -19,9 +19,7 @@
       this.startQuiz()
     },
 
-    mounted() {
-            window.scrollTo(0, 0)
-        },
+
 
     methods: {
         startQuiz() {
@@ -122,9 +120,11 @@
     <div class="restart_button">
       <button @click="restartQuiz" :hidden="!allAnswered">Gör om Quiz</button>
     </div>
-
+    <div class="container_opinion_button">
+      <button class="opinion_button">Tyck till om provet</button>
+    </div>
   </div>
-  <button id="interaction" @click="goToInteraction">tyck till om provet</button>
+  <button @click="goToInteraction">tyck till om provet</button>
 </template>
 
 <style scoped>
@@ -212,8 +212,12 @@ li {
   transform: scale(1.1);
 }
 
-#interaction {
-  margin: 1em;
+.container_opinion_button {
+  margin-bottom: 1em;
+}
+
+.opinion_button {
+  margin-top: 1em;
   color: white;
   border: none;
   border-radius: 5px;
@@ -223,7 +227,7 @@ li {
   transition: transform 0.3s ease;
 }
 
-#interaction:hover {
+.opinion_button:hover {
   background-color: #0e74c2;
   transform: scale(1.1);
 }

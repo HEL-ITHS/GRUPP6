@@ -138,7 +138,7 @@ export default {
 }
 
 #searched_button {
-  width: 10%;
+  min-width: 100px;
   padding: 6px;
   background: #2575fc;
   border: none;
@@ -155,7 +155,7 @@ export default {
   transform: scale(1.05);
 }
 #searched_input {
-  width: 25%;
+  min-width: 200px;
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 8px;

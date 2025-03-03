@@ -396,4 +396,29 @@
   background-color: #0e74c2;
   transform: scale(1.1);
 }
+
+@media (max-width: 979px) {
+    .parrot_container {
+        display: none;
+    }
+
+    .choice_parts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 2em;
+    }
+
+    .popup_info {
+        width: 100%;
+    }
+
+    .popup_box {
+        width: 300px;
+
+    }
+}
+
 </style>

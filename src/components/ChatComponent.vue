@@ -1,17 +1,23 @@
 <script>
+import { userDetails } from '../stores/userStorage';
 export default {
+  computed: {
+    setUsernameFromLogIn(){
+        const userstore = userDetails()
+        return userstore.username
+      }
+  },
   data() {
     return {
       newMessage: "",
       messages: [],
-      user: "Användare",
       feedback: ''
     };
   },
   methods: {
     sendMessage() {
       if (this.newMessage.trim() !== "") {
-        this.messages.push({ user: this.user, text: this.newMessage });
+        this.messages.push({ user: this.setUsernameFromLogIn, text: this.newMessage });
         this.newMessage = "";
         setTimeout(() => {
           this.messages.push({
@@ -56,8 +62,8 @@ export default {
         :key="index"
         class="chat_message"
         :class="{
-          userMessage: msg.user === 'Användare',
-          systemMessage: msg.user !== 'Användare',
+          userMessage: msg.user === setUsernameFromLogIn,
+          systemMessage: msg.user !== setUsernameFromLogIn,
         }"
       >
         <strong>{{ msg.user }}:</strong> {{ msg.text }}

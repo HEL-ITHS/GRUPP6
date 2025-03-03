@@ -28,7 +28,7 @@ export default {
       this.hoverRating = 0;
     },
     goToHome(){
-      this.$router.push('/student')
+      this.$router.push('/dashboard')
     }
   },
 };

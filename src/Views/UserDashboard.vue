@@ -12,6 +12,7 @@
     computed: {
       displayUserView(){
         const userstore = userDetails()
+        console.log('User type:', userstore.userType);
         return userstore.userType;
       },
     },
@@ -25,7 +26,7 @@
     :backgroundImage="'/assets/heroStudent.jpg'"
     :ariaLabel="'Pen and books that are open and ready to be read.'"
     :welcomeHeading="'Välkommen till studentvyn'"
-    :pageDescription="'Förbättra dina engelska kunskaper genom utmana dig själv på quiz med olika svårighetsgrad, se dina resultat och ha roligt medan du lär dig. Du kan även att använda lexikon för att söka och lära dig mer om orden.'"/>
+    :pageDescription="'Förbättra dina engelska kunskaper genom att utmana dig själv på quiz med olika svårighetsgrad, ha roligt medan du lär dig och se dina resultat. Du kan även använda lexikon för att söka och lära dig mer om orden.'"/>
     <div class="navigation_options">
       <RouterLink to="/Difficulty">
       <button class="navigation_btns">Gör quiz</button></RouterLink>

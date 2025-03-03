@@ -10,7 +10,7 @@
     },
     methods: {
       backToHomeStudent(){
-        this.$router.push('/student')
+        this.$router.push('/dashboard')
       }
     }
   }

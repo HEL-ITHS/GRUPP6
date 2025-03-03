@@ -1,6 +1,6 @@
 <script>
     import HeaderStudent from "../components/HeaderStudent.vue"
-    import NewQuiz from "../components/NewQuiz.vue";
+    import NewQuiz from "../components/NewQuiz.vue"
 
     export default {
         components: {
@@ -39,26 +39,26 @@
 
         methods: {
             onClickStartQuiz(linkName){
-                this.loading = true;
-                this.randomQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
-                setTimeout(() => {
-                    this.linkName = linkName
-                    this.quizLevel = true;
-                    this.allChoices = !this.allChoices
-                    this.showParrot = false
-                    this.loading = false
+                this.loading = true
+                this.randomQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)]
+            setTimeout(() => {
+                this.linkName = linkName
+                this.quizLevel = true
+                this.allChoices = !this.allChoices
+                this.showParrot = false
+                this.loading = false
             }, 4000)
             },
-                showInfo(text) {
-                    this.popupText = text
-                    this.showPopup = true
-                },
-                closePopup() {
-                    this.showPopup = false
-                },
+            showInfo(text) {
+                this.popupText = text
+                this.showPopup = true
+            },
+            closePopup() {
+                this.showPopup = false
+            },
             quitQuiz(){
-                this.quizLevel = false;
-                this.allChoices = true;
+                this.quizLevel = false
+                this.allChoices = true
                 this.showParrot = true
             }
             }

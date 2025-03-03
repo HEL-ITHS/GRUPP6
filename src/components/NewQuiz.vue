@@ -70,6 +70,7 @@
         <div class="question">
           <h3>{{ question.question }}</h3>
         </div>
+        <div class="answer_container">
         <label
           class="answer"
           v-for="(answer, key) in question.answers"
@@ -83,6 +84,7 @@
           />
           {{ answer }}
         </label>
+      </div>
       </form>
     </div>
     <div class="result_button">
@@ -137,7 +139,7 @@ form {
   text-decoration: underline;
 }
 
-.questioncontainer {
+.question_container {
   padding: 20px;
 }
 
@@ -145,14 +147,22 @@ form {
   display: flex;
   justify-content: center;
   margin-top: 2em;
+  align-items: center;
 }
 
-.answer {
+.answer_container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.answer {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 1.5em;
   cursor: pointer;
+  width: 150px;
 }
 
 .checkmark {

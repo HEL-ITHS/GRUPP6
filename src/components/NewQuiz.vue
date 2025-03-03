@@ -162,7 +162,7 @@ form {
   align-items: center;
   margin-top: 1.5em;
   cursor: pointer;
-  width: 117px;
+  width: 122px;
 }
 
 .checkmark {

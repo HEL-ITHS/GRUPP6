@@ -63,7 +63,7 @@
 <template>
   <div v-if="showQuiz">
     <div class="test_text">
-      <h1>Prov Enkelt</h1>
+      <h1>Quiz</h1>
     </div>
     <div v-for="(question, index) in quiz" :key="index">
       <form class="question_container" @submit.prevent>
@@ -136,7 +136,6 @@ form {
   display: flex;
   justify-content: center;
   margin-top: 2em;
-  text-decoration: underline;
 }
 
 .question_container {
@@ -162,7 +161,7 @@ form {
   align-items: center;
   margin-top: 1.5em;
   cursor: pointer;
-  width: 122px;
+  width: 125px;
 }
 
 .checkmark {

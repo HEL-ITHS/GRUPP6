@@ -3,9 +3,18 @@
 
   export default {
     computed: {
-      setUsernameFromLogIn(){
+      displayUsername(){
         const userstore = userDetails()
         return userstore.username
+      },
+
+      userTypeInSwedish(){
+        const userType = userDetails().userType
+        const translations = {
+          student: "Student",
+          teacher: "Lärare"
+        };
+        return translations[userType] || userType
       }
     },
     methods: {
@@ -21,7 +30,10 @@
 <template>
   <header class="container_header">
     <img  @click="backToHomeStudent"  src="/assets/Logga.png" alt="Grammify-logo" class="logo">
-    <h2 class="header_text">{{ setUsernameFromLogIn }}</h2>
+    <div class="header_text_container">
+      <h2 class="header_user_title">{{ userTypeInSwedish }}</h2>
+      <p class="header_user_status">Inloggad som: {{ displayUsername }}</p>
+    </div>
   </header>
 </template>
 
@@ -38,4 +50,31 @@
     width: auto;
     height: 120px;
   }
+
+  .header_text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  .header_user_title,
+  .header_text {
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+  .logo {
+    height: 80px;
+  }
+
+  .header_user_title{
+    font-size: 1.5em
+  }
+
+  .header_user_status {
+    font-size: 1em
+  }
+}
+
 </style>

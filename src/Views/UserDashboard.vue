@@ -12,7 +12,6 @@
     computed: {
       displayUserView(){
         const userstore = userDetails()
-        console.log('User type:', userstore.userType);
         return userstore.userType;
       },
     },
@@ -25,7 +24,7 @@
     <HeroContent
     :backgroundImage="'/assets/heroStudent.jpg'"
     :ariaLabel="'Pen and books that are open and ready to be read.'"
-    :welcomeHeading="'Välkommen till studentvyn'"
+    :welcomeHeading="'Välkommen till studentportalen,  '"
     :pageDescription="'Förbättra dina engelska kunskaper genom att utmana dig själv på quiz med olika svårighetsgrad, ha roligt medan du lär dig och se dina resultat. Du kan även använda lexikon för att söka och lära dig mer om orden.'"/>
     <div class="navigation_options">
       <RouterLink to="/Difficulty">
@@ -41,7 +40,7 @@
     <HeroContent
     :backgroundImage="'/assets/heroTeacher.jpg'"
     :ariaLabel="'A corridor in a library, displaying books'"
-    :welcomeHeading="'Välkommen till lärarvyn'"
+    :welcomeHeading="'Välkommen till lärarportalen'"
     :pageDescription="'Här har du tillgång till flera funktioner för att underlätta din undervisning. Du kan hantera dina elevers betyg, få en översikt på deras presentationer och framsteg för att kunna identifiera områden där de behöver förbättras. Du kan även använda lexikonet för att snabbt hitta definitioner och förklaringar för olika engelska ord som dina elever kan behöva hjälp med. Välj ett alternativ nedan för att börja!'"/>
     <div class="navigation_options">
       <RouterLink to="/">
@@ -76,9 +75,31 @@
     width: 200px;
   }
 
-  .navigation_btns:hover {
-    background-color: #004276;
-    transform: scale(0.98);
-    transition: transform 0.1s ease;
+/* För skärmar MINDRE än 600px*/
+  @media (max-width: 600px) {
+    .navigation_options {
+      margin: 1.5em;
+    }
+
+    .navigation_btns {
+      width: 150px;
+      padding: 12px;
+      margin: 1em;
+    }
+
+    .navigation_btns:active {
+      background-color: #004276;
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    }
+
+  }
+/* För skärmar STÖRRE än 600px*/
+  @media (min-width: 601px){
+    .navigation_btns:hover {
+      background-color: #004276;
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    }
   }
 </style>

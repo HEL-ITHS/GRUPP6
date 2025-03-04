@@ -44,18 +44,12 @@
 <template>
   <HeaderStudent />
 
-  <div class="hero_content">
-    <section class="hero_text_content">
-      <h1>Välkommen till lexikon</h1>
-      <p>
-        Vårt lexikon är en användbar resurs för att snabbt hitta förklaringar på
-        begrepp och termer som används i olika ämnen. Det är utformat för att
-        vara lättillgängligt och hjälpa elever att förstå viktiga ord och
-        definitioner. Genom att hålla lexikonet uppdaterat strävar vi efter att
-        stödja lärandet på bästa sätt.
-      </p>
-    </section>
-  </div>
+  <HeroContent
+    :background-image="'/assets/heroTeacher.jpg'"
+    :aria-label="'A corridor in a library, displaying books'"
+    :welcome-heading="'Välkommen till lexikon,'"
+    :page-description="'Vårt lexikon är en användbar resurs för att snabbt hitta förklaringar på begrepp och termer som används i olika ämnen. Det är utformat för att vara lättillgängligt och hjälpa elever att förstå viktiga ord och definitioner. Genom att hålla lexikonet uppdaterat strävar vi efter att stödja lärandet på bästa sätt.'"
+  />
 
   <div id="lexicon_container">
     <input

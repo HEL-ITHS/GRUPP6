@@ -31,9 +31,6 @@
       <RouterLink to="/Difficulty">
         <button class="navigation_btns">Gör quiz</button></RouterLink
       >
-      <RouterLink to="/">
-        <button class="navigation_btns">Se mina resultat</button>
-      </RouterLink>
       <RouterLink to="/lexicon"
         ><button class="navigation_btns">Lexikon</button></RouterLink
       >
@@ -66,8 +63,9 @@
 
   .navigation_options {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin: 3em;
   }
 
@@ -86,7 +84,8 @@
   /* För skärmar MINDRE än 600px*/
   @media (max-width: 600px) {
     .navigation_options {
-      margin: 1.5em;
+      margin: 2em;
+      flex-direction: column;
     }
 
     .navigation_btns {

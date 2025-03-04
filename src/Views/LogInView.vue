@@ -34,7 +34,7 @@ export default {
 
 <template>
   <div id="main_container">
-    <img src="/assets/Logga.png" alt="logga">
+    <img src="/assets/Logga.png" alt="logga" />
 
   <form @submit.prevent="onClickLoggin()"
   >
@@ -59,7 +59,7 @@ export default {
       />
     </div>
     <div class="choice_container">
-      <label for="typeOfUser" ><strong>Välj:</strong></label>
+      <label for="typeOfUser"><strong>Välj:</strong></label>
       <select v-model="value" id="typeOfUser" required>
         <option selected disabled value="">Välj</option>
         <option value="student">Elev</option>

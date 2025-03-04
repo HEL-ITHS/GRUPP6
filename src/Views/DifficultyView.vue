@@ -145,10 +145,9 @@
     </div>
 
     <div v-if="loading" class="loading_screen">
-        <div class="spinner">
+        <div class="spinner" />
             <p>Laddar quiz...</p>
             <p class="quote">{{ randomQuote }}</p>
-        </div>
     </div>
 
     <div v-if="quizLevel">

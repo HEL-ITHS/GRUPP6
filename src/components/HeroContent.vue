@@ -47,7 +47,7 @@
     <section class="hero_text_content">
       <h1> {{ welcomeHeading }}</h1>
       <h2> {{ displayUserName }} </h2>
-      <p> {{  pageDescription }}</p>
+      <p> {{ pageDescription }}</p>
     </section>
   </div>
 </template>

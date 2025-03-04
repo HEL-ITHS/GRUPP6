@@ -48,7 +48,7 @@ export default {
         placeholder="Skriv din åsikt eller förbättringsförslag här..."
         rows="5"
         cols="40"
-      ></textarea>
+      />
       <button @click="submitFeedback">Skicka Åsikt</button>
     </div>
 

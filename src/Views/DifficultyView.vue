@@ -58,6 +58,7 @@
                 this.allChoices = true
                 this.showParrot = true
             },
+
             }
         }
 </script>
@@ -132,6 +133,11 @@
             Starta quiz
         </button>
     </div>
+    <div class="navigation_options">
+    <RouterLink to="/dashboard">
+      <button class="navigation_btns">Tillbaka</button></RouterLink
+    >
+  </div>
     </div>
 
     <div v-if="showPopup" class="popup_info">
@@ -156,11 +162,7 @@
             <button @click="quitQuiz" class="cancel_button">Avsluta</button>
         </div>
     </div>
-    <div class="navigation_options">
-    <RouterLink to="/dashboard">
-      <button class="navigation_btns">Tillbaka</button></RouterLink
-    >
-  </div>
+
 </template>
 
 <style scoped>

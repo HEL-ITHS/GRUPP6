@@ -32,13 +32,13 @@
 
 <template>
   <header class="container_header">
-    <img  @click="backToHomeStudent"  src="/assets/Logga.png" alt="Grammify-logo" class="logo">
+    <img @click="backToHomeStudent" src="/assets/Logga.png" alt="Grammify-logo" class="logo" />
     <div class="header_text_container">
       <h2 class="header_user_title">{{ userTypeInSwedish }}</h2>
       <p class="header_user_status">Inloggad som: {{ displayUsername }}</p>
     </div>
     <div class="logout_container">
-      <img @click="backToLogin" class="logout_image" src="/assets/logout.png" alt="Log out icon">
+      <img @click="backToLogin" class="logout_image" src="/assets/logout.png" alt="Log out icon" />
     </div>
   </header>
 </template>

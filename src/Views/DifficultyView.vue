@@ -67,12 +67,12 @@
 
     <div class="head_container">
         <div class="head_text">
-            <img class="quiz_image" src="/assets/quiz2.jpg" alt="Quiz time letters">
+            <img class="quiz_image" src="/assets/quiz2.jpg" alt="Quiz time letters" />
         </div>
         <div v-if="showParrot" class="parrot_container">
             <div class="parrot_wrapper">
-                <img class="parrot" src="/assets/parrot1.jpg" alt="parrot">
-                <img class="speachbubble" src="/assets/chatt.png" alt="Speachbubble">
+                <img class="parrot" src="/assets/parrot1.jpg" alt="parrot" />
+                <img class="speachbubble" src="/assets/chatt.png" alt="Speachbubble" />
             </div>
         </div>
     </div>
@@ -81,11 +81,11 @@
     <div class="choice_parts">
         <div class="quiz_type_container">
             <div class="quiz_type"><strong>Glosor</strong></div>
-            <img class="info_image" src="/assets/info.png" alt="" @click="showInfo('I detta quiz lär vi oss ord.')">
+            <img class="info_image" src="/assets/info.png" alt="" @click="showInfo('I detta quiz lär vi oss ord.')" />
         </div>
         <div class="level_container">
             <p>Svårighetsgrad </p>
-            <img class="level_image" src="/assets/level1.png" alt="Grafic of level">
+            <img class="level_image" src="/assets/level1.png" alt="Grafic of level" />
         </div>
         <button
         class="start_quiz"
@@ -95,16 +95,16 @@
         </button>
     </div>
 
-    <hr style="margin-bottom: 2em; margin-top: 2em; margin-left: 5em; margin-right: 5em;">
+    <hr style="margin-bottom: 2em; margin-top: 2em; margin-left: 5em; margin-right: 5em;" />
 
     <div class="choice_parts">
         <div class="quiz_type_container">
             <div class="quiz_type"><strong>Ord i mening</strong></div>
-            <img class="info_image" src="/assets/info.png" alt="" @click="showInfo('I detta quiz lär vi oss att placera rätt ord i en mening.')">
+            <img class="info_image" src="/assets/info.png" alt="" @click="showInfo('I detta quiz lär vi oss att placera rätt ord i en mening.')" />
         </div>
         <div class="level_container">
             <p>Svårighetsgrad </p>
-            <img class="level_image" src="/assets/level2.png" alt="Grafic of level">
+            <img class="level_image" src="/assets/level2.png" alt="Grafic of level" />
         </div>
         <button
         class="start_quiz"
@@ -114,16 +114,16 @@
     </button>
     </div>
 
-    <hr style="margin-bottom: 2em; margin-top: 2em; margin-left: 5em; margin-right: 5em;">
+    <hr style="margin-bottom: 2em; margin-top: 2em; margin-left: 5em; margin-right: 5em;" />
 
     <div class="choice_parts">
         <div class="quiz_type_container">
             <div class="quiz_type"><strong>Ordklasser</strong></div>
-            <img class="info_image" src="/assets/info.png" alt="" @click="showInfo('I detta quiz lär vi oss om ordklasser.')">
+            <img class="info_image" src="/assets/info.png" alt="" @click="showInfo('I detta quiz lär vi oss om ordklasser.')" />
         </div>
         <div class="level_container">
             <p>Svårighetsgrad </p>
-            <img class="level_image" src="/assets/level3.png" alt="Grafik of level">
+            <img class="level_image" src="/assets/level3.png" alt="Grafik of level" />
         </div>
         <button
             class="start_quiz"
@@ -137,7 +137,7 @@
     <div v-if="showPopup" class="popup_info">
         <div class="popup_box">
             <p> {{ popupText }} </p>
-            <img class="popup_image" src="/assets/parrotpop.jpg" alt="questio mark">
+            <img class="popup_image" src="/assets/parrotpop.jpg" alt="questio mark" />
             <div class="button_container">
                 <button class="popup_button" @click="closePopup">Stäng</button>
             </div>
@@ -145,13 +145,14 @@
     </div>
 
     <div v-if="loading" class="loading_screen">
-        <div class="spinner"></div>
-        <p>Laddar quiz...</p>
-        <p class="quote">{{ randomQuote }}</p>
+        <div class="spinner">
+            <p>Laddar quiz...</p>
+            <p class="quote">{{ randomQuote }}</p>
+        </div>
     </div>
 
     <div v-if="quizLevel">
-        <NewQuiz :quizLink="linkName" />
+        <NewQuiz :quiz-link="linkName" />
         <div class="container_cancel_button">
             <button @click="quitQuiz" class="cancel_button">Avsluta</button>
         </div>

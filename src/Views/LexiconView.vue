@@ -94,7 +94,7 @@
   </div>
   <div class="navigation_options">
     <RouterLink to="/dashboard">
-      <button class="navigation_btns">Tillbaka</button></RouterLink
+      <button class="navigation_btns">Startsida</button></RouterLink
     >
   </div>
 </template>

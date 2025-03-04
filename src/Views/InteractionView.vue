@@ -70,7 +70,7 @@ export default {
     </div>
   </div>
   <ChatComponent />
-  <button @click="goToHome">Home</button>
+  <button @click="goToHome">Startsida</button>
 </template>
 
 <style scoped>

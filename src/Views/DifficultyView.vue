@@ -180,7 +180,7 @@
 
 @keyframes fly-in {
     from {
-        transform: translateX(100vw) translateY(-50%);
+        transform: translateX(100px) translateY(-50%);
         opacity: 0;
     }
     to {

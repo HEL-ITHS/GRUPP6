@@ -127,7 +127,7 @@
     </div>
 
   </div>
-  <button class="opinion_button" @click="goToInteraction">tyck till om provet</button>
+  <button class="opinion_button" @click="goToInteraction">Tyck till om provet</button>
 </template>
 
 <style scoped>

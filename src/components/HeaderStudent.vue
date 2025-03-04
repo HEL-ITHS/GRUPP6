@@ -20,6 +20,9 @@
     methods: {
       backToHomeStudent(){
         this.$router.push('/dashboard')
+      },
+      backToLogin() {
+        this.$router.push('/')
       }
     }
   }
@@ -33,6 +36,9 @@
     <div class="header_text_container">
       <h2 class="header_user_title">{{ userTypeInSwedish }}</h2>
       <p class="header_user_status">Inloggad som: {{ displayUsername }}</p>
+    </div>
+    <div class="logout_container">
+      <img @click="backToLogin" class="logout_image" src="/assets/logout.png" alt="Log out icon">
     </div>
   </header>
 </template>
@@ -58,9 +64,26 @@
 
   }
 
+  header {
+    position: relative;
+  }
+
   .header_user_title,
   .header_text {
     margin: 0;
+  }
+
+  .logout_container {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 2em;
+  }
+
+  .logout_image {
+    height: 25px;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {

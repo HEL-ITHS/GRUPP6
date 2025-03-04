@@ -156,6 +156,11 @@
             <button @click="quitQuiz" class="cancel_button">Avsluta</button>
         </div>
     </div>
+    <div class="navigation_options">
+    <RouterLink to="/dashboard">
+      <button class="navigation_btns">Tillbaka</button></RouterLink
+    >
+  </div>
 </template>
 
 <style scoped>
@@ -393,6 +398,29 @@
   background-color: #0e74c2;
   transform: scale(1.1);
 }
+
+.navigation_btns {
+    font-weight: 600;
+    color: white;
+    background-color: #0e74c2;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2em;
+    transition: background-color 0.3s ease;
+    width: 100px;
+  }
+
+  .navigation_btns:active {
+    background-color: #004276;
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  .navigation_btns:hover {
+    background-color: #004276;
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
 
 @media (max-width: 979px) {
     .parrot_container {

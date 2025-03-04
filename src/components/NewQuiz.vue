@@ -8,6 +8,9 @@
         quiz: []
       }
     },
+    mounted() {
+            window.scrollTo(0, 0)
+        },
     props: {
       quizLink: {
         type: String,

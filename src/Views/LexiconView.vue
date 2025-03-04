@@ -92,6 +92,11 @@
       </div>
     </div>
   </div>
+  <div class="navigation_options">
+    <RouterLink to="/dashboard">
+      <button class="navigation_btns">Tillbaka</button></RouterLink
+    >
+  </div>
 </template>
 
 <style>
@@ -135,7 +140,7 @@
   #searched_button {
     min-width: 100px;
     padding: 6px;
-    background: #2575fc;
+    background: #0e74c2;
     border: none;
     color: white;
     font-size: 16px;
@@ -146,8 +151,8 @@
   }
 
   #searched_button:hover {
-    background: #1e63d7;
-    transform: scale(1.05);
+    background: #004276;
+    transform: scale(0.98);
   }
   #searched_input {
     min-width: 200px;
@@ -156,8 +161,8 @@
     border-radius: 8px;
     font-size: 16px;
     transition:
-      border 0.3s ease,
-      box-shadow 0.3s ease;
+      border 0.1s ease,
+      box-shadow 0.1s ease;
     background: #f8f8f8;
   }
 
@@ -209,5 +214,28 @@
     justify-content: center;
     text-align: center;
     padding: 10px;
+  }
+
+  .navigation_btns {
+    font-weight: 600;
+    color: white;
+    background-color: #0e74c2;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2em;
+    transition: background-color 0.3s ease;
+    width: 100px;
+  }
+
+  .navigation_btns:active {
+    background-color: #004276;
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  .navigation_btns:hover {
+    background-color: #004276;
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
   }
 </style>

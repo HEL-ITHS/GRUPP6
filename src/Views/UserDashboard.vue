@@ -1,7 +1,7 @@
 <script>
-  import HeaderStudent from "../components/HeaderStudent.vue"
-  import { userDetails} from "../stores/userStorage";
-  import HeroContent from "../components/HeroContent.vue"
+  import HeaderStudent from '../components/HeaderStudent.vue'
+  import { userDetails } from '../stores/userStorage'
+  import HeroContent from '../components/HeroContent.vue'
 
   export default {
     components: {
@@ -10,11 +10,11 @@
     },
 
     computed: {
-      displayUserView(){
+      displayUserView() {
         const userstore = userDetails()
-        return userstore.userType;
-      },
-    },
+        return userstore.userType
+      }
+    }
   }
 </script>
 
@@ -22,36 +22,44 @@
   <HeaderStudent />
   <div v-if="displayUserView === 'student'">
     <HeroContent
-    :backgroundImage="'/assets/heroStudent.jpg'"
-    :ariaLabel="'Pen and books that are open and ready to be read.'"
-    :welcomeHeading="'Välkommen till studentportalen,  '"
-    :pageDescription="'Förbättra dina engelska kunskaper genom att utmana dig själv på quiz med olika svårighetsgrad, ha roligt medan du lär dig och se dina resultat. Du kan även använda lexikon för att söka och lära dig mer om orden.'"/>
+      :background-image="'/assets/heroStudent.jpg'"
+      :aria-label="'Pen and books that are open and ready to be read.'"
+      :welcome-heading="'Välkommen till studentportalen,  '"
+      :page-description="'Förbättra dina engelska kunskaper genom att utmana dig själv på quiz med olika svårighetsgrad, ha roligt medan du lär dig och se dina resultat. Du kan även använda lexikon för att söka och lära dig mer om orden.'"
+    />
     <div class="navigation_options">
       <RouterLink to="/Difficulty">
-      <button class="navigation_btns">Gör quiz</button></RouterLink>
+        <button class="navigation_btns">Gör quiz</button></RouterLink
+      >
       <RouterLink to="/">
-      <button class="navigation_btns">Se mina resultat</button>
+        <button class="navigation_btns">Se mina resultat</button>
       </RouterLink>
-      <RouterLink to="/lexicon"><button class="navigation_btns">Lexikon</button></RouterLink>
+      <RouterLink to="/lexicon"
+        ><button class="navigation_btns">Lexikon</button></RouterLink
+      >
     </div>
   </div>
 
   <div v-if="displayUserView === 'teacher'">
     <HeroContent
-    :backgroundImage="'/assets/heroTeacher.jpg'"
-    :ariaLabel="'A corridor in a library, displaying books'"
-    :welcomeHeading="'Välkommen till lärarportalen'"
-    :pageDescription="'Här har du tillgång till flera funktioner för att underlätta din undervisning. Du kan hantera dina elevers betyg, få en översikt på deras presentationer och framsteg för att kunna identifiera områden där de behöver förbättras. Du kan även använda lexikonet för att snabbt hitta definitioner och förklaringar för olika engelska ord som dina elever kan behöva hjälp med. Välj ett alternativ nedan för att börja!'"/>
+      :background-image="'/assets/heroTeacher.jpg'"
+      :aria-label="'A corridor in a library, displaying books'"
+      :welcome-heading="'Välkommen till lärarportalen'"
+      :page-description="'Här har du tillgång till flera funktioner för att underlätta din undervisning. Du kan hantera dina elevers betyg, få en översikt på deras presentationer och framsteg för att kunna identifiera områden där de behöver förbättras. Du kan även använda lexikonet för att snabbt hitta definitioner och förklaringar för olika engelska ord som dina elever kan behöva hjälp med. Välj ett alternativ nedan för att börja!'"
+    />
     <div class="navigation_options">
       <RouterLink to="/">
-      <button class="navigation_btns">Klasslista</button></RouterLink>
-      <RouterLink to="/lexicon"><button class="navigation_btns">Lexikon</button></RouterLink>
+        <button class="navigation_btns">Klasslista</button></RouterLink
+      >
+      <RouterLink to="/lexicon"
+        ><button class="navigation_btns">Lexikon</button></RouterLink
+      >
     </div>
   </div>
-
 </template>
 <style scoped>
-  html, body {
+  html,
+  body {
     height: 100%;
     margin: 0;
   }
@@ -66,7 +74,7 @@
   .navigation_btns {
     font-weight: 600;
     color: white;
-    background-color: #0e74c2;;
+    background-color: #0e74c2;
     border: none;
     border-radius: 5px;
     padding: 20px;
@@ -75,7 +83,7 @@
     width: 200px;
   }
 
-/* För skärmar MINDRE än 600px*/
+  /* För skärmar MINDRE än 600px*/
   @media (max-width: 600px) {
     .navigation_options {
       margin: 1.5em;
@@ -92,10 +100,9 @@
       transform: scale(0.98);
       transition: transform 0.1s ease;
     }
-
   }
-/* För skärmar STÖRRE än 600px*/
-  @media (min-width: 601px){
+  /* För skärmar STÖRRE än 600px*/
+  @media (min-width: 601px) {
     .navigation_btns:hover {
       background-color: #004276;
       transform: scale(0.98);

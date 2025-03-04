@@ -1,24 +1,24 @@
 <script>
-  import { userDetails} from "../stores/userStorage";
+  import { userDetails } from '../stores/userStorage'
 
   export default {
     computed: {
-      displayUsername(){
+      displayUsername() {
         const userstore = userDetails()
         return userstore.username
       },
 
-      userTypeInSwedish(){
+      userTypeInSwedish() {
         const userType = userDetails().userType
         const translations = {
-          student: "Student",
-          teacher: "Lärare"
-        };
+          student: 'Student',
+          teacher: 'Lärare'
+        }
         return translations[userType] || userType
       }
     },
     methods: {
-      backToHomeStudent(){
+      backToHomeStudent() {
         this.$router.push('/dashboard')
       },
       backToLogin() {
@@ -26,26 +26,34 @@
       }
     }
   }
-
 </script>
-
 
 <template>
   <header class="container_header">
-    <img @click="backToHomeStudent" src="/assets/Logga.png" alt="Grammify-logo" class="logo" />
+    <img
+      @click="backToHomeStudent"
+      src="/assets/Logga.png"
+      alt="Grammify-logo"
+      class="logo"
+    />
     <div class="header_text_container">
       <h2 class="header_user_title">{{ userTypeInSwedish }}</h2>
       <p class="header_user_status">Inloggad som: {{ displayUsername }}</p>
     </div>
     <div class="logout_container">
-      <img @click="backToLogin" class="logout_image" src="/assets/logout.png" alt="Log out icon" />
+      <img
+        @click="backToLogin"
+        class="logout_image"
+        src="/assets/logout.png"
+        alt="Log out icon"
+      />
     </div>
   </header>
 </template>
 
 <style scoped>
   .container_header {
-    background-color:#004276;
+    background-color: #004276;
     display: flex;
     align-items: center;
     color: white;
@@ -55,13 +63,13 @@
   .logo {
     width: auto;
     height: 120px;
+    cursor: pointer;
   }
 
   .header_text_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
   }
 
   header {
@@ -74,11 +82,11 @@
   }
 
   .logout_container {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 2em;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 2em;
   }
 
   .logout_image {
@@ -87,17 +95,16 @@
   }
 
   @media (max-width: 768px) {
-  .logo {
-    height: 80px;
-  }
+    .logo {
+      height: 80px;
+    }
 
-  .header_user_title{
-    font-size: 1.5em
-  }
+    .header_user_title {
+      font-size: 1.5em;
+    }
 
-  .header_user_status {
-    font-size: 1em
+    .header_user_status {
+      font-size: 1em;
+    }
   }
-}
-
 </style>

@@ -10,7 +10,8 @@
     data() {
       return {
         classLink: '',
-        displayChoosenClass: false
+        displayChoosenClass: false,
+        chooseClasses: true
       }
     },
     mounted() {
@@ -23,9 +24,10 @@
         this.displayChoosenClass = true
         console.log('FÖRÄLDER')
         console.log('FÖRÄLDER, Klasslänken:', this.classLink)
+        this.chooseClasses = false
       },
       closeClassList() {
-        this.displayChoosenClass = false
+        ;(this.chooseClasses = true), (this.displayChoosenClass = false)
       }
     }
   }
@@ -34,7 +36,7 @@
 <template>
   <HeaderStudent />
 
-  <div class="chooseClasses">
+  <div v-if="chooseClasses" class="chooseClasses">
     <div class="classes_name">
       <p>3A</p>
       <button @click="onClickShowClasses('./public/classList1.json')">
@@ -59,8 +61,6 @@
 
   <div v-if="displayChoosenClass">
     <ShowClasses :class-link="classLink" />
-    <button @click="closeClassList" class="cancel_button">
-      Stäng KLASSLISTAN
-    </button>
+    <button @click="closeClassList" class="cancel_button">Tillbaka</button>
   </div>
 </template>

@@ -3,6 +3,7 @@
     data() {
       return {
         selectedClasses: Array(20).fill(null),
+        showClasses: true,
         classList: []
       }
     },
@@ -27,17 +28,21 @@
             console.log('BARN, ShowSelectedfunktion aktiveras')
             console.log('BARN Klasslänken som skickas:', this.classLink)
           })
-      },
-
-      close
+      }
     }
   }
 </script>
 
 <template>
-  <div>
+  <div v-if="showClasses">
+    <h3>Klasslista</h3>
     <div v-for="(studentName, index) in classList" :key="index">
-      <p>{{ studentName.name }}</p>
+      <ul>
+        <li>{{ studentName.name }}</li>
+        <li>{{ studentName.phone }}</li>
+        <li>{{ studentName.address }}</li>
+        <li>{{ studentName.email }}</li>
+      </ul>
     </div>
   </div>
 </template>

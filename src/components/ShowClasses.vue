@@ -24,8 +24,12 @@
           .then((response) => response.json())
           .then((result) => {
             this.classList = result
+            console.log('BARN, ShowSelectedfunktion aktiveras')
+            console.log('BARN Klasslänken som skickas:', this.classLink)
           })
-      }
+      },
+
+      close
     }
   }
 </script>

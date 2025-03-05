@@ -9,7 +9,8 @@
     },
     data() {
       return {
-        classLink: ''
+        classLink: '',
+        displayChoosenClass: false
       }
     },
     mounted() {
@@ -19,6 +20,12 @@
     methods: {
       onClickShowClasses(classLink) {
         this.classLink = classLink
+        this.displayChoosenClass = true
+        console.log('FÖRÄLDER')
+        console.log('FÖRÄLDER, Klasslänken:', this.classLink)
+      },
+      closeClassList() {
+        this.displayChoosenClass = false
       }
     }
   }
@@ -50,7 +57,10 @@
     </div>
   </div>
 
-  <div>
+  <div v-if="displayChoosenClass">
     <ShowClasses :class-link="classLink" />
+    <button @click="closeClassList" class="cancel_button">
+      Stäng KLASSLISTAN
+    </button>
   </div>
 </template>

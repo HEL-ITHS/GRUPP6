@@ -7,8 +7,8 @@
   "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
+    "source.fixAll.eslint": "explicit"
+},
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
   "editor.rulers": [80],

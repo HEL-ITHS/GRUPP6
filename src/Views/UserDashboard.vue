@@ -45,7 +45,7 @@
       :page-description="'Här har du tillgång till flera funktioner för att underlätta din undervisning. Du kan hantera dina elevers betyg, få en översikt på deras presentationer och framsteg för att kunna identifiera områden där de behöver förbättras. Du kan även använda lexikonet för att snabbt hitta definitioner och förklaringar för olika engelska ord som dina elever kan behöva hjälp med. Välj ett alternativ nedan för att börja!'"
     />
     <div class="navigation_options">
-      <RouterLink to="/">
+      <RouterLink to="/classlist">
         <button class="navigation_btns">Klasslista</button></RouterLink
       >
       <RouterLink to="/lexicon"

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Alice Johansson",
+    "phone": "070-123 45 67",
+    "address": "Storgatan 12, 411 01 Göteborg",
+    "email": "alice.johansson@skola.se"
+  },
+  {
+    "name": "Erik Karlsson",
+    "phone": "070-234 56 78",
+    "address": "Linnégatan 34, 411 02 Göteborg",
+    "email": "erik.karlsson@skola.se"
+  },
+  {
+    "name": "Sofia Nilsson",
+    "phone": "070-345 67 89",
+    "address": "Vasagatan 56, 411 03 Göteborg",
+    "email": "sofia.nilsson@skola.se"
+  },
+  {
+    "name": "Liam Bergström",
+    "phone": "070-456 78 90",
+    "address": "Haga Nygata 78, 411 04 Göteborg",
+    "email": "liam.bergstrom@skola.se"
+  },
+  {
+    "name": "Maja Svensson",
+    "phone": "070-567 89 01",
+    "address": "Kungsgatan 90, 411 05 Göteborg",
+    "email": "maja.svensson@skola.se"
+  },
+  {
+    "name": "William Andersson",
+    "phone": "070-678 90 12",
+    "address": "Östra Hamngatan 11, 411 06 Göteborg",
+    "email": "william.andersson@skola.se"
+  },
+  {
+    "name": "Ella Lindgren",
+    "phone": "070-789 01 23",
+    "address": "Järntorget 13, 411 07 Göteborg",
+    "email": "ella.lindgren@skola.se"
+  },
+  {
+    "name": "Oscar Persson",
+    "phone": "070-890 12 34",
+    "address": "Kungsportsavenyen 15, 411 08 Göteborg",
+    "email": "oscar.persson@skola.se"
+  },
+  {
+    "name": "Nora Eriksson",
+    "phone": "070-901 23 45",
+    "address": "Götaplatsen 17, 411 09 Göteborg",
+    "email": "nora.eriksson@skola.se"
+  },
+  {
+    "name": "Lucas Holm",
+    "phone": "070-012 34 56",
+    "address": "Chalmersgatan 19, 411 10 Göteborg",
+    "email": "lucas.holm@skola.se"
+  },
+  {
+    "name": "Elin Larsson",
+    "phone": "070-123 45 68",
+    "address": "Södra Vägen 21, 411 11 Göteborg",
+    "email": "elin.larsson@skola.se"
+  },
+  {
+    "name": "Felix Sandberg",
+    "phone": "070-234 56 79",
+    "address": "Lilla Bommen 23, 411 12 Göteborg",
+    "email": "felix.sandberg@skola.se"
+  },
+  {
+    "name": "Clara Dahl",
+    "phone": "070-345 67 80",
+    "address": "Odinsgatan 25, 411 13 Göteborg",
+    "email": "clara.dahl@skola.se"
+  },
+  {
+    "name": "Isak Henriksson",
+    "phone": "070-456 78 91",
+    "address": "Redbergsvägen 27, 411 14 Göteborg",
+    "email": "isak.henriksson@skola.se"
+  },
+  {
+    "name": "Hanna Viklund",
+    "phone": "070-567 89 02",
+    "address": "Majorna 29, 411 15 Göteborg",
+    "email": "hanna.viklund@skola.se"
+  },
+  {
+    "name": "Jonathan Åberg",
+    "phone": "070-678 90 13",
+    "address": "Eriksberg 31, 411 16 Göteborg",
+    "email": "jonathan.aberg@skola.se"
+  },
+  {
+    "name": "Evelina Ström",
+    "phone": "070-789 01 24",
+    "address": "Lundby 33, 411 17 Göteborg",
+    "email": "evelina.strom@skola.se"
+  },
+  {
+    "name": "Adam Blom",
+    "phone": "070-890 12 35",
+    "address": "Guldheden 35, 411 18 Göteborg",
+    "email": "adam.blom@skola.se"
+  },
+  {
+    "name": "Matilda Sjöberg",
+    "phone": "070-901 23 46",
+    "address": "Frölunda Torg 37, 411 19 Göteborg",
+    "email": "matilda.sjoberg@skola.se"
+  },
+  {
+    "name": "Alexander Nyström",
+    "phone": "070-012 34 57",
+    "address": "Backaplan 39, 411 20 Göteborg",
+    "email": "alexander.nystrom@skola.se"
+  }
+]

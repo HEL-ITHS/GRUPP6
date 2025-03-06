@@ -95,69 +95,84 @@
 </template>
 
 <style scoped>
-  .chooseClasses {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    .chooseClasses {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  <<<<<<< HEAD
+    }
+  =======
+      margin-top: 2em;
+      margin-bottom: 2em;
   }
 
   .classes_name {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+      display: flex;
+  <<<<<<< HEAD
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
 
-  .classes_name p {
-    font-size: large;
-    margin: 0;
-  }
+    button {
+      color: white;
+      border: none;
+      border-radius: 5px;
+      background-color: #004276;
+      transition: transform 0.3s ease;
+  =======
+      justify-content: space-around;
+      align-items: center;
+    }
 
-  .classes_name button {
-    margin: 0;
-  }
+    .classes_name p {
+      font-size: large;
+      margin: 0;
+    }
 
-  .classListButton {
-    width: 150px;
-    background-color: #7ac0f5;
-    border: none;
-    border-radius: 5px;
-    padding: 12px;
-    margin-top: 2em;
-    transition: transform 0.3s ease;
-  }
+    .classes_name button {
+      margin: 0;
+    }
 
-  .classListButton:hover {
-    background-color: #519fdb;
-    transform: scale(1.1);
-  }
+    .classListButton {
+      width: 150px;
+      background-color: #7ac0f5;
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+      margin-top: 2em;
+      transition: transform 0.3s ease;
+    }
 
-  .cancel_button {
-    font-weight: 600;
-    color: white;
-    background-color: #0e74c2;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 2em;
-    transition: background-color 0.3s ease;
-    width: 100px;
-  }
+    .classListButton:hover {
+      background-color: #519fdb;
+      transform: scale(1.1);
+    }
 
-  .cancel_button:hover {
-    background-color: #0e74c2;
-    transform: scale(1.1);
-  }
+    .cancel_button {
+      font-weight: 600;
+      color: white;
+      background-color: #0e74c2;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 2em;
+      transition: background-color 0.3s ease;
+      width: 100px;
+    }
 
-  .cancel_button:active {
-    background-color: #004276;
-    transform: scale(0.98);
-    transition: transform 0.1s ease;
-  }
-  .cancel_button:hover {
-    background-color: #004276;
-    transform: scale(0.98);
-    transition: transform 0.1s ease;
-  }
+    .cancel_button:hover {
+      background-color: #0e74c2;
+      transform: scale(1.1);
+    }
+
+    .cancel_button:active {
+      background-color: #004276;
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    }
+    .cancel_button:hover {
+      background-color: #004276;
+      transform: scale(0.98);
+    }
 </style>

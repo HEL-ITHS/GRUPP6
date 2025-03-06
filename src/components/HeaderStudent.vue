@@ -86,7 +86,6 @@
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    margin-right: 2em;
   }
 
   .logout_image {

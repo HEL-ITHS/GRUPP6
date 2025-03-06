@@ -1,9 +1,9 @@
 <script>
-  import { userDetails} from "../stores/userStorage";
+  import { userDetails } from '../stores/userStorage'
 
   export default {
     computed: {
-      displayUserName(){
+      displayUserName() {
         const userstore = userDetails()
         return userstore.username
       },
@@ -16,8 +16,8 @@
           position: 'relative',
           padding: '3em',
           height: '50%'
-        };
-      },
+        }
+      }
     },
 
     props: {
@@ -41,13 +41,12 @@
   }
 </script>
 
-
 <template>
   <div class="hero_content" :style="backgroundStyle" :aria-label="ariaLabel">
     <section class="hero_text_content">
-      <h1> {{ welcomeHeading }}</h1>
-      <h2> {{ displayUserName }} </h2>
-      <p> {{ pageDescription }}</p>
+      <h1>{{ welcomeHeading }}</h1>
+      <h2>{{ displayUserName }}</h2>
+      <p>{{ pageDescription }}</p>
     </section>
   </div>
 </template>
@@ -59,7 +58,7 @@
     margin: 2em;
   }
 
-  @media (max-width:600px) {
+  @media (max-width: 600px) {
     .hero_content {
       padding: 2em;
       height: 30%;
@@ -85,7 +84,7 @@
   @media (max-width: 500px) {
     .hero_content {
       padding: 1em;
-      height: 10%
+      height: 10%;
     }
     .hero_text_content {
       margin: 1em;

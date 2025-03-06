@@ -5,7 +5,9 @@
         showQuiz: true,
         selectedAnswer: Array(9).fill(null),
         showResults: false,
-        quiz: []
+        quiz: [],
+        totalScore: null,
+        motivationalQuotes: null
       }
     },
     mounted() {
@@ -19,6 +21,7 @@
     },
 
     created() {
+      this.loadMotivationalQuotes()
       this.startQuiz()
     },
 
@@ -33,9 +36,28 @@
 
       submitQuiz() {
         if (this.allAnswered) {
+          this.totalScore = this.getTotalScore()
           this.showResults = true
           this.showQuiz = false
         }
+      },
+
+      getTotalScore() {
+        let totalScore = 0
+        for (let i = 0; i < this.quiz.length; i++) {
+          if (this.selectedAnswer[i] === this.quiz[i].correctAnswer) {
+            totalScore++
+          }
+        }
+        return totalScore
+      },
+
+      loadMotivationalQuotes() {
+        fetch('/motivationalQuotes.json')
+          .then((response) => response.json())
+          .then((result) => {
+            this.motivationalQuotes = result
+          })
       },
 
       restartQuiz() {
@@ -45,6 +67,7 @@
             (this.showQuiz = true)
         }
       },
+
       goToInteraction() {
         this.$router.push('/interaction')
       }
@@ -56,6 +79,13 @@
           this.selectedAnswer.length === this.quiz.length &&
           this.selectedAnswer.every((question) => question !== null)
         )
+      },
+
+      motivationalQuote() {
+        const selected = Math.floor(
+          Math.random() * this.motivationalQuotes.length
+        )
+        return this.motivationalQuotes[selected]
       }
     }
   }
@@ -101,6 +131,7 @@
 
   <div v-if="showResults" class="result_continer">
     <h2>Resultat</h2>
+
     <ul>
       <li v-for="(question, index) in quiz" :key="'result' + index">
         <strong>{{ question.question }}</strong
@@ -118,6 +149,22 @@
         </strong>
       </li>
     </ul>
+
+    <div class="result_message">
+      <p class="text_result">
+        Ditt totala resultat: {{ totalScore }} av {{ quiz.length }}
+      </p>
+      <span v-if="totalScore === quiz.length"
+        >Grattis, du tillhör quizeliten! Du fick alla rätt!</span
+      >
+      <span v-else-if="totalScore >= quiz.length * 0.7"
+        >Grymt resultat, quizmästare!
+      </span>
+      <span v-if="totalScore < quiz.length * 0.4"
+        >{{ motivationalQuote }}
+      </span>
+    </div>
+
     <div class="restart_button">
       <button @click="restartQuiz" :hidden="!allAnswered">Gör om Quiz</button>
     </div>
@@ -198,6 +245,21 @@
   li {
     margin-top: 2em;
     list-style: none;
+  }
+
+  .result_message {
+    text-align: center;
+    padding: 1.3em;
+    margin: 3em;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  }
+
+  .text_result {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.1em;
   }
 
   .restart_button {

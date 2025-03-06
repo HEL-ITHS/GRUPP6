@@ -138,21 +138,18 @@
   }
 
   #searched_button {
-    min-width: 100px;
-    padding: 6px;
-    background: #0e74c2;
+    width: 120px;
+    background-color: #7ac0f5;
     border: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
+    border-radius: 5px;
+    padding: 6px;
+    margin-top: 2em;
+    transition: transform 0.3s ease;
   }
 
   #searched_button:hover {
-    background: #004276;
-    transform: scale(0.98);
+    background-color: #519fdb;
+    transform: scale(1.1);
   }
   #searched_input {
     min-width: 200px;

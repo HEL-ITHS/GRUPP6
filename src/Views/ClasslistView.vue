@@ -1,4 +1,5 @@
 <script>
+  import { RouterLink } from 'vue-router'
   import HeaderStudent from '../components/HeaderStudent.vue'
   import ShowClasses from '../components/ShowClasses.vue'
 
@@ -22,8 +23,6 @@
       onClickShowClasses(classLink) {
         this.classLink = classLink
         this.displayChoosenClass = true
-        console.log('FÖRÄLDER')
-        console.log('FÖRÄLDER, Klasslänken:', this.classLink)
         this.chooseClasses = false
       },
       closeClassList() {
@@ -38,38 +37,49 @@
 
   <div v-if="chooseClasses" class="chooseClasses">
     <div class="classes_name">
-      <h4>3A</h4>
-      <button @click="onClickShowClasses('./public/classList1.json')">
+      <p>3A</p>
+      <button
+        class="classListButton"
+        @click="onClickShowClasses('./public/classList1.json')"
+      >
         Klasslista
       </button>
     </div>
 
     <hr
-    style="
+      style="
         margin-bottom: 2em;
         margin-top: 2em;
         margin-left: 5em;
         margin-right: 5em;
-      " />
+      "
+    />
 
     <div class="classes_name">
-      <h4>3B</h4>
-      <button @click="onClickShowClasses('./public/classList2.json')">
+      <p>3B</p>
+      <button
+        class="classListButton"
+        @click="onClickShowClasses('./public/classList2.json')"
+      >
         Klasslista
       </button>
     </div>
 
     <hr
-    style="
+      style="
         margin-bottom: 2em;
         margin-top: 2em;
         margin-left: 5em;
         margin-right: 5em;
-      " />
+      "
+    />
 
     <div class="classes_name">
-      <h4>3C</h4>
-      <button @click="onClickShowClasses('./public/classList3.json')">
+      <p>3C</p>
+      <button
+        class="classListButton"
+        @click="onClickShowClasses('./public/classList3.json')"
+      >
         Klasslista
       </button>
     </div>
@@ -79,43 +89,75 @@
     <ShowClasses :class-link="classLink" />
     <button @click="closeClassList" class="cancel_button">Tillbaka</button>
   </div>
-
-  <button @click="goToHome">Startsida</button>
+  <RouterLink to="/dashboard">
+    <button class="cancel_button">Startsida</button></RouterLink
+  >
 </template>
 
 <style scoped>
-
-.chooseClasses {
+  .chooseClasses {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 2em;
     margin-bottom: 2em;
-}
+  }
 
-.classes_name {
+  .classes_name {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
+  }
 
-.classes_name p {
+  .classes_name p {
+    font-size: large;
     margin: 0;
-}
+  }
 
-button {
-    margin-top: 1em;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  background-color: #004276;
-  padding: 10px;
-  margin-left: 1em;
-  transition: transform 0.3s ease;
-}
+  .classes_name button {
+    margin: 0;
+  }
 
-button:hover {
-    background: #004276;
+  .classListButton {
+    width: 150px;
+    background-color: #7ac0f5;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    margin-top: 2em;
+    transition: transform 0.3s ease;
+  }
+
+  .classListButton:hover {
+    background-color: #519fdb;
+    transform: scale(1.1);
+  }
+
+  .cancel_button {
+    font-weight: 600;
+    color: white;
+    background-color: #0e74c2;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2em;
+    transition: background-color 0.3s ease;
+    width: 100px;
+  }
+
+  .cancel_button:hover {
+    background-color: #0e74c2;
+    transform: scale(1.1);
+  }
+
+  .cancel_button:active {
+    background-color: #004276;
     transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  .cancel_button:hover {
+    background-color: #004276;
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
   }
 </style>

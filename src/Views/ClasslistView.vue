@@ -83,15 +83,15 @@
         Klasslista
       </button>
     </div>
+    <RouterLink to="/dashboard">
+      <button class="cancel_button">Startsida</button></RouterLink
+    >
   </div>
 
   <div v-if="displayChoosenClass">
     <ShowClasses :class-link="classLink" />
     <button @click="closeClassList" class="cancel_button">Tillbaka</button>
   </div>
-  <RouterLink to="/dashboard">
-    <button class="cancel_button">Startsida</button></RouterLink
-  >
 </template>
 
 <style scoped>

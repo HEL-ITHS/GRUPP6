@@ -68,25 +68,25 @@
 </template>
 
 <style scoped>
-
-.chooseClasses {
+  .chooseClasses {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
+  }
 
-.classes_name {
+  .classes_name p {
+    margin: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    text-align: center;
     padding: 10px;
-}
+  }
 
-button {
-  color: white;
-  border: none;
-  border-radius: 5px;
-  background-color: #004276;
-  transition: transform 0.3s ease;
-}
+  button {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #004276;
+    transition: transform 0.3s ease;
+  }
 </style>

@@ -73,7 +73,7 @@
     margin: 10px;
     box-shadow: 2px 2px 2px 2px;
     background-color: lightblue;
-    border-radius: 2px;
+    border-radius: 10px;
   }
 
   li {

@@ -10,7 +10,7 @@
     "correctAnswer": "went"
   },
   {
-    "question": "2. Vilket ord passar in i följande mening: 'She ____ a book right now.'",
+    "question": "2. Vilket ord passar in i följande mening: 'She ____ a book at the moment.'",
     "answers": {
       "a": "read",
       "b": "reads",
@@ -20,7 +20,7 @@
     "correctAnswer": "is reading"
   },
   {
-    "question": "3. Vilket ord passar in i följande mening: 'They ____ to the park every weekend.'",
+    "question": "3. Vilket ord passar in i följande mening: 'She ____ to the gym every morning.'",
     "answers": {
       "a": "go",
       "b": "going",
@@ -30,7 +30,7 @@
     "correctAnswer": "go"
   },
   {
-    "question": "4. Vilket ord passar in i följande mening: 'We ____ a great time at the party.'",
+    "question": "4. Vilket ord passar in i följande mening: 'We ____ a great time at the party yesterday.'",
     "answers": {
       "a": "have",
       "b": "had",
@@ -85,7 +85,7 @@
       "a": "are",
       "b": "is",
       "c": "were",
-      "d": "will"
+      "d": "will be"
     },
     "correctAnswer": "will be"
   }

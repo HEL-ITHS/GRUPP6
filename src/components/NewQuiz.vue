@@ -73,7 +73,7 @@
         </div>
         <div class="answer_container">
           <label
-            class="answer"
+            class="bubble"
             v-for="(answer, key) in question.answers"
             :key="key"
           >
@@ -83,7 +83,7 @@
               v-model="selectedAnswer[index]"
               :value="answer"
             />
-            {{ answer }}
+            <span class="bubble_content">{{ answer }}</span>
           </label>
         </div>
       </form>
@@ -139,7 +139,11 @@
   }
 
   .question_container {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
   }
 
   .question {
@@ -150,27 +154,53 @@
   }
 
   .answer_container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-  }
-  .answer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 1.5em;
-    cursor: pointer;
-    width: 125px;
+    width: 100%;
   }
 
-  .checkmark {
+  .bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 45px;
+    border-radius: 22px;
+    background: #ffcccb;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px;
+    background-color: #7ac0f5;
+    margin-top: 1.5em;
+}
+
+.bubble input {
+    display: none;
+}
+
+.bubble:has(input:checked) {
+    background: #3498db !important;
+    color: white;
+    border: 3px solid #1f618d;
+    box-shadow: 0px 0px 10px rgba(52, 152, 219, 0.8);
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+.checkmark {
     height: 25px;
     width: 25px;
     margin-right: 1em;
-  }
+    }
 
-  .show_answer_button {
+.show_answer_button {
     border: none;
     border-radius: 5px;
     background-color: #7ac0f5;

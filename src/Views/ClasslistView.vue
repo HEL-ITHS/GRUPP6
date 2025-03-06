@@ -38,23 +38,39 @@
 
   <div v-if="chooseClasses" class="chooseClasses">
     <div class="classes_name">
-      <p>3A</p>
+      <h4>3A</h4>
       <button @click="onClickShowClasses('./public/classList1.json')">
-        Lista
+        Klasslista
       </button>
     </div>
 
+    <hr
+    style="
+        margin-bottom: 2em;
+        margin-top: 2em;
+        margin-left: 5em;
+        margin-right: 5em;
+      " />
+
     <div class="classes_name">
-      <p>3B</p>
+      <h4>3B</h4>
       <button @click="onClickShowClasses('./public/classList2.json')">
-        Lista
+        Klasslista
       </button>
     </div>
 
+    <hr
+    style="
+        margin-bottom: 2em;
+        margin-top: 2em;
+        margin-left: 5em;
+        margin-right: 5em;
+      " />
+
     <div class="classes_name">
-      <p>3C</p>
+      <h4>3C</h4>
       <button @click="onClickShowClasses('./public/classList3.json')">
-        Lista
+        Klasslista
       </button>
     </div>
   </div>
@@ -72,11 +88,18 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+<<<<<<< HEAD
   }
+=======
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+>>>>>>> b6b4b7e5ca95d4a9aaa131fc88bcf1c451d1d488
 
   .classes_name p {
     margin: 0;
     display: flex;
+<<<<<<< HEAD
     align-items: center;
     text-align: center;
     padding: 10px;
@@ -88,5 +111,29 @@
     border-radius: 5px;
     background-color: #004276;
     transition: transform 0.3s ease;
+=======
+    justify-content: space-around;
+    align-items: center;
+}
+
+.classes_name p {
+    margin: 0;
+}
+
+button {
+    margin-top: 1em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #004276;
+  padding: 10px;
+  margin-left: 1em;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+    background: #004276;
+    transform: scale(0.98);
+>>>>>>> b6b4b7e5ca95d4a9aaa131fc88bcf1c451d1d488
   }
 </style>

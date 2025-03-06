@@ -63,4 +63,30 @@
     <ShowClasses :class-link="classLink" />
     <button @click="closeClassList" class="cancel_button">Tillbaka</button>
   </div>
+
+  <button @click="goToHome">Startsida</button>
 </template>
+
+<style scoped>
+
+.chooseClasses {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.classes_name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #004276;
+  transition: transform 0.3s ease;
+}
+</style>

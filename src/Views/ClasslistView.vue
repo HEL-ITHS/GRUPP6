@@ -105,6 +105,7 @@
 
   .classes_name {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
     padding: 10px;

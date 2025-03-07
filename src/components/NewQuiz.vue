@@ -1,4 +1,6 @@
 <script>
+  import { userDetails } from '../stores/userStorage'
+
   export default {
     data() {
       return {
@@ -37,6 +39,7 @@
       submitQuiz() {
         if (this.allAnswered) {
           this.totalScore = this.getTotalScore()
+          this.saveTheBestScore()
           this.showResults = true
           this.showQuiz = false
         }
@@ -68,6 +71,11 @@
         }
       },
 
+      saveTheBestScore() {
+        const userStore = userDetails()
+        userStore.updateCurrentScore(this.totalScore)
+      },
+
       goToInteraction() {
         this.$router.push('/interaction')
       }
@@ -86,6 +94,11 @@
           Math.random() * this.motivationalQuotes.length
         )
         return this.motivationalQuotes[selected]
+      },
+
+      bestScore() {
+        const userStore = userDetails()
+        return userStore.bestScore
       }
     }
   }
@@ -153,6 +166,9 @@
     <div class="result_message">
       <p class="text_result">
         Ditt totala resultat: {{ totalScore }} av {{ quiz.length }}
+      </p>
+      <p class="text_result" v-if="bestScore >= 0">
+        <strong>Ditt tidigare bästa:</strong> {{ bestScore }}
       </p>
       <span v-if="totalScore === quiz.length"
         >Grattis, du tillhör quizeliten! Du fick alla rätt!</span
@@ -226,28 +242,28 @@
     padding: 10px;
     background-color: #7ac0f5;
     margin-top: 1.5em;
-}
+  }
 
-.bubble input {
+  .bubble input {
     display: none;
-}
+  }
 
-.bubble:has(input:checked) {
+  .bubble:has(input:checked) {
     background: #3498db !important;
     color: white;
     border: 3px solid #1f618d;
     box-shadow: 0px 0px 10px rgba(52, 152, 219, 0.8);
     transform: scale(1.1);
     transition: 0.2s ease-in-out;
-}
+  }
 
-.checkmark {
+  .checkmark {
     height: 25px;
     width: 25px;
     margin-right: 1em;
-    }
+  }
 
-.show_answer_button {
+  .show_answer_button {
     border: none;
     border-radius: 5px;
     background-color: #7ac0f5;

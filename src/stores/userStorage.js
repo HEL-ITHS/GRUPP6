@@ -1,19 +1,23 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
-export const userDetails = defineStore("user", {
+export const userDetails = defineStore('user', {
   state: () => ({
-    username: sessionStorage.getItem("savedUsername") || "",
-    userType: sessionStorage.getItem("savedUserType") || "",
+    username: sessionStorage.getItem('savedUsername') || '',
+    userType: sessionStorage.getItem('savedUserType') || '',
+    feedback: []
   }),
 
   actions: {
     setUsername(username) {
-      this.username = username;
-      sessionStorage.setItem("savedUsername", username);
+      this.username = username
+      sessionStorage.setItem('savedUsername', username)
     },
     setUserType(userType) {
-      this.userType = userType;
-      sessionStorage.setItem("savedUserType", userType);
+      this.userType = userType
+      sessionStorage.setItem('savedUserType', userType)
     },
-  },
-});
+    setFeedback(newFeedback) {
+      this.feedback.push(newFeedback)
+    }
+  }
+})

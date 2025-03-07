@@ -39,6 +39,9 @@
     <div class="class_cards">
       <div v-for="(studentName, index) in classList" :key="index">
         <ul>
+            <div class="profile_container">
+                <img class="profile_icon" src="/assets/profile_icon.png" alt="Profile image" />
+            </div>
           <li>{{ studentName.name }}</li>
           <li>{{ studentName.phone }}</li>
           <li>{{ studentName.address }}</li>
@@ -81,10 +84,20 @@
     list-style: none;
   }
 
+  .profile_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile_icon {
+    width: 60px;
+  }
+
   @media (max-width: 979px) {
     .class_cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      height: 300px;
     }
   }
 
@@ -92,6 +105,7 @@
     .class_cards {
       display: grid;
       grid-template-columns: 1fr;
+      height: 300px;
     }
   }
 </style>

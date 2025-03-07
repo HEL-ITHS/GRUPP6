@@ -32,7 +32,7 @@
   {
     "name": "William Andersson",
     "phone": "070-678 90 12",
-    "address": "Östra Hamngatan 11, 411 06 Göteborg",
+    "address": "Hamngatan 11, 411 06 Göteborg",
     "email": "william.andersson@skola.se"
   },
   {
@@ -44,7 +44,7 @@
   {
     "name": "Oscar Persson",
     "phone": "070-890 12 34",
-    "address": "Kungsportsavenyen 15, 411 08 Göteborg",
+    "address": "Avenyn 15, 411 08 Göteborg",
     "email": "oscar.persson@skola.se"
   },
   {
@@ -56,7 +56,7 @@
   {
     "name": "Lucas Holm",
     "phone": "070-012 34 56",
-    "address": "Chalmersgatan 19, 411 10 Göteborg",
+    "address": "Chalmers väg 19, 411 10 Göteborg",
     "email": "lucas.holm@skola.se"
   },
   {
@@ -80,7 +80,7 @@
   {
     "name": "Isak Henriksson",
     "phone": "070-456 78 91",
-    "address": "Redbergsvägen 27, 411 14 Göteborg",
+    "address": "Redberg 27, 411 14 Göteborg",
     "email": "isak.henriksson@skola.se"
   },
   {

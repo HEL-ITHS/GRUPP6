@@ -38,13 +38,13 @@
   {
     "name": "William Blomqvist",
     "phone": "070-901 23 78",
-    "address": "Östra Larmgatan 7, 411 07 Göteborg",
+    "address": "Larmgatan 7, 411 07 Göteborg",
     "email": "william.blomqvist@skola.se"
   },
   {
     "name": "Linnea Strömberg",
     "phone": "070-012 34 89",
-    "address": "Värmlandsgatan 8, 411 45 Göteborg",
+    "address": "Värmlands Väg 8, 411 45 Göteborg",
     "email": "linnea.stromberg@skola.se"
   },
   {
@@ -56,49 +56,49 @@
   {
     "name": "Nathalie Jonsson",
     "phone": "070-234 56 01",
-    "address": "Karl Johansgatan 10, 414 55 Göteborg",
+    "address": "Johansgatan 10, 414 55 Göteborg",
     "email": "nathalie.jonsson@skola.se"
   },
   {
     "name": "Filip Henriksson",
     "phone": "070-345 67 12",
-    "address": "Vågmästaregatan 11, 417 29 Göteborg",
+    "address": "Dahlgatan 11, 417 29 Göteborg",
     "email": "filip.henriksson@skola.se"
   },
   {
     "name": "Elvira Åkesson",
     "phone": "070-456 78 23",
-    "address": "Långedragsvägen 12, 426 76 Göteborg",
+    "address": "Långevägen 12, 426 76 Göteborg",
     "email": "elvira.akesson@skola.se"
   },
   {
     "name": "Oscar Viklund",
     "phone": "070-567 89 34",
-    "address": "Sankt Eriksgatan 13, 411 05 Göteborg",
+    "address": "Eriksgatan 13, 411 05 Göteborg",
     "email": "oscar.viklund@skola.se"
   },
   {
     "name": "Ida Sjöberg",
     "phone": "070-678 90 45",
-    "address": "Gustaf Dalénsgatan 14, 417 24 Göteborg",
+    "address": "Dalénsgatan 14, 417 24 Göteborg",
     "email": "ida.sjoberg@skola.se"
   },
   {
     "name": "Albin Norén",
     "phone": "070-789 01 56",
-    "address": "Masthuggstorget 15, 413 27 Göteborg",
+    "address": "Masthugget 15, 413 27 Göteborg",
     "email": "albin.noren@skola.se"
   },
   {
     "name": "Tove Larsson",
     "phone": "070-890 12 67",
-    "address": "Sanatoriegatan 16, 416 53 Göteborg",
+    "address": "Jupiters Väg 16, 416 53 Göteborg",
     "email": "tove.larsson@skola.se"
   },
   {
     "name": "Hampus Ekström",
     "phone": "070-901 23 78",
-    "address": "Rambergsstaden 17, 417 05 Göteborg",
+    "address": "Ramberget 17, 417 05 Göteborg",
     "email": "hampus.ekstrom@skola.se"
   },
   {
@@ -116,7 +116,7 @@
   {
     "name": "Freja Nyström",
     "phone": "070-234 56 01",
-    "address": "Gamlestadstorget 20, 415 12 Göteborg",
+    "address": "Gamlestan 20, 415 12 Göteborg",
     "email": "freja.nystrom@skola.se"
   }
 ]

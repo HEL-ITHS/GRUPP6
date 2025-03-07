@@ -4,7 +4,7 @@ export const userDetails = defineStore('user', {
   state: () => ({
     username: sessionStorage.getItem('savedUsername') || '',
     userType: sessionStorage.getItem('savedUserType') || '',
-    feedback: []
+    feedback: JSON.parse(sessionStorage.getItem('savedFeedback')) || []
   }),
 
   actions: {
@@ -18,6 +18,7 @@ export const userDetails = defineStore('user', {
     },
     setFeedback(newFeedback) {
       this.feedback.push(newFeedback)
+      sessionStorage.setItem('savedFeedback', JSON.stringify(this.feedback))
     }
   }
 })

@@ -85,7 +85,7 @@
   }
 
   /* För skärmar MINDRE än 600px*/
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .navigation_options {
       margin: 2em;
       flex-direction: column;

@@ -5,6 +5,7 @@ import DifficultyView from './Views/DifficultyView.vue'
 import Lexicon from './Views/LexiconView.vue'
 import UserDashboard from './Views/UserDashboard.vue'
 import Classlist from './Views/ClasslistView.vue'
+import CommentsView from './Views/CommentsView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -34,6 +35,10 @@ export default createRouter({
     {
       component: Classlist,
       path: '/classlist'
+    },
+    {
+      component: CommentsView,
+      path: '/comments'
     }
   ]
 })

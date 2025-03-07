@@ -51,6 +51,9 @@
       <RouterLink to="/lexicon"
         ><button class="navigation_btns">Lexikon</button></RouterLink
       >
+      <RouterLink to="/comments"
+        ><button class="navigation_btns">Åsikter</button></RouterLink
+      >
     </div>
   </div>
 </template>

@@ -19,6 +19,10 @@ export const userDetails = defineStore('user', {
     setFeedback(newFeedback) {
       this.feedback.push(newFeedback)
       sessionStorage.setItem('savedFeedback', JSON.stringify(this.feedback))
+    },
+    removeFeedback(index) {
+      this.feedback.splice(index, 1)
+      sessionStorage.setItem('savedFeedback', JSON.stringify(this.feedback))
     }
   }
 })

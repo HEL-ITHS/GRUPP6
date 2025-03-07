@@ -10,10 +10,11 @@
     computed: {
       feedback() {
         return userDetails().feedback
-      },
-      setUsernameFromLogIn() {
-        const userstore = userDetails()
-        return userstore.username
+      }
+    },
+    methods: {
+      removeFeedback(index) {
+        userDetails().removeFeedback(index)
       }
     }
   }
@@ -25,7 +26,8 @@
   <div v-if="feedback.length > 0">
     <ul>
       <li v-for="(item, index) in feedback" :key="index">
-        {{ item }}
+        <strong>Anonym: </strong>{{ item }}
+        <button @click="removeFeedback(index)">Ta bort</button>
       </li>
     </ul>
   </div>

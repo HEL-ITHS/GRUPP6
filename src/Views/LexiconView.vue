@@ -99,7 +99,7 @@
         <p v-else class="synonyms">Inga synonymer finns</p>
       </div>
     </div>
-    <div v-else-if="wordFound">
+    <div v-else-if="wordNotFound">
       <p class="errorMessage">
         Opps! Det här var inget ord, testa och sök på något annat!
       </p>

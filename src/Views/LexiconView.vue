@@ -7,12 +7,16 @@
     data() {
       return {
         word: '',
-        definition: ''
+        definition: null,
+        wordNotFound: false
       }
     },
     methods: {
       onClickLexicon() {
         if (!this.word) return
+
+        this.wordNotFound = false
+        this.definition = null
 
         fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${this.word}`)
           .then((response) => response.json())
@@ -20,7 +24,7 @@
             const data = result[0]
 
             this.definition = {
-              word: data.word,
+              word: data.word || '',
               phonetic: data.phonetics[0]?.text || '',
               audio: data.phonetics[1]?.audio || '',
               meanings: data.meanings.map((meaning) => ({
@@ -29,6 +33,10 @@
                 synonyms: meaning.synonyms[0] || ''
               }))
             }
+          })
+          .catch(() => {
+            this.wordNotFound = true
+            this.definition = null
           })
       },
       playAudio() {
@@ -90,6 +98,11 @@
         </p>
         <p v-else class="synonyms">Inga synonymer finns</p>
       </div>
+    </div>
+    <div v-else-if="wordFound">
+      <p class="errorMessage">
+        Opps! Det här var inget ord, testa och sök på något annat!
+      </p>
     </div>
   </div>
   <div class="navigation_options">
@@ -234,5 +247,11 @@
     background-color: #004276;
     transform: scale(0.98);
     transition: transform 0.1s ease;
+  }
+
+  .errorMessage {
+    color: red;
+    padding: 20px;
+    font-size: 22px;
   }
 </style>

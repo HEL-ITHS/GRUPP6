@@ -5,7 +5,8 @@ export const userDetails = defineStore('user', {
     username: sessionStorage.getItem('savedUsername') || '',
     userType: sessionStorage.getItem('savedUserType') || '',
     feedback: JSON.parse(sessionStorage.getItem('savedFeedback')) || [],
-    bestScore: sessionStorage.getItem('savedBestCurrentScore') || 0
+    bestCurrentScore: sessionStorage.getItem('savedBestScore') || 0,
+    preScore: sessionStorage.getItem('savedPreScore') || 0
   }),
 
   actions: {
@@ -27,17 +28,16 @@ export const userDetails = defineStore('user', {
       sessionStorage.setItem('savedFeedback', JSON.stringify(this.feedback))
     },
 
-    updateCurrentScore(score) {
-      console.log('Vad får jag i variabeln score in i updateScore:', score)
-      if (score > this.bestScore) {
-        console.log('när score är högre än this.best:', score)
-        this.bestScore = score
-        sessionStorage.setItem('savedBestCurrentScore', score)
-      } else {
-        console.log(
-          'score som inte var högre än tidigaree- ingen uppdate! Men värdet är:',
-          score
-        )
+    setScores(newScore) {
+      console.log('newScore:', newScore)
+      this.preScore = newScore
+      sessionStorage.setItem('savedPreScore', preScore)
+      console.log('preScore:', preScore)
+
+      if (newScore > this.bestCurrentScore) {
+        console.log('newScore då det är högre än tidigare resultat:', newScore)
+        this.bestCurrentScore = newScore
+        sessionStorage.setItem('savedBestScore', this.bestCurrentScore)
       }
     }
   }

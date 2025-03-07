@@ -39,10 +39,15 @@
       submitQuiz() {
         if (this.allAnswered) {
           this.totalScore = this.getTotalScore()
-          this.saveTheBestScore()
+          this.saveScores()
           this.showResults = true
           this.showQuiz = false
         }
+      },
+
+      saveScores() {
+        const userStore = userDetails()
+        userStore.setScores(this.totalScore)
       },
 
       getTotalScore() {
@@ -71,11 +76,6 @@
         }
       },
 
-      saveTheBestScore() {
-        const userStore = userDetails()
-        userStore.updateCurrentScore(this.totalScore)
-      },
-
       goToInteraction() {
         this.$router.push('/interaction')
       }
@@ -98,7 +98,7 @@
 
       bestScore() {
         const userStore = userDetails()
-        return userStore.bestScore
+        return userStore.bestCurrentScore
       }
     }
   }
@@ -167,7 +167,7 @@
       <p class="text_result">
         Ditt totala resultat: {{ totalScore }} av {{ quiz.length }}
       </p>
-      <p class="text_result" v-if="bestScore >= 0">
+      <p class="text_result" v-if="bestScore > 0">
         <strong>Ditt tidigare bästa:</strong> {{ bestScore }}
       </p>
       <span v-if="totalScore === quiz.length"

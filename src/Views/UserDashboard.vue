@@ -1,11 +1,11 @@
 <script>
-  import HeaderStudent from '../components/HeaderStudent.vue'
   import { userDetails } from '../stores/userStorage'
   import HeroContent from '../components/HeroContent.vue'
+  import HeaderAll from '../components/HeaderAll.vue'
 
   export default {
     components: {
-      HeaderStudent,
+      HeaderAll,
       HeroContent
     },
 
@@ -19,7 +19,7 @@
 </script>
 
 <template>
-  <HeaderStudent />
+  <HeaderAll />
   <div v-if="displayUserView === 'student'">
     <HeroContent
       :background-image="'/assets/heroStudent.jpg'"
@@ -46,13 +46,13 @@
     />
     <div class="navigation_options">
       <RouterLink to="/classlist">
-        <button class="navigation_btns">Klasslista</button></RouterLink
+        <button class="navigation_buttons">Klasslista</button></RouterLink
       >
       <RouterLink to="/lexicon"
-        ><button class="navigation_btns">Lexikon</button></RouterLink
+        ><button class="navigation_buttons">Lexikon</button></RouterLink
       >
       <RouterLink to="/comments"
-        ><button class="navigation_btns">Åsikter</button></RouterLink
+        ><button class="navigation_buttons">Åsikter</button></RouterLink
       >
     </div>
   </div>
@@ -72,7 +72,7 @@
     margin: 3em;
   }
 
-  .navigation_btns {
+  .navigation_buttons {
     font-weight: 600;
     color: white;
     background-color: #0e74c2;
@@ -84,28 +84,26 @@
     width: 200px;
   }
 
-  /* För skärmar MINDRE än 600px*/
   @media (max-width: 768px) {
     .navigation_options {
       margin: 2em;
       flex-direction: column;
     }
 
-    .navigation_btns {
+    .navigation_buttons {
       width: 150px;
       padding: 12px;
       margin: 1em;
     }
 
-    .navigation_btns:active {
+    .navigation_buttons:active {
       background-color: #004276;
       transform: scale(0.98);
       transition: transform 0.1s ease;
     }
   }
-  /* För skärmar STÖRRE än 600px*/
   @media (min-width: 601px) {
-    .navigation_btns:hover {
+    .navigation_buttons:hover {
       background-color: #004276;
       transform: scale(0.98);
       transition: transform 0.1s ease;

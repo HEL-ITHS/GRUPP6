@@ -1,11 +1,11 @@
 <script>
-  import HeaderStudent from '../components/HeaderStudent.vue'
+  import HeaderAll from '../components/HeaderAll.vue'
   import NewQuiz from '../components/NewQuiz.vue'
   import { userDetails } from '../stores/userStorage'
 
   export default {
     components: {
-      HeaderStudent,
+      HeaderAll,
       NewQuiz
     },
     data() {
@@ -66,12 +66,12 @@
         }
         return 'Ej genomfört'
       }
-    },
+    }
   }
 </script>
 
 <template>
-  <HeaderStudent />
+  <HeaderAll />
 
   <div class="head_container">
     <div class="head_text">
@@ -80,19 +80,19 @@
     <div v-if="showParrot" class="parrot_container">
       <div class="parrot_wrapper">
         <img class="parrot" src="/assets/parrot1.jpg" alt="parrot" />
-        <img class="speachbubble" src="/assets/chatt.png" alt="Speachbubble" />
+        <img class="speach_bubble" src="/assets/chatt.png" alt="Speachbubble" />
       </div>
     </div>
   </div>
 
-  <div v-if="allChoices" class="choise_container">
+  <div v-if="allChoices" class="choice_container">
     <div class="choice_parts">
       <div class="quiz_type_container">
         <div class="quiz_type"><strong>Glosor</strong></div>
         <img
           class="info_image"
           src="/assets/info.png"
-          alt=""
+          alt="Info button"
           @click="showInfo('I detta quiz lär vi oss ord.')"
         />
       </div>
@@ -127,7 +127,7 @@
         <img
           class="info_image"
           src="/assets/info.png"
-          alt=""
+          alt="Info button"
           @click="
             showInfo(
               'I detta quiz lär vi oss att placera rätt ord i en mening.'
@@ -166,7 +166,7 @@
         <img
           class="info_image"
           src="/assets/info.png"
-          alt=""
+          alt="Info button"
           @click="showInfo('I detta quiz lär vi oss om ordklasser.')"
         />
       </div>
@@ -175,7 +175,7 @@
         <img
           class="level_image"
           src="/assets/level3.png"
-          alt="Grafik of level"
+          alt="Grafic of level"
         />
       </div>
       <div class="quiz_status">
@@ -187,7 +187,7 @@
     </div>
     <div class="navigation_options">
       <RouterLink to="/dashboard">
-        <button class="navigation_btns">Startsida</button></RouterLink
+        <button class="navigation_buttons">Startsida</button></RouterLink
       >
     </div>
   </div>
@@ -195,7 +195,11 @@
   <div v-if="showPopup" class="popup_info">
     <div class="popup_box">
       <p>{{ popupText }}</p>
-      <img class="popup_image" src="/assets/parrotpop.jpg" alt="questio mark" />
+      <img
+        class="popup_image"
+        src="/assets/parrotpop.jpg"
+        alt="Parrot with glasses"
+      />
       <div class="button_container">
         <button class="popup_button" @click="closePopup">Stäng</button>
       </div>
@@ -280,7 +284,7 @@
     animation: fly-in 2s ease-out forwards;
   }
 
-  .speachbubble {
+  .speach_bubble {
     width: 150px;
     opacity: 0;
     animation: fade-in 1s ease-in forwards;
@@ -290,7 +294,7 @@
     left: -170px;
   }
 
-  .choise_container {
+  .choice_container {
     margin-top: 2em;
     margin-bottom: 7em;
   }
@@ -455,7 +459,7 @@
     transform: scale(1.1);
   }
 
-  .navigation_btns {
+  .navigation_buttons {
     font-weight: 600;
     color: white;
     background-color: #0e74c2;
@@ -467,12 +471,12 @@
     width: 100px;
   }
 
-  .navigation_btns:active {
+  .navigation_buttons:active {
     background-color: #004276;
     transform: scale(0.98);
     transition: transform 0.1s ease;
   }
-  .navigation_btns:hover {
+  .navigation_buttons:hover {
     background-color: #004276;
     transform: scale(0.98);
     transition: transform 0.1s ease;

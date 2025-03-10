@@ -1,8 +1,8 @@
 <script>
-  import HeaderStudent from '../components/HeaderStudent.vue'
+  import HeaderAll from '../components/HeaderAll.vue'
 
   export default {
-    components: { HeaderStudent },
+    components: { HeaderAll },
 
     data() {
       return {
@@ -50,7 +50,7 @@
 </script>
 
 <template>
-  <HeaderStudent />
+  <HeaderAll />
 
   <HeroContent
     :background-image="'/assets/heroTeacher.jpg'"
@@ -76,7 +76,7 @@
           v-if="definition.phonetic !== '' || definition.audio !== ''"
           id="phonetic_word"
         >
-          <strong>Uttal:</strong> {{ definition.phonetic }}
+          <strong>Uttal:</strong>{{ definition.phonetic }}
           <button v-if="definition.audio" @click="playAudio" id="play_button">
             ▶
           </button>
@@ -90,24 +90,24 @@
         <div v-if="meaning.partOfSpeech" id="part_of_speech">
           <h4>{{ meaning.partOfSpeech }}</h4>
         </div>
-        <p v-if="meaning.definition" id="defintion">
-          <strong>Defintion:</strong> {{ meaning.definition }}
-        </p>
-        <p v-if="meaning.synonyms.length > 0" class="synonyms">
-          <strong>Synonymer:</strong> {{ meaning.synonyms }}
-        </p>
-        <p v-else class="synonyms">Inga synonymer finns</p>
+        <div v-if="meaning.definition" id="defintion">
+          <p><strong>Defintion:</strong>{{ meaning.definition }}</p>
+        </div>
+        <div v-if="meaning.synonyms.length > 0" id="synonyms">
+          <p><strong>Synonymer:</strong>{{ meaning.synonyms }}</p>
+        </div>
+        <p v-else id="synonyms">Inga synonymer finns</p>
       </div>
     </div>
     <div v-else-if="wordNotFound">
-      <p class="errorMessage">
+      <p class="error_message">
         Opps! Det här var inget ord, testa och sök på något annat!
       </p>
     </div>
   </div>
   <div class="navigation_options">
     <RouterLink to="/dashboard">
-      <button class="navigation_btns">Startsida</button></RouterLink
+      <button class="navigation_buttons">Startsida</button></RouterLink
     >
   </div>
 </template>
@@ -219,14 +219,14 @@
     text-align: center;
     padding: 10px;
   }
-  .synonyms {
+  #synonyms {
     display: flex;
     justify-content: center;
     text-align: center;
     padding: 10px;
   }
 
-  .navigation_btns {
+  .navigation_buttons {
     font-weight: 600;
     color: white;
     background-color: #0e74c2;
@@ -238,18 +238,18 @@
     width: 100px;
   }
 
-  .navigation_btns:active {
+  .navigation_buttons:active {
     background-color: #004276;
     transform: scale(0.98);
     transition: transform 0.1s ease;
   }
-  .navigation_btns:hover {
+  .navigation_buttons:hover {
     background-color: #004276;
     transform: scale(0.98);
     transition: transform 0.1s ease;
   }
 
-  .errorMessage {
+  .error_message {
     color: red;
     padding: 20px;
     font-size: 22px;

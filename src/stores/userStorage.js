@@ -33,31 +33,24 @@ export const userDetails = defineStore('user', {
 
     setScores(score, quizId) {
       if (quizId in this.currentScores) {
-        /* Uppdatera i Pinia */
         this.previousScores[quizId] = this.currentScores[quizId]
         this.currentScores[quizId] = score
-        /* Uppdatera session storage */
         sessionStorage.setItem(
           'savedPreviousScores',
           JSON.stringify(this.previousScores)
         )
       } else {
-        /* Uppdatera i Pinia */
         this.currentScores[quizId] = score
       }
 
-      /* Enda gången vi inte ska uppdatera bestScore är när vi redan har ett bestScore sparat men nya resultatet slår inte det */
       if (!(quizId in this.bestScores && score < this.bestScores[quizId])) {
-        /* Uppdatera i Pinia */
         this.bestScores[quizId] = score
-        /* Uppdatera session storage */
         sessionStorage.setItem(
           'savedBestScores',
           JSON.stringify(this.bestScores)
         )
       }
 
-      /* Uppdatera session storage */
       sessionStorage.setItem(
         'savedCurrentScores',
         JSON.stringify(this.currentScores)

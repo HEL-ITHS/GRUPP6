@@ -86,10 +86,10 @@
       },
 
       motivationalQuote() {
-        const selected = Math.floor(
+        const selectedMotivaionalQuotes = Math.floor(
           Math.random() * this.motivationalQuotes.length
         )
-        return this.motivationalQuotes[selected]
+        return this.motivationalQuotes[selectedMotivaionalQuotes]
       },
 
       previousScore() {
@@ -145,7 +145,7 @@
     </div>
   </div>
 
-  <div v-if="showResults" class="result_continer">
+  <div v-if="showResults" class="result_container">
     <h2>Resultat</h2>
 
     <ul>
@@ -194,10 +194,6 @@
 </template>
 
 <style scoped>
-  form {
-    background-color: white;
-  }
-
   .test_text {
     display: flex;
     justify-content: center;
@@ -284,7 +280,7 @@
     margin-bottom: 4em;
   }
 
-  .result_continer {
+  .result_container {
     margin-top: 2em;
     display: flex;
     align-items: center;

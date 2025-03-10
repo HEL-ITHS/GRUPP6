@@ -1,22 +1,14 @@
 <script>
-import LogInView from "./Views/LogInView.vue";
-import DifficultyView from "./Views/DifficultyView.vue";
-import FooterAll from "./components/FooterAll.vue";
+  import FooterAll from './components/FooterAll.vue'
 
-
-
-export default {
-  components: {
-    LogInView,
-    DifficultyView,
-    FooterAll
-  },
-};
+  export default {
+    components: {
+      FooterAll
+    }
+  }
 </script>
 
 <template>
-
   <RouterView />
   <FooterAll />
-
 </template>

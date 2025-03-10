@@ -1,10 +1,10 @@
 <script>
-  import HeaderStudent from '../components/HeaderStudent.vue'
+  import HeaderAll from '../components/HeaderAll.vue'
   import { userDetails } from '../stores/userStorage'
 
   export default {
     components: {
-      HeaderStudent
+      HeaderAll
     },
 
     computed: {
@@ -21,7 +21,7 @@
 </script>
 
 <template>
-  <HeaderStudent />
+  <HeaderAll />
   <h1>Kommentarer Från studenter</h1>
   <div v-if="feedback.length > 0">
     <ul>

@@ -1,11 +1,11 @@
 <script>
   import { RouterLink } from 'vue-router'
-  import HeaderStudent from '../components/HeaderStudent.vue'
   import ShowClasses from '../components/ShowClasses.vue'
+  import HeaderAll from '../components/HeaderAll.vue'
 
   export default {
     components: {
-      HeaderStudent,
+      HeaderAll,
       ShowClasses
     },
     data() {
@@ -33,13 +33,13 @@
 </script>
 
 <template>
-  <HeaderStudent />
+  <HeaderAll />
 
-  <div v-if="chooseClasses" class="chooseClasses">
+  <div v-if="chooseClasses" class="choose_classes">
     <div class="classes_name">
       <p>3A</p>
       <button
-        class="classListButton"
+        class="classlist_button"
         @click="onClickShowClasses('./public/classList1.json')"
       >
         Klasslista
@@ -58,7 +58,7 @@
     <div class="classes_name">
       <p>3B</p>
       <button
-        class="classListButton"
+        class="classlist_button"
         @click="onClickShowClasses('./public/classList2.json')"
       >
         Klasslista
@@ -77,7 +77,7 @@
     <div class="classes_name">
       <p>3C</p>
       <button
-        class="classListButton"
+        class="classlist_button"
         @click="onClickShowClasses('./public/classList3.json')"
       >
         Klasslista
@@ -95,7 +95,7 @@
 </template>
 
 <style scoped>
-  .chooseClasses {
+  .choose_classes {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -111,16 +111,6 @@
     padding: 10px;
   }
 
-  button {
-    color: white;
-    border: none;
-    border-radius: 5px;
-    background-color: #004276;
-    transition: transform 0.3s ease;
-    justify-content: space-around;
-    align-items: center;
-  }
-
   .classes_name p {
     font-size: large;
     margin: 0;
@@ -130,7 +120,7 @@
     margin: 0;
   }
 
-  .classListButton {
+  .classlist_button {
     width: 150px;
     background-color: #7ac0f5;
     border: none;
@@ -140,7 +130,7 @@
     transition: transform 0.3s ease;
   }
 
-  .classListButton:hover {
+  .classlist_button:hover {
     background-color: #519fdb;
     transform: scale(1.1);
   }

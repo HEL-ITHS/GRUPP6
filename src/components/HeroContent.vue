@@ -4,8 +4,7 @@
   export default {
     computed: {
       displayUserName() {
-        const userstore = userDetails()
-        return userstore.username
+        return userDetails().username
       },
 
       backgroundStyle() {

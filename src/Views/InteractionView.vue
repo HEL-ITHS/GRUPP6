@@ -1,41 +1,42 @@
 <script>
-import HeaderStudent from "../components/HeaderStudent.vue";
-import ChatComponent from "../components/ChatComponent.vue";
-export default {
-  components: {
-    HeaderStudent,
-    ChatComponent,
-  },
-  data() {
-    return {
-      rating: 0,
-      ShowThankYou: false,
-      hoverRating: 0,
-    };
-  },
-  mounted() {
-    window.scrollTo(0, 0);
-  },
-  methods: {
-    setRating(star) {
-      this.rating = star;
-      this.ShowThankYou = true;
+  import ChatComponent from '../components/ChatComponent.vue'
+  import HeaderAll from '../components/HeaderAll.vue'
+
+  export default {
+    components: {
+      HeaderAll,
+      ChatComponent
     },
-    setHover(star) {
-      this.hoverRating = star;
+    data() {
+      return {
+        rating: 0,
+        ShowThankYou: false,
+        hoverRating: 0
+      }
     },
-    resetHover() {
-      this.hoverRating = 0;
+    mounted() {
+      window.scrollTo(0, 0)
     },
-    goToHome(){
-      this.$router.push('/dashboard')
+    methods: {
+      setRating(star) {
+        this.rating = star
+        this.ShowThankYou = true
+      },
+      setHover(star) {
+        this.hoverRating = star
+      },
+      resetHover() {
+        this.hoverRating = 0
+      },
+      goToHome() {
+        this.$router.push('/dashboard')
+      }
     }
-  },
-};
+  }
 </script>
 
 <template>
-  <HeaderStudent />
+  <HeaderAll />
   <div id="rating_container">
     <div id="hero_text">
       <h1>Vi värdesätter din åsikt!</h1>
@@ -59,7 +60,7 @@ export default {
           @mouseover="setHover(star)"
           @mouseleave="resetHover"
         >
-          {{ star <= (hoverRating || rating) ? "⭐" : "☆" }}
+          {{ star <= (hoverRating || rating) ? '⭐' : '☆' }}
         </span>
         <transition name="rotate-in">
           <div v-if="ShowThankYou">
@@ -74,73 +75,74 @@ export default {
 </template>
 
 <style scoped>
-#rating_container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-image: linear-gradient(rgba(6, 8, 24, 0.7), rgba(77, 92, 158, 0.7)),
-    url(/assets/rating.png);
-  background-position: center;
-  background-size: cover;
-  min-height: 50vh;
-  align-items: center;
-  text-align: center;
-}
-#hero_text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  margin-top: 50px;
-}
-#hero_text p {
-  max-width: 600px;
-  margin-top: 20px;
-  font-size: 18px;
-  font-style: italic;
-}
-#rating {
-  display: flex;
-  flex-direction: column;
-  width: 50vw;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  margin-top: 30px;
-}
-
-#stars span {
-  font-size: 42px;
-  color: gold;
-}
-.rotate-in-enter-active {
-  animation: rotate-in 1s ease-out;
-}
-button {
-  margin-top: 1em;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  background-color: #004276;
-  padding: 10px;
-  margin-left: 1em;
-  transition: transform 0.3s ease;
-}
-
-
-@keyframes rotate-in {
-  0% {
-    transform: rotate(-360deg) scale(0.1);
-    opacity: 0;
+  #rating_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image:
+      linear-gradient(rgba(6, 8, 24, 0.7), rgba(77, 92, 158, 0.7)),
+      url(/assets/rating.png);
+    background-position: center;
+    background-size: cover;
+    min-height: 50vh;
+    align-items: center;
+    text-align: center;
   }
-  50% {
-    transform: rotate(360deg) scale(0.5);
-    opacity: 0.5;
+  #hero_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    margin-top: 50px;
   }
-  100% {
-    transform: rotate(360deg) scale(1);
-    opacity: 1;
+  #hero_text p {
+    max-width: 600px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-style: italic;
   }
-}
+  #rating {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 30px;
+  }
+
+  #stars span {
+    font-size: 42px;
+    color: gold;
+    cursor: pointer;
+  }
+  .rotate-in-enter-active {
+    animation: rotate-in 1s ease-out;
+  }
+  button {
+    margin-top: 1em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #004276;
+    padding: 10px;
+    margin-left: 1em;
+    transition: transform 0.3s ease;
+  }
+
+  @keyframes rotate-in {
+    0% {
+      transform: rotate(-360deg) scale(0.1);
+      opacity: 0;
+    }
+    50% {
+      transform: rotate(360deg) scale(0.5);
+      opacity: 0.5;
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+      opacity: 1;
+    }
+  }
 </style>

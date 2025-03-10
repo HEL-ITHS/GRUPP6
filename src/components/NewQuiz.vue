@@ -8,8 +8,8 @@
         selectedAnswer: Array(9).fill(null),
         showResults: false,
         quiz: [],
-        totalScore: null,
-        motivationalQuotes: null
+        motivationalQuotes: null,
+        passFactor: 0.66
       }
     },
     mounted() {
@@ -38,26 +38,22 @@
 
       submitQuiz() {
         if (this.allAnswered) {
-          this.totalScore = this.getTotalScore()
-          this.saveScores()
+          const score = this.getScore()
+          userDetails().setScores(score, this.quizLink)
+
           this.showResults = true
           this.showQuiz = false
         }
       },
 
-      saveScores() {
-        const userStore = userDetails()
-        userStore.setScores(this.totalScore)
-      },
-
-      getTotalScore() {
-        let totalScore = 0
+      getScore() {
+        let score = 0
         for (let i = 0; i < this.quiz.length; i++) {
           if (this.selectedAnswer[i] === this.quiz[i].correctAnswer) {
-            totalScore++
+            score++
           }
         }
-        return totalScore
+        return score
       },
 
       loadMotivationalQuotes() {
@@ -96,9 +92,16 @@
         return this.motivationalQuotes[selected]
       },
 
-      bestScore() {
-        const userStore = userDetails()
-        return userStore.bestCurrentScore
+      previousScore() {
+        return userDetails().previousScores[this.quizLink]
+      },
+
+      currentScore() {
+        return userDetails().currentScores[this.quizLink]
+      },
+
+      doneQuizBefore() {
+        return this.quizLink in userDetails().previousScores
       }
     }
   }
@@ -165,18 +168,18 @@
 
     <div class="result_message">
       <p class="text_result">
-        Ditt totala resultat: {{ totalScore }} av {{ quiz.length }}
+        Ditt resultat: {{ currentScore }} av {{ quiz.length }}
       </p>
-      <p class="text_result" v-if="bestScore > 0">
-        <strong>Ditt tidigare bästa:</strong> {{ bestScore }}
+      <p v-if="doneQuizBefore">
+        Föregående resultat: {{ previousScore }} av {{ quiz.length }}
       </p>
-      <span v-if="totalScore === quiz.length"
+      <span v-if="currentScore === quiz.length"
         >Grattis, du tillhör quizeliten! Du fick alla rätt!</span
       >
-      <span v-else-if="totalScore >= quiz.length * 0.7"
+      <span v-else-if="currentScore >= quiz.length * passFactor"
         >Grymt resultat, quizmästare!
       </span>
-      <span v-if="totalScore < quiz.length * 0.4"
+      <span v-if="currentScore < quiz.length * passFactor"
         >{{ motivationalQuote }}
       </span>
     </div>

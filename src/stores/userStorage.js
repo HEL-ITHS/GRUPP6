@@ -5,8 +5,11 @@ export const userDetails = defineStore('user', {
     username: sessionStorage.getItem('savedUsername') || '',
     userType: sessionStorage.getItem('savedUserType') || '',
     feedback: JSON.parse(sessionStorage.getItem('savedFeedback')) || [],
-    bestCurrentScore: sessionStorage.getItem('savedBestScore') || 0,
-    preScore: sessionStorage.getItem('savedPreScore') || 0
+    previousScores:
+      JSON.parse(sessionStorage.getItem('savedPreviousScores')) || {},
+    currentScores:
+      JSON.parse(sessionStorage.getItem('savedCurrentScores')) || {},
+    bestScores: JSON.parse(sessionStorage.getItem('savedBestScores')) || {}
   }),
 
   actions: {
@@ -28,17 +31,37 @@ export const userDetails = defineStore('user', {
       sessionStorage.setItem('savedFeedback', JSON.stringify(this.feedback))
     },
 
-    setScores(newScore) {
-      console.log('newScore:', newScore)
-      this.preScore = newScore
-      sessionStorage.setItem('savedPreScore', preScore)
-      console.log('preScore:', preScore)
-
-      if (newScore > this.bestCurrentScore) {
-        console.log('newScore då det är högre än tidigare resultat:', newScore)
-        this.bestCurrentScore = newScore
-        sessionStorage.setItem('savedBestScore', this.bestCurrentScore)
+    setScores(score, quizId) {
+      if (quizId in this.currentScores) {
+        /* Uppdatera i Pinia */
+        this.previousScores[quizId] = this.currentScores[quizId]
+        this.currentScores[quizId] = score
+        /* Uppdatera session storage */
+        sessionStorage.setItem(
+          'savedPreviousScores',
+          JSON.stringify(this.previousScores)
+        )
+      } else {
+        /* Uppdatera i Pinia */
+        this.currentScores[quizId] = score
       }
+
+      /* Enda gången vi inte ska uppdatera bestScore är när vi redan har ett bestScore sparat men nya resultatet slår inte det */
+      if (!(quizId in this.bestScores && score < this.bestScores[quizId])) {
+        /* Uppdatera i Pinia */
+        this.bestScores[quizId] = score
+        /* Uppdatera session storage */
+        sessionStorage.setItem(
+          'savedBestScores',
+          JSON.stringify(this.bestScores)
+        )
+      }
+
+      /* Uppdatera session storage */
+      sessionStorage.setItem(
+        'savedCurrentScores',
+        JSON.stringify(this.currentScores)
+      )
     }
   }
 })

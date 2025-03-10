@@ -1,6 +1,7 @@
 <script>
   import HeaderStudent from '../components/HeaderStudent.vue'
   import NewQuiz from '../components/NewQuiz.vue'
+  import { userDetails } from '../stores/userStorage'
 
   export default {
     components: {
@@ -9,6 +10,9 @@
     },
     data() {
       return {
+        easyPath: '/quizLevelEasy.json',
+        mediumPath: '/quizLevelMedium.json',
+        hardPath: '/quizLevelHard.json',
         showPopup: false,
         popupText: '',
         quizLevel: false,
@@ -54,8 +58,15 @@
         this.quizLevel = false
         this.allChoices = true
         this.showParrot = true
+      },
+      getQuizStatus(quizId) {
+        const bestScores = userDetails().bestScores
+        if (quizId in bestScores) {
+          return 'Bästa resultat: ' + bestScores[quizId]
+        }
+        return 'Ej genomfört'
       }
-    }
+    },
   }
 </script>
 
@@ -93,10 +104,10 @@
           alt="Grafic of level"
         />
       </div>
-      <button
-        class="start_quiz"
-        @click="onClickStartQuiz('/quizLevelEasy.json')"
-      >
+      <div class="quiz_status">
+        <p>{{ getQuizStatus(easyPath) }}</p>
+      </div>
+      <button class="start_quiz" @click="onClickStartQuiz(easyPath)">
         Starta quiz
       </button>
     </div>
@@ -132,10 +143,10 @@
           alt="Grafic of level"
         />
       </div>
-      <button
-        class="start_quiz"
-        @click="onClickStartQuiz('/quizLevelMedium.json')"
-      >
+      <div class="quiz_status">
+        <p>{{ getQuizStatus(mediumPath) }}</p>
+      </div>
+      <button class="start_quiz" @click="onClickStartQuiz(mediumPath)">
         Starta quiz
       </button>
     </div>
@@ -167,10 +178,10 @@
           alt="Grafik of level"
         />
       </div>
-      <button
-        class="start_quiz"
-        @click="onClickStartQuiz('/quizLevelHard.json')"
-      >
+      <div class="quiz_status">
+        <p>{{ getQuizStatus(hardPath) }}</p>
+      </div>
+      <button class="start_quiz" @click="onClickStartQuiz(hardPath)">
         Starta quiz
       </button>
     </div>
@@ -286,7 +297,7 @@
 
   .choice_parts {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     place-items: center;
   }
 
@@ -321,6 +332,10 @@
 
   .level_image {
     height: 16px;
+  }
+
+  .quiz_status p {
+    margin: 0;
   }
 
   .start_quiz {

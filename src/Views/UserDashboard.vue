@@ -29,10 +29,10 @@
     />
     <div class="navigation_options">
       <RouterLink to="/Difficulty">
-        <button class="navigation_btns">Gör quiz</button></RouterLink
+        <button class="navigation_buttons">Gör quiz</button></RouterLink
       >
       <RouterLink to="/lexicon"
-        ><button class="navigation_btns">Lexikon</button></RouterLink
+        ><button class="navigation_buttons">Lexikon</button></RouterLink
       >
     </div>
   </div>

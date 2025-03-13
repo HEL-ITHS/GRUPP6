@@ -4,7 +4,7 @@ export const userDetails = defineStore('user', {
   state: () => ({
     username: sessionStorage.getItem('savedUsername') || '',
     userType: sessionStorage.getItem('savedUserType') || '',
-    feedback: JSON.parse(sessionStorage.getItem('savedFeedback')) || [],
+    feedback: JSON.parse(localStorage.getItem('savedFeedback')) || [],
     previousScores:
       JSON.parse(sessionStorage.getItem('savedPreviousScores')) || {},
     currentScores:
@@ -24,11 +24,11 @@ export const userDetails = defineStore('user', {
 
     setFeedback(newFeedback) {
       this.feedback.push(newFeedback)
-      sessionStorage.setItem('savedFeedback', JSON.stringify(this.feedback))
+      localStorage.setItem('savedFeedback', JSON.stringify(this.feedback))
     },
     removeFeedback(index) {
       this.feedback.splice(index, 1)
-      sessionStorage.setItem('savedFeedback', JSON.stringify(this.feedback))
+      localStorage.setItem('savedFeedback', JSON.stringify(this.feedback))
     },
 
     setScores(score, quizId) {

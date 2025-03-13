@@ -13,31 +13,33 @@
     },
     methods: {
       onClickLexicon() {
-        if (!this.word) return
+        if (!this.word) {
+          return
+        } else {
+          this.wordNotFound = false
+          this.definition = null
 
-        this.wordNotFound = false
-        this.definition = null
+          fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${this.word}`)
+            .then((response) => response.json())
+            .then((result) => {
+              const data = result[0]
 
-        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${this.word}`)
-          .then((response) => response.json())
-          .then((result) => {
-            const data = result[0]
-
-            this.definition = {
-              word: data.word || '',
-              phonetic: data.phonetics[0]?.text || '',
-              audio: data.phonetics[1]?.audio || '',
-              meanings: data.meanings.map((meaning) => ({
-                partOfSpeech: meaning.partOfSpeech,
-                definition: meaning.definitions[0]?.definition || '',
-                synonyms: meaning.synonyms[0] || ''
-              }))
-            }
-          })
-          .catch(() => {
-            this.wordNotFound = true
-            this.definition = null
-          })
+              this.definition = {
+                word: data.word || '',
+                phonetic: data.phonetics[0]?.text || '',
+                audio: data.phonetics[1]?.audio || '',
+                meanings: data.meanings.map((meaning) => ({
+                  partOfSpeech: meaning.partOfSpeech,
+                  definition: meaning.definitions[0]?.definition || '',
+                  synonyms: meaning.synonyms[0] || ''
+                }))
+              }
+            })
+            .catch(() => {
+              this.wordNotFound = true
+              this.definition = null
+            })
+        }
       },
       playAudio() {
         if (this.definition && this.definition.audio) {

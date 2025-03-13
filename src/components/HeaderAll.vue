@@ -11,7 +11,7 @@
       userTypeInSwedish() {
         const userType = userDetails().userType
         const translations = {
-          student: 'Student',
+          student: 'Elev',
           teacher: 'Lärare'
         }
         return translations[userType] || userType

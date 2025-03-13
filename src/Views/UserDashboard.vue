@@ -24,7 +24,7 @@
     <HeroContent
       :background-image="'/assets/heroStudent.jpg'"
       :aria-label="'Pen and books that are open and ready to be read.'"
-      :welcome-heading="'Välkommen till studentportalen,  '"
+      :welcome-heading="'Välkommen till Elevportalen,'"
       :page-description="'Förbättra dina engelska kunskaper genom att utmana dig själv på quiz med olika svårighetsgrad, ha roligt medan du lär dig och se dina resultat. Du kan även använda lexikon för att söka och lära dig mer om orden.'"
     />
     <div class="navigation_options">
@@ -42,7 +42,7 @@
       :background-image="'/assets/heroTeacher.jpg'"
       :aria-label="'A corridor in a library, displaying books'"
       :welcome-heading="'Välkommen till lärarportalen'"
-      :page-description="'Här har du tillgång till flera funktioner för att underlätta din undervisning. Du kan hantera dina elevers betyg, få en översikt på deras presentationer och framsteg för att kunna identifiera områden där de behöver förbättras. Du kan även använda lexikonet för att snabbt hitta definitioner och förklaringar för olika engelska ord som dina elever kan behöva hjälp med. Välj ett alternativ nedan för att börja!'"
+      :page-description="'Här har du tillgång till flera funktioner för att underlätta din undervisning. Du kan få en översikt över klasslistan och se elevernas åsikter om quizen. Du har också tillgång till ett lexikon för att snabbt hitta definitioner och förklaringar av engelska ord som kan vara användbara för eleverna. Välj ett alternativ nedan för att komma igång'"
     />
     <div class="navigation_options">
       <RouterLink to="/classlist">

@@ -32,15 +32,14 @@ export const userDetails = defineStore('user', {
     },
 
     setScores(score, quizId) {
+      this.currentScores[quizId] = score
+
       if (quizId in this.currentScores) {
         this.previousScores[quizId] = this.currentScores[quizId]
-        this.currentScores[quizId] = score
         sessionStorage.setItem(
           'savedPreviousScores',
           JSON.stringify(this.previousScores)
         )
-      } else {
-        this.currentScores[quizId] = score
       }
 
       if (!(quizId in this.bestScores && score < this.bestScores[quizId])) {
